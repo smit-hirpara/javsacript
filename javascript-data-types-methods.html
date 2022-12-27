@@ -18,7 +18,6 @@
             border-radius: 0 0 15px 15px;
             display: flex;
         }
-
         p {
             background-color: yellow;
             color: red;
@@ -32,7 +31,21 @@
             padding: 20px;
             border-radius: 15px;
             margin: 0 10px;
-            width: atuo;
+            width: 50%
+        }
+        @media screen and (max-width: 1210px) {
+            span {
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 800px) {
+            div {
+                display: block;
+            }
+            span {
+                width: 50%;
+                border: none;
+            }
         }
 
         h1 {
@@ -284,6 +297,93 @@
                 document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(5) , "<br><br>");
                 document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(6) , "<br><br>");
 
+            document.write("</span>");
+
+            /* ============================================================================================================================================================
+                                                                            Object Method
+            ============================================================================================================================================================ */
+            document.write("<span>");
+                document.write("<h1>Object Methods</h1>");
+                // =============== Object.create() method create new key in object
+                document.write("<p>Object.create Method</p>");
+                // normal object
+                let object1 = {
+                    firstName:'utsav',
+                    lastName:'hirpara',
+                    class:'1th',
+                    age:5
+                }
+                document.write("<b>object age = </b>", object1.age , "<br><br>");
+                delete object1.age;
+                document.write("<b>object age = </b>", object1.age , "<br><br>");
+
+                // with object.create() method
+                let object2 = Object.create( {
+                    firstNmae:'meet',
+                    lastNmae:'rathod',
+                    class:'10th',
+                    age:17,
+                });
+                document.write("<b>object age with Object.create() = </b>" , object2.age , "<br><br>");
+                delete object2.age;
+                document.write("<b>object age with Object.create() = </b>" , object2.age , "<br><br>");
+                    
+                // ============ object.keys() method return object kyes
+                document.write("<p>Object.keys Method</p>");
+                let object3 = {
+                    firstName:'shivam',
+                    lastName:'hirpara',
+                    class:'9th',
+                    age:17
+                }
+                let user1 = Object.keys(object3);
+                // console.warn(user1);
+                document.write("<b>object kyes = </b>",user1,"<br><br>");
+
+                // ============ object.values() method return object values
+                document.write("<p>Object.values Method</p>");
+                let object4 = {
+                    firstName:'om',
+                    lastName:'rathod',
+                    class:'12th',
+                    age:22
+                }
+                let user2 = Object.values(object4);
+                // console.warn(user2);
+                document.write("<b>object values = </b>", user2 , "<br><br>");
+
+                // ============== object.entries() method retrun array of keys and values
+                document.write("<p>Object.entries Method</p>");
+                let object5 = {
+                    firstName:'kayur',
+                    lastName:'rathod',
+                    class:'8th',
+                    age:13
+                }
+                let user3 = Object.entries(object5);
+                document.write("object5 firstName = ", user3[0][1] , "<br>");
+                document.write("object5 lastName = ", user3[1][1] , "<br>");
+                document.write("object5 class = ", user3[2][1] , "<br>");
+                document.write("object5 age = ",user3[3][1] , "<br>");
+
+                // console.warn("firstName = ", user3[0][1]);
+                // console.warn("lastName = ", user3[1][1]);
+                // console.warn("class = ", user3[2][1]);
+                // console.warn("age = ",user3[3][1]);
+
+                // ================== Object.assign() method
+                var object6 = {
+                    firstName:'meet',
+                    lastName:'rathod',
+                    class:'10th',
+                    age:17
+                }
+                var object7 = {
+                    address:'odhgvnisgtuibbkj',
+                    city:'junagadh'
+                }
+                var user4 = Object.assign(object6,object7);
+                console.warn(user4)
             document.write("</span>");
 
         document.write("</div>");
