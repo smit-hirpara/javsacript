@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>page titel</title>
+    </head>
+    <body>
+        <script>
+
+            // for loop
+            document.write("<b>if statement1</b><br>");
+            for(a = 0; a < 10; a++)  {
+                document.write(a+"<br>");
+            }
+
+            document.write("<b>if statement2</b><br>");
+            var b = 0;
+            for(; b < 10; b++) {
+                document.write(b+"<br>");
+            }
+
+            document.write("<b>if statement3</b><br>");
+            var c = 0;
+            for(;c < 10;) {
+                c++ ;
+                    document.write(c+"<br>");;
+            }
+
+            document.write("<b>if statement4</b><br>");
+            var d = 0;
+            for(;;d++) {
+                if(d==4) {
+                    break;
+                }
+                document.write(d+"<br>");
+            }
+
+            // nasted for loop
+            document.write("<b>nasted for loop</b><br>");
+            for(e = 0; e < 5; e++) {
+                document.write("<b>outer loop</b>"+e+"<br>");
+                for(f = 0; f < 5; f++) {
+                    document.write("inner loop"+f+"<br>");
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>javascnipt string methods</title>
+    <style>
+        header {
+            background-color: aqua;
+            padding: 15px;
+            border: 3px solid black;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+        }
+
+        div {
+            border: 3px solid black;
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+            display: flex;
+        }
+
+        p {
+            background-color: yellow;
+            color: red;
+            padding: 3px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 10px 0 5px 0;
+        }
+        span {
+            border: 3px solid red;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 0 10px;
+            width: atuo;
+        }
+
+        h1 {
+            background-color: aquamarine;
+            padding: 10px;
+            border-radius: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        /* ==============================================================================================================================================
+                                                                    String Methods
+        ============================================================================================================================================== */
+        document.write("<header><i><b>Data Types Methods</b></i></header>");
+        document.write("<div>");
+            document.write("<span> <h1>String Methods</h1>");
+                // =============== length() method return variable length
+                document.write("<p>Length Method</p>");
+                var a = "abcefghijklmnopqrstuvwxyz";
+                document.write("<b>a variable length = </b>" + a.length + "<br><br>"); // output 25
+
+                // =============== slice() method return variable slice
+                document.write("<p>slice Method</p>");
+                var b = "abcefghijklmnopqrstuvwxyz";
+                document.write("<b>b variable slice = </b>" + b.slice(4) + "<br>"); // output fghijklmnopqrstuvwxyz
+                document.write("<b>b variable slice = </b>" + b.slice(4, 20) + "<br><br>"); // output fghijklmnopqrstu
+
+                // ============== toLowerCase() method return variable to lowercase
+                document.write("<p>toLoweCase Method</p>");
+                var c = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                document.write("<b>c variable toLoweCase = </b>" + c.toLocaleLowerCase() + "<br><br>"); // output abcefghijklmnopqrstuvwxyz
+
+                // ============== toUpperCase() method return variable to upper case
+                document.write("<p>toUpperCase Method</p>");
+                var d = "abcefghijklmnopqrstuvwxyz";
+                document.write("<b>d variable tpUpperCase = </b>" + d.toUpperCase() + "<br><br>"); // output ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+                // ============== includes() method return search variable exist and given boolean value
+                document.write("<p>includes Method</p>");
+                var e = "abcefghijklmnopqrstuvwxyz";
+                document.write("<b>e variable incledes = </b>" + e.includes("abcd") + "<br><br>"); // output false
+
+                // ============== startWith() method return variable first word match and given boolean value
+                document.write("<p>startWith Method</p>");
+                var f = "abcdefghijklmnopqrstuvwxyz";
+                document.write("<b>f variable startWith = </b>" + f.startsWith("abc") + "<br><br>");  // output true
+
+                // ============== endWith() method return variable last word match and given boolean value 
+                document.write("<p>endWith Method</p>");
+                var g = "abcefghijklmnopqrstuvwxyz";
+                document.write("<b>g variable endWith = </b>" + g.endsWith("xyz") + "<br><br>"); // output true
+
+                // ============== serch() method return variable search word and given serch word index
+                document.write("<p>serch Method</p>");
+                var h = "abcefghijklmnopqrstuvwxyz";
+                document.write("<b>h variable search = </b>" + h.search("opqr") + "<br><br>"); // output 13
+
+                // ============== match() method return variable search word and grouping in array
+                document.write("<p>match Method</p>");
+                var i = "abcd efgh abcd ijklmnopurst abcd uvwx abcd yx";
+                document.write("<b>i variable match = </b>" + i.match(/abcd/g) + "<br><br>"); // output abcd,abcd,abcd,abcd
+
+                // =============== indexOf() method return variable search word and given index
+                document.write("<p>indexOf Method</p>");
+                var j = "abceifghijklmnopqrstuviwxyz";
+                document.write("<b>j variable indexof = </b>" + j.indexOf("i") + "<br><br>"); // output 4
+
+                // =============== lastIndexOf() method find last word return variable search word and given index
+                document.write("<p>lastIndexOf Method</p>");
+                var k = "abcefmghijklmnopqrstuvwmxyz";
+                document.write("<b>k variable lastIndexof = </b>" + k.lastIndexOf("m") + "<br><br>"); // output 23
+
+                // =============== replace() method replace word, latter and return
+                document.write("<p>replace Method</p>");
+                var l = "abcefghijklmnopqrstuvwxyz";
+                document.write("<b>l variable replace = </b>" + l.replace("ijkl", "smit") + "<br><br>"); // output abcefghsmitmnopqrstuvwxyz
+
+                // =============== trim() method remove extara space in variable
+                document.write("<p>trim Method</p>");
+                var m = "               abcefghijklmnopqrstuvwxyz               ";
+                // alert("without trim() method = " + m); // output                abcefghijklmnopqrstuvwxyz               
+                // alert("trim method = " + m.trim()); // output abcefghijklmnopqrstuvwxyz
+                document.write("<b>m variable trim = </b>" + m.trim() + "<br><br>"); // output abcefghijklmnopqrstuvwxyz
+
+                // =============== charAt() method search index and return index latter
+                document.write("<p>charAt Method</p>");
+                var n = "abcefghijklmnopqrstuvwxyz";
+                document.write("<b>n variable charAt = </b>" + n.charAt(15) + "<br><br>"); // output q
+
+                // =============== charCodeAt() method search latter and return asci code
+                document.write("<p>charCodeAt Method</p>");
+                var o = "abcdefghijklmnopqrstuvwxyz";
+                document.write("<b>o variable charCodeAt = </b>" + o.charCodeAt("k") + "<br><br>"); // output  116
+
+                // ============== fromCharCode() method search asci code and return asci code latter, number abd spacial chartear
+                document.write("<p>fromCharCode Method</p>");
+                var p = String.fromCharCode(116);
+                document.write("<b>p variable fromCharCode = </b>" + p + "<br><br>"); // output  116
+
+                // ============= concat() method concat to variable , marge to variable
+                document.write("<p>concat Method</p>"); 
+                var q = "abcdefghijklm";
+                var r = "nopqrstuvwxyz";
+                document.write("<b>q and r concat = </b> = " + q.concat(r) + "<br><br>"); // output abcdefghijklmnopqrstuvwxyz
+
+                var s = "abcdefgh";
+                var t = "ijklmnop";
+                var u = "qrstuvwxyz";
+                document.write("<b>s, t and u concat = </b>" + s.concat(t, u) + "<br><br>"); // output abcdefghijklmnopqrstuvwxyz
+
+                // =========== split() method split(break) variable and return
+                document.write("<p>split Method</p>");
+                var v = "abcd efch ijkl mnop qrst uvwx yz";
+                document.write("<b>v variable split = </b>" + v.split(" ") + "<br><br>"); // output abcd,efgh,ijkl,mnop,qrst,uvwx,yz
+
+                var w = "smit hirpara smit hrpara smit hirpara smit hirpara";
+                document.write("<b>w variable split = </b>" + w.split("s") + "<br><br>"); // output ,mit hirpara ,mit hrpara ,mit hirpara ,mit hirpara
+
+                // ========== repeat() method repeat your variable value
+                document.write("<p>replace Method</p>");
+                var x = "ABCD";
+                document.write("<b>x variable repeat = </b>" + x.repeat(4) + "<br><br>"); // output  ABCDABCDABCDABCD
+
+                // ========== slice() method given variable slice
+                document.write("<p>slice Method</p>");
+                var y = "abcdefghijklmnopqrstuvwxyz";
+                document.write("<b>y variable slice = </b>" + y.slice(5) + "<br><br>"); // output  fghijklmnopqrstuvwxyz
+                document.write("<b>y variable slice = </b>" + y.slice(5, 12) + "<br><br>"); // output  fghijkl
+
+                // ========= substr() method given variable slice
+                document.write("<p>substr Method</p>");
+                var z = "abcdefghijklmnopqrstuvwxyz";
+                document.write("<b>z variable substr = </b>" + z.substr(5) + "<br><br>"); // output  fghijklmnopqrstuvwxyz
+                document.write("<b>z variable substr = </b>" + y.substr(5, 5) + "<br><br>"); // output  fghij
+
+                // ========= substring() method given variable slice
+                document.write("<p>substring Method</p>");
+                var A = "abcdefghijklmnopqrstuvwxyz";
+                document.write("<b>A variable substring = </b>" + A.substring(5) + "<br><br>"); // output  fghijklmnopqrstuvwxyz
+                document.write("<b>A variable substring = </b>" + A.substring(5, 10) + "<br><br>"); // output  fghij
+
+                // ========= toString() method convort numeric(number) value in string
+                document.write("<p>toString Method</p>");
+                var B = 10;
+                var C = 20;
+                var D = 30;
+                document.write("<b>C variable toString() = </b>", B.toString() + C, "<br><br>"); // output  1020
+                document.write("<b>D variable normal = </b>", C + D, "<br><br>"); // output  50        
+
+                // ========= valueOf() method return variable value
+                document.write("<p>valueOf Method</p>");
+                var E = "abcdefghijklmnopqrstuvwxyz";
+                var F = E.valueOf(E);
+                document.write("<b>F variable valueOf = </b>", F, "<br><br>"); // output  abcdefghijklmnopqrstuvwxyz
+            document.write("</span>");
+
+
+            /* =========================================================================================================================================================
+                                                                                    Number Methods
+            ========================================================================================================================================================= */
+            document.write("<span>");
+
+                document.write("<h1>Number Method</h1>");
+                // ========== toString() methiod convort numaric(number) value in string
+                document.write("<p>toString Method</p>");
+                var G = 10;
+                var H = 20;
+                var I = 30;
+                document.write("<b>G variable toString() = </b>", G.toString() + H, "<br><br>"); // output  1020
+                document.write("<b>H variable normal = </b>", H + I, "<br><br>"); // output  50      
+
+                // ========= Number() method convort string value in number
+                document.write("<p>number Method</p>");
+                var J = "10";
+                var K = 20;
+                var L = Number(J);
+                var M = "10 20";
+                var N = Number(M);
+                document.write("<b>normal J variable = </b>", J + K , "<br><br>"); // output 1020
+                document.write("<b>J variable number = </b>", L , "<br><br>"); // output 10
+                document.write("<b>J variable number addition = </b>", L+K ,"<br><br>"); // output 30
+                document.write("<b>M variable number = </b>", N  ,"<br><br>"); // output NaN
+
+                // =========== parseInt() method return without desimal value
+                document.write("<p>parsInt Method</p>");
+                var O = "10 20";
+                var P = parseInt(O);
+                var Q = 100.33;
+                var R = 150.35;
+                document.write("<b>O variable parsint = </b>" , P , "<br><br>"); // output 10
+                document.write("<b>Q variable without parsint = </b>", Q , "<br><br>"); // output 100.33
+                document.write("<b>Q variable parsint = </b>", parseInt(Q) , "<br><br>"); // output 100
+                document.write("<b>R variable parsint = </b>", parseInt(R) , "<br><br>"); // output 150
+                document.write("<b>R variable without parsint = </b>", R , "<br><br>"); // output 150.35
+
+                // =========== parseFloat() method return with desimal value
+                document.write("<p>parsFloat Method</p>");
+                var S = 40.45;
+                var T = 50.50;
+                document.write("<b>S variable parseFloat = </b>" , parseFloat(S) , "<br><br>"); // output 40.45
+                document.write("<b>T variable parseFloat = </b>" , parseFloat(T) , "<br><br>"); // output 50.5
+
+                // ========== inFinite() method chack variable value integer and not integer and return boolean value
+                document.write("<p>isFinite Method</p>");
+                var U = 100;
+                var V = "100";
+                var W = "smit";
+                document.write("<b>U variable isFinit = </b>", isFinite(U) , "<br><br>"); // output true
+                document.write("<b>V variable isFinit = </b>", isFinite(V) , "<br><br>"); // output true
+                document.write("<b>W variable isFinit = </b>", isFinite(W) , "<br><br>"); // output flase
+
+                // ========= isInteger() method chack variable value integet or not integer and return boolean value
+                document.write("<p>isInteger Method</p>");
+                var X = 100;
+                var Y = "smit";
+                var Z = 10.60;
+                document.write("<b>X variable isInteger = </b>", Number.isInteger(X) , "<br><br>"); // output true
+                document.write("<b>Y variable isInteger = </b>", Number.isInteger(Y) , "<br><br>"); // output false
+                document.write("<b>Z variable isInteger = </b>", Number.isInteger(Z) , "<br><br>"); // output false
+
+                // =========== toFixed() method convort long numaric(number) value in short value
+                document.write("<p>toFixed Method</p>");
+                var aa = 100.46827;
+                document.write("<b>aa variable toFixed = </b>", aa.toFixed(1) , "<br><br>"); // output 100.5
+                document.write("<b>aa variable toFixed = </b>", aa.toFixed(2) , "<br><br>"); // output 100.47               
+                document.write("<b>aa variable toFixed = </b>", aa.toFixed(3) , "<br><br>"); // output 100.468               
+                document.write("<b>aa variable toFixed = </b>", aa.toFixed(4) , "<br><br>"); // output 100.4683               
+
+                // ============ toPrecision() method convort long numaric(number) value in short numaric(number) value
+                document.write("<p>toPrecision Method</p>");
+                var bb = 5.46782;
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(1) , "<br><br>");
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(2) , "<br><br>");
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(3) , "<br><br>");
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(4) , "<br><br>");
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(5) , "<br><br>");
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(6) , "<br><br>");
+
+                // ============== toExponential Method convort long numaric(number) value in short numaric(number) value
+                document.write("<p>toexponential Method</p>");
+                var cc = 5.24536;
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(1) , "<br><br>");
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(2) , "<br><br>");
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(3) , "<br><br>");
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(4) , "<br><br>");
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(5) , "<br><br>");
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(6) , "<br><br>");
+
+            document.write("</span>");
+
+        document.write("</div>");
+    </script>
+</body>
+
+</html>
