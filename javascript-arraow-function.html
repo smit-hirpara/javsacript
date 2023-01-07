@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>arrow functiuon</title>
+    </head>
+    <body>
+        <script>
+            // exapmle 1
+            var userfun1 = function() {
+                document.write('anunumous function<br>'); // output anunumous function
+            }
+            userfun1();
+
+            // example 2
+            // ====== arrow function example 1
+            var usersfun2 = () => {
+                document.write('arrow function 1<br>'); // arrow function 1
+            }
+            usersfun2();
+
+            // ====== arrow function example 2
+            var usersfun3 = () => document.write('arrow function 2<br>'); // output arrow function 2
+            usersfun3();
+
+            // ===== arrow function example 3
+            var usersfun4 = () => {
+                document.write('arrow function 3<br>'); // output arrow function 3
+                document.write('arrow function 4<br>'); // output arrow function 4
+            }
+            usersfun4();
+
+            // example 3
+            // ======== arrow function with parameter example 1
+            var usersfun5 = (name) => document.write("user name = ",name,'<br>'); // output user name = meet
+            usersfun5('meet');
+
+            // ======= arrow function with parameter example 2
+            var usersfun6 = name => document.write('user name = ',name,'<br>'); // output user name = raj
+            usersfun6('raj');
+
+            // ========= arrow function with parameter example 3
+            var usersfun7 = (name,age) => document.write('user name = ',name,', age = ',age,"<br>"); // output user name = utsav, age = 5
+            usersfun7('utsav',5);
+
+            // ======= arrow function with parameter and return statement
+            var usersfun8 = (name,age) => { return `hello ${name}, your age is ${age}<br>`}; // output hello mohit, your age is 19
+            document.write(usersfun8('mohit',19));
+
+            // ======== arrow function with parameter without return statement
+            var usersfun9 = (name,age) => `hello ${name}, your age is ${age}<br>`; // output hello om, your age is 24
+            document.write(usersfun9('om',24));
+            // document.write(typeof(usersfun9));  // chack userfun9 type
+        </script>
+    </body>
+</html>

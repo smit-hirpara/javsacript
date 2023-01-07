@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>anonymous function</title>
+    </head>
+    <body>
+        <script>
+            // =========[] example 1
+            var users1 = function() {
+                document.write('anonymous function<br>'); // output anonymous function
+            }
+            users1();
+
+            // =========== example 2
+            // ============= anonymous function with parameter
+            var users2 = function(firstname,lastname) {
+                document.write('firstname = ',firstname,', lastname = ',lastname,"<br>"); // output fitstname = meet, last name = rathod
+            }
+            users2('meet','rathod'); 
+
+            // =========== example 2
+            function users3() {
+                document.write('normal function<br>');
+                var users4 = function() {
+                    document.write('anonymous function<Br>');
+                }
+                users4();
+            }
+            users3();
+
+            // ===== example 3
+            // ======== pasing anonymous function as argument
+            function users5(naunymousfun) {
+                return naunymousfun();
+            }
+            document.write(users5(function(){return "raj";}));
+
+            
+            // example 4
+            // ========= returning anonymous functiuon
+            function users7(a) {
+                return function(b) {
+                    return a+b;
+                }
+            }
+            var userfun = users7(10);
+            console.warn(userfun(20));
+
+
+        </script>
+    </body>
+</html>

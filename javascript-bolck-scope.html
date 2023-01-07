@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>block scope</title>
+</head>
+
+<body>
+    <script>
+        var a = 10
+        var b = 20;
+        if (a < b) {
+            var lessthan = 'a is lassthan b';
+            var gratethan = 'a is graterthan b';
+            let name = 'utsav';
+            const name2 = 'meet'; // you can't use const keyword variable outer this block
+            document.write("inner if block = ", lessthan, "<br>"); // output a is lassthan b
+            document.write('inner if block = ', name, "<br>"); // output utsav
+            document.write('inner if block = ', name2, "<br>"); // outut meet
+
+        }
+        document.write("outer if block = ", lessthan, "<br>"); // output a is lassthan b
+        document.write("outer if block = ", gratethan, "<br>"); // output a is geaterthan b
+        document.write('outer if block = ', name, "<br>"); // output utsav
+        // document.write('outer if block = ', name2, "<br>"); // Error
+
+    </script>
+</body>
+
+</html>

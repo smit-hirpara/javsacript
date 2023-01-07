@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>type of operator</title>
+    </head>
+    <body>
+        <script>
+            // example 1
+            var user1;
+            var user2 = null;
+            var user3 = 'smit';
+            var user4 = 10;
+            var user5 = ['meet','virang','mohit','kayur'];
+            var userdetails = {name:'raj',mobile:1236549875,email:'raj123@gmail.com'}
+            var user7 = true;
+            var user8 = function() {
+                document.write('function type');
+            }
+            var user9 = () => document.write("arrow function");
+
+            document.write('user1 type = ',typeof(user1),"<br>"); // output undefined
+            document.write('user2 type = ',typeof(user2),"<br>"); // output object
+            document.write('user3 type = ',typeof(user3),"<br>"); // output string
+            document.write('user4 type = ',typeof(user4),"<br>"); // output number
+            document.write('user5 type = ',typeof(user5),"<br>"); // output object
+            document.write('userdetails type = ',typeof(userdetails),"<br>"); // output object
+            document.write('user7 type = ',typeof(user7),"<br>"); // output boolean
+            document.write('user8 type = ',typeof(user8),"<br>"); // output function
+            document.write('user9 type = ',typeof(user9),"<br><hr>"); // output boolean
+
+            // example 2
+            document.write(typeof('smit'),"<br>"); // output string
+            document.write(typeof(10),"<br>"); // output numbert
+            document.write(typeof(true),"<br>"); // output boolean
+            document.write(typeof(null),"<br>"); // output object
+            document.write(typeof(a),"<br>"); // output undefined
+            document.write(typeof(['raj','shivam','meet']),"<br>"); // output object
+            document.write(typeof({name:'raj',age:10}),"<br><hr>"); // output object
+
+
+            // ======================================== undefined ==============================
+            // example 1
+            var a; // undefined
+            document.write("variable a type = ",typeof(a),"<br>"); // output undefined
+            a = 'mohit';
+            document.write("variable a type = ",typeof(a),'<br>'); // output string
+            a = 10;
+            document.write("variable a type = ",typeof(a),'<br>'); // output number
+
+            // example 2
+            var user10;
+            document.write('variable name tyle = ',typeof(user10),'<br>') // output undefined
+            user10 = 'smit';
+            document.write('variable name tyle = ',typeof(user10),'<br>') // output string
+
+        </script>
+    </body>
+</html>

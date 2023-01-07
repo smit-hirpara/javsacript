@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>variable hosting</title>
+</head>
+
+<body>
+    <script>
+        // =========== example 1
+        var name; // variable declaration
+        name = 'meet'; // variable initalization
+
+        var user = 'raj';  // variable decalration and initalization
+
+        // ============ example 2
+        user2 = 'virang';
+        document.write("user2 = ", user2, "<br>"); // output virang
+        var user2;
+        document.write("user2 = ", user2, "<br>"); // output virang
+
+        // =========== example 3
+        var user3;
+        document.write("user3 = ", user3, "<br>"); // output undefined
+        user3 = 'raj';
+        document.write("user3 = ", user3, "<br>") // output raj
+
+        // =========== example 4
+        // =========== we write like this
+        var user4 = 'utsav';
+        document.write("user4 = ", user4, ", user 5 = ", user5, "<br>"); // output utsav
+        var user5 = 'om';
+        document.write('user4 = ', user4, ", user 5 = ", user5, "<br>"); // output om
+
+        // =========== compile phase
+        // var user4;
+        // var user5;
+        // user4 = 'utsav';
+        // document.write("user4 = ",user4,"<br>"); // output utsav
+        // user5 = 'om';
+        // document.write('user5 = ',user5,"<br>"); // output om
+
+
+        // ========= example 5 
+        // we write like this
+        user6 = 'parth';
+        document.write("user6 = ", user6, "<br>"); // output parth
+        var user6;
+
+        // ========== compile phase
+        // var user6;
+        // user6 = 'parth';
+        // document.write('user6 = ',user6,"<br>");
+
+
+        // ========== example 6 
+        // ========== we write like this
+        var user7 = 'virang';
+        document.write('user7 = ', user7, "<br>"); // output virang
+        function names() {
+            document.write('user7 = ', user7, "<br>"); // output undefined
+            var user7 = "utsav";
+            document.write('user7 = ', user7, "<br>"); // output utsav
+        }
+        names();
+
+            // =========== compile phase
+            // var user7;
+            // user7 = 'virang';
+            // document.write('user7 = ',user7,"<br>");
+            // function names() {
+            //     var user7;
+            //     docment.write('user7 = ',use7,'<br>');
+            //     user7 = 'utsav';
+            //     document.write('user7 = ',user7,"<br>");
+            // }
+            // names();
+    </script>
+</body>
+
+</html>

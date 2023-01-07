@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>closure</title>
+</head>
+
+<body>
+    <script>
+        // closure example 1
+        function userfun1() {
+            var user1 = 'meet';
+            document.write('outer function variable user1 = ', user1, "<br>"); // output meet
+            // document.write('inner funcition variable user2 = ', user2, "<br>"); // Error you can't use inner function variable in outer function but you can use outer function variabel in inner functon
+            function userfun2() {
+                var user2 = 'smit';
+                document.write('inner funcition variable user2 = ', user2, "<br>");// output smit
+                document.write('outer function variable user1 = ', user1, "<br>"); // output meet     CLOSURE
+            }
+            userfun2()
+        }
+        userfun1();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>function experssion</title>
+    </head>
+    <body>
+        <script>
+            // =========== example 1
+            function userfun1() {
+                document.write("nourmal function<br>"); // output nourmal function
+            }
+            userfun1();
+
+            // ============== function expression
+            var user = function userfun2() {
+                document.write('function expressipon<br>'); // output function expressipon
+            }
+            user();
+
+            // ============ example 2
+            var user2;
+            document.write("user2 = ",user2,"<br>"); // output undefined
+            user2 = function userfun3() {
+                var user1 = 'smit';
+                document.write('user1 = ',user1,"<br>"); // output smit
+            }
+            user2();
+        </script>
+    </body>
+</html>

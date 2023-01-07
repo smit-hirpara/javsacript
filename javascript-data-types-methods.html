@@ -35,7 +35,7 @@
         }
         @media screen and (max-width: 1210px) {
             span {
-                width: 100%;
+                width: 100vw;
             }
         }
         @media screen and (max-width: 800px) {
@@ -43,7 +43,7 @@
                 display: block;
             }
             span {
-                width: 50%;
+                width: 100vw;
                 border: none;
             }
         }
@@ -206,6 +206,7 @@
             document.write("</span>");
 
 
+
             /* =========================================================================================================================================================
                                                                                     Number Methods
             ========================================================================================================================================================= */
@@ -280,25 +281,27 @@
                 // ============ toPrecision() method convort long numaric(number) value in short numaric(number) value
                 document.write("<p>toPrecision Method</p>");
                 var bb = 5.46782;
-                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(1) , "<br><br>");
-                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(2) , "<br><br>");
-                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(3) , "<br><br>");
-                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(4) , "<br><br>");
-                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(5) , "<br><br>");
-                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(6) , "<br><br>");
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(1) , "<br><br>"); // output 5
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(2) , "<br><br>"); // output 5.5
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(3) , "<br><br>"); // output 5.47
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(4) , "<br><br>"); // output 5.468
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(5) , "<br><br>"); // output 5.4678
+                document.write("<b>bb variable toprecistion = </b>" + bb.toPrecision(6) , "<br><br>"); // output 5.46782
 
                 // ============== toExponential Method convort long numaric(number) value in short numaric(number) value
                 document.write("<p>toexponential Method</p>");
                 var cc = 5.24536;
-                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(1) , "<br><br>");
-                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(2) , "<br><br>");
-                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(3) , "<br><br>");
-                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(4) , "<br><br>");
-                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(5) , "<br><br>");
-                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(6) , "<br><br>");
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(1) , "<br><br>"); // output 5.2e+0
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(2) , "<br><br>"); // output 5.25e+0
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(3) , "<br><br>"); // output 5.245e+0
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(4) , "<br><br>"); // output 5.2454e+0
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(5) , "<br><br>"); // output 5.24536e+0
+                document.write("<b>cc variable toprecistion = </b>" + cc.toExponential(6) , "<br><br>"); // output 5.245360e+0
 
             document.write("</span>");
 
+
+            
             /* ============================================================================================================================================================
                                                                             Object Method
             ============================================================================================================================================================ */
@@ -313,9 +316,9 @@
                     class:'1th',
                     age:5
                 }
-                document.write("<b>object age = </b>", object1.age , "<br><br>");
+                document.write("<b>object age = </b>", object1.age , "<br><br>"); // output 5
                 delete object1.age;
-                document.write("<b>object age = </b>", object1.age , "<br><br>");
+                document.write("<b>object age = </b>", object1.age , "<br><br>"); // output undefirnd
 
                 // with object.create() method
                 let object2 = Object.create( {
@@ -324,9 +327,9 @@
                     class:'10th',
                     age:17,
                 });
-                document.write("<b>object age with Object.create() = </b>" , object2.age , "<br><br>");
+                document.write("<b>object age with Object.create() = </b>" , object2.age , "<br><br>"); // output 17
                 delete object2.age;
-                document.write("<b>object age with Object.create() = </b>" , object2.age , "<br><br>");
+                document.write("<b>object age with Object.create() = </b>" , object2.age , "<br><br>"); // output 17
                     
                 // ============ object.keys() method return object kyes
                 document.write("<p>Object.keys Method</p>");
@@ -338,7 +341,7 @@
                 }
                 let user1 = Object.keys(object3);
                 // console.warn(user1);
-                document.write("<b>object kyes = </b>",user1,"<br><br>");
+                document.write("<b>object kyes = </b>",user1,"<br><br>"); // output firstNmae,lastNmae,class,age
 
                 // ============ object.values() method return object values
                 document.write("<p>Object.values Method</p>");
@@ -350,7 +353,7 @@
                 }
                 let user2 = Object.values(object4);
                 // console.warn(user2);
-                document.write("<b>object values = </b>", user2 , "<br><br>");
+                document.write("<b>object values = </b>", user2 , "<br><br>"); // output on,rathod,12th,22
 
                 // ============== object.entries() method retrun array of keys and values
                 document.write("<p>Object.entries Method</p>");
@@ -361,17 +364,20 @@
                     age:13
                 }
                 let user3 = Object.entries(object5);
-                document.write("object5 firstName = ", user3[0][1] , "<br>");
-                document.write("object5 lastName = ", user3[1][1] , "<br>");
-                document.write("object5 class = ", user3[2][1] , "<br>");
-                document.write("object5 age = ",user3[3][1] , "<br>");
+                document.write("foll object = " + user3 + "<br>"); // output firstName,kayur,lastName,rathod,class,8th,age,13
+                document.write("object5 firstName = ", user3[0][1] , "<br>"); // output kayur
+                document.write("object5 lastName = ", user3[1][1] , "<br>"); // output rathod
+                document.write("object5 class = ", user3[2][1] , "<br>"); // output 8th
+                document.write("object5 age = ",user3[3][1] , "<br>"); // output 13
 
                 // console.warn("firstName = ", user3[0][1]);
                 // console.warn("lastName = ", user3[1][1]);
                 // console.warn("class = ", user3[2][1]);
                 // console.warn("age = ",user3[3][1]);
 
-                // ================== Object.assign() method
+                // ================== Object.assign() method marge to object, concat to objects
+                document.write("<p>Object.assign Method</p>");
+
                 var object6 = {
                     firstName:'meet',
                     lastName:'rathod',
@@ -383,7 +389,143 @@
                     city:'junagadh'
                 }
                 var user4 = Object.assign(object6,object7);
-                console.warn(user4)
+                console.warn("assign object = ",user4); // output marge object
+                document.write("Object.assign = Object.assign(objectname) <br><br>");
+
+                // =============== Object.freeze() method can't allows change key values, freeze key value
+                document.write("<p>Object.freeze Method</p>");
+                var object8 = {
+                    firstName:'utsav',
+                    lastName:'hirpara',
+                    class:'1th',
+                    age:5
+                }
+                var user5 = Object.freeze(object8);
+                user5.firstName = "smit"; // assign smit in user5 object firstName
+                console.warn("freeze object = ",user5); // output object, you can't change object values
+                document.write("Object.freeze = Object.freeze(objectname) <br><br>");
+
+                // ============== Object.seal() method allow change key values
+                document.write("<p>Object.seal Method</p>");
+
+                var object9 = {
+                    firstName:'utsav',
+                    lastName:'hirpara',
+                    class:'1th',
+                    age:5
+                }
+                var user6 = Object.seal(object9);
+                user6.firstName = "meet"; // aloow to change object values
+            
+                console.warn("seal object = "+user6.firstName); // output meet
+                document.write("seal object = ",user6.firstName); // output meet
+
+                // =============== Object.getPopertyOf() method return array keys
+                array1 = ['meet','om','virang','kayur'];
+                var user = Object.getPrototypeOf(array1);
+                console.warn(user);
+
+            document.write("</span>");
+
+
+
+            /* ================================================================================================================================
+                                                                Array Methods
+            ================================================================================================================================ */
+            document.write("<span>");
+                document.write("<h1>Array Methods</h1>");
+
+                // ====================== toString method to conort array keys in string
+                document.write("<p>tostring() Method</p>");
+
+                var user7 = ['smit','shivam','meet','utsav'];
+                var user8 = user7.toString();
+                document.write(user8); // output smit,shivam,meet,utav
+
+                // ==================== join method join any item in array
+                document.write("<p>join() Method</p>");
+
+                var user9 = ['smit','shivam','utsav','meet'];
+                var user10 = user9.join('=='); // output smit==shivam==utsav==meet
+                document.write(user10);
+
+                // =================== pop method remove last value of array
+                document.write("<p>pop() Method</p>");
+
+                var user11 = ['smit','shivam','utsav','meet'];
+                document.write("without pop = ",user11,'<br>'); // output smit,shivam,utsav,meet
+                user11.pop();
+                document.write("with pop = ",user11,"<br>"); // output smit,shivam,utsav
+                user11.pop();
+                document.write("with pop = ",user11,"<br>"); // output smit,shivam
+                user11.pop();
+                document.write("with pop = ",user11,"<br>"); // output smit
+
+                // =================== push method add new value in array
+                document.write("<p>push() Method</p>");
+                var user12 = ['smit','shivam','utsav','meet'];
+                document.write("without push = ",user12,"<br>"); // output smit,shivam,utsav,meet
+                user12.push('jenil');
+                document.write("with push = ",user12,"<br>"); // output smit,shivam,utsav,meet,jenil
+                user12.push('pal ');
+                document.write("with push = ",user12,"<br>"); // output smit,shivam,utsav,meet,jenil,pal
+                document.write(user12.push('om')); // output 7
+
+                // ================= shift method remove first value of array
+                document.write("<p>shift() Method</p>");
+
+                var user13 = ['smit','shivam','utsav','meet'];
+                document.write("without shift = ",user13,"<br>"); // output smit,shivam,utsav,meet
+                user13.shift();
+                document.write("with shift = ",user13,"<br>"); // output shivam,utsav,meet
+                user13.shift();
+                document.write("with shift = ",user13,"<br>"); // output utsav,meet
+                user13.shift();
+                document.write("with shift = ",user13,"<br>"); // output meet
+
+                // ================== unshift method add new value in array
+                document.write("<p>unshift() Method</p>");
+                var user14 = ['smit','shivam','utsav','meet'];
+                document.write("without unshift =", user14,"<br>"); // output smit,shivam,utsav,meet
+                user14.unshift('om');
+                document.write("with unshift =", user14,"<br>"); // output smit,shivam,utsav,meet
+                user14.unshift('pal');
+                document.write("with unshift =", user14,"<br>"); // output smit,shivam,utsav,meet
+                user14.unshift('jenil');
+                document.write("with unshift =", user14,"<br>"); // output smit,shivam,utsav,meet
+
+                // =================== concat method marge to array
+                document.write("<p>concat() Method</p>");
+
+                var user15 = ['shivam','utsav','meet','smit'];
+                var user16 = ['dhruvi','dhayana','haydhaya'];
+                var user17 = ['raj','virang','parth'];
+                var user18 = user15.concat(user16);
+                document.write(user17,"<br>"); // output smit,shivam,utsav,mett,dhruvi,dhyana,haydhya
+                var user19 = user15.concat(user16,user17); // contct multiple array
+                document.write(user19,'<br>'); // output smit,shivam,utsav,mett,dhruvi,dhyana,haydhya,raj,virang,parth
+                var user20 = user15.concat('dhruvi'); // add new value in array
+                document.write(user20);
+
+                // ================= splice method add new values by index
+                document.write("<p>splice() Method</p>");
+
+                var user21 = ['shivam','utsav','meet','smit'];
+                document.write('without splice = ',user21,"<bR>"); // output shivam,utsav,meet,smit
+                var user22 = user21.splice(1,0, "virang","parth");
+                document.write('with splice = ',user22); // output shivam,virang,parth,utsav,meet,smit
+
+                // ================ slice method given array slice
+                document.write("<p>slice() Method</p>");
+
+                var user23 = ['shivam','utsav','meet','smit'];
+                document.write("without slice = ", user23,'<br>');
+                var user24 = user23.slice(2);
+                document.write("with slice = ", user24,'<br>'); // output meet,smit
+                var user25 = user23.slice(1,3);
+                document.write('with slice = ', user25,'<br>'); // output utsav,meet
+
+
             document.write("</span>");
 
         document.write("</div>");

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>object</title>
+    </head>
+    <body>
+        <script>
+            // example 
+            /* =================================================================================================================
+                                                     object properties 
+            ================================================================================================================== */
+            document.write('<b><i>object properties 1</i></b><br>');
+            var obj = {name:'meet',class:'10th',age:18,mobilenumber:1236549876} // properti
+            document.write('user name = ',obj.name,"<br>"); // output meet
+            document.write('user class = ',obj.class,"<br>"); // output 10th
+            document.write('user age = ',obj.age,"<br>"); // output 18
+            document.write('user mobilenumber = ',obj.mobilenumber,"<br><hr>"); // output 1236549876
+
+            // example 2
+            document.write('<b><i>object properties 2</i></b><br>');
+            var user = {name:'shivam',class:'9th',age:13,mobilenumber:1236549876,'email address':'sivam123@gmial.com'} // properti
+            document.write('user name = ',user.name,"<br>"); // output meet
+            document.write('user class = ',user.class,"<br>"); // output 10th
+            document.write('user age = ',user.age,"<br>"); // output 18
+            document.write('user mobilenumber = ',user.mobilenumber,"<br>"); // output 1236549876
+            document.write('user email = ',user['email address'],"<br><hr>"); // output 1236549876
+
+            /* ===================================================================================================================
+                                                        object methods
+            =================================================================================================================== */
+            document.write('<b><i>object methods</i></b><br>');
+            var obj2 = {name:'raj',class:'10th',age:18,freiend:function(){return('meet')}} // properties and method
+            document.write('user name = ',obj2.name,"<br>"); // output rej
+            document.write('user class = ',obj2.class,"<br>"); // output 10th
+            document.write('user age = ',obj2.age,"<br>"); // output 18
+            document.write('user friends = ',obj2.freiend(),"<br><hr>"); // output meet
+
+            /*=================================================================================
+                                                array in object
+            ================================================================================ */
+            document.write('<b><i>array in object</i></b><br>');
+            var obj3 = {name:'utsav',class:'10th',age:18,freirnd:['meet','mohit','kayur']} // properties and array
+            document.write('user name = ',obj3.name,"<br>"); // output rej
+            document.write('user class = ',obj3.class,"<br>"); // output 10th
+            document.write('user age = ',obj3.age,"<br>"); // output 18
+            document.write('user friends = ',obj3.freirnd,"<br>"); // output meet,mohit,kayur
+            document.write('user friend1 = ',obj3.freirnd[0],"<br>"); // output meet,mohit,kayur
+            document.write('user friend2 = ',obj3.freirnd[1],"<br>"); // output meet,mohit,kayur
+            document.write('user friend3 = ',obj3.freirnd[2],"<br><hr>"); // output meet,mohit,kayur
+
+            /* ===============================================================================
+                                        add new properties with .poerator
+            =============================================================================== */
+            document.write('<b><i>add new properties with .poerator</i></b><br>');
+            var obj4 = {};
+            obj4.name = "shivam";
+            obj4.class = '10th';
+            obj4.age = 10;
+            document.write('obj4 name = ',obj4.name,'<br>'); // output shivam
+            document.write('obj4 class = ',obj4.class,'<br>'); // output 10th
+            document.write('obj4 age = ',obj4.age,'<br>'); // output 10
+            document.write('<hr>');
+
+            /* ==============================================================================
+                                    add new properties with [] square brackets
+            ============================================================================== */
+            document.write('<b><i>add new properties with [] square brackets</i></b><br>');
+            var obj5 = {};
+            obj5['name']='smit';
+            obj5['class']='11th';
+            obj5['age']=17;
+            document.write('obj4 name = ',obj5.name,'<br>'); // output shivam
+            document.write('obj4 class = ',obj5.class,'<br>'); // output 10th
+            document.write('obj4 age = ',obj5.age,'<br>'); // output 10
+            document.write('<hr>');
+
+            /* =======================================================================
+                            access object property with .operator
+            ======================================================================= */
+            document.write('<b><i>access object property with .operator</i></b><br>');
+            var obj6 = {name:'utsav',class:'1st',age:5,}
+            document.write('name = ',obj6.name,"<br>"); // output utsav
+            document.write('class = ',obj6.class,"<br>"); // output 10th
+            document.write('age = ',obj6.age,"<br><hr>"); // output 5
+
+            /* =========================================================================
+                        access object property with []squer brackets
+            ========================================================================= */
+            document.write('<b><i>access object property with []squer brackets</i></b><br>');
+            var obj7 = {name:'mohit',class:'10st',age:18,}
+            document.write('user name = ',obj7['name'],"<br>"); // output mohit
+            document.write('user name = ',obj7['class'],"<br>"); // output 10th
+            document.write('user name = ',obj7['age'],"<hr>"); // output 18
+            
+            
+            // ==================================== type of object
+            document.write('<b><i>Type Of Object</i></b><br>');
+            document.write('1. buit in object<br> 2. userdefiend function<br><hr>');
+
+            // ============================================ object counstructor
+            var onj8 = {} // object literal
+            var obj9 = new Object(); // object counstructor
+            obj9.name = 'kayur';
+            obj9.class = '9th';
+            obj9.age = 13;
+            document.write('user name = ',obj9.name,"<br>"); // output kayur
+            document.write('user class = ',obj9.class,"<br>"); // output 9th
+            document.write('user class = ',obj9.age,"<br><hr>"); // output 13
+
+            /* =====================================================================
+                                        object counstructor
+            ===================================================================== */
+            document.write('<b><i>object counstructor 1</i></b><br>');
+            function Users(name, mobile ,emial, age) {
+                this.username = name,
+                this.usermobile = mobile,
+                this.useremail = emial,
+                this.userage = age;
+            }
+            var obj10 = new Users('virang',1236549875,'virang123@gmail.com',18);
+            document.write('obj10: username = ',obj10.username,"<br>"); // output virnag
+            document.write('obj10: usermobile = ',obj10.usermobile,"<br>"); // output 1236549875
+            document.write('obj10: useremail = ',obj10.useremail,"<br>"); // output virang123@gmail.com
+            document.write('obj10: userage = ',obj10.userage,"<br>"); // output 18
+
+            var obj11 = new Users('kayur',1235437658,'kayur123@gmail.com',14);
+            document.write('obj11: username = ',obj11.username,"<br>"); // output kayur
+            document.write('obj11: usermoblie = ',obj11.usermobile,"<br>"); // output 1235437658
+            document.write('obj11: useremail = ',obj11.useremail,"<br>"); // output kayur123@gmail.com
+            document.write('obj11: userage = ',obj11.userage,"<br><hr>"); // output 14
+
+            document.write('<b><i>object counstructor 2</i></b><br>');
+            function Usersobj(fname,lname,mobile,age) {
+                this.firstname = fname;
+                this.lastname = lname;
+                this.mobilenumber = mobile;
+                this.userage = age;
+            }
+            var obj11 = new Usersobj('meet','rathod',1239874587,17);
+            document.write('obj11 firstname = ',obj11.firstname,'<br>'); // output meet
+            document.write('obj11 lastname = ',obj11.lastname,'<br>'); // output rathod
+            document.write('obj11 mobilenumber = ',obj11.mobilenumber,'<br>'); // output 1239874587
+            document.write('obj11 userage = ',obj11.userage,'<br><hr>'); // output 17
+
+            /* =====================================================================
+                                        factory function
+            ===================================================================== */
+            /* =========================== factory function with properties ==================== */
+            document.write('<b><i>factory function with properties</i></b><br>');
+            function users() {
+                return {
+                    fnanme:'kayur',
+                    lname:'rathod',
+                    class:'9th',
+                    age:16
+                }
+            }
+            var obj19 = users();
+            document.write('obj19 fname = ',obj19.fnanme,"<br>"); // output kayur
+            document.write('obj19 lname = ',obj19.lname,"<br>"); // output rathod
+            document.write('obj19 clas = ',obj19.class,"<br>"); // output 9th
+            document.write('obj19 age = ',obj19.age,"<br>"); // output 16
+            document.write("<br><hr>");
+
+            /* ========================= factory function with properties and methods ================== */
+            document.write('<b><i>factory function with properties and methods</i></b><br>');
+            function users2() {
+                return {
+                    user1:'raj',
+                    user2:'mohit',
+                    user3:'kayur',
+                    user4:'utsav',
+                    allusers: function() {return(this.user1+', '+this.user2+', '+this.user3+', '+this.user4)}
+                }
+            }
+            var obj20 = users2();
+            document.write('obj20 user1 = ',obj20.user1,'<br>'); // output raj
+            document.write('obj20 user2 = ',obj20.user2,'<br>'); // output mahit
+            document.write('obj20 user3 = ',obj20.user3,'<br>'); // output kayur
+            document.write('obj20 user4 = ',obj20.user4,'<br>'); // output utsav
+            document.write('obj20 allusers = ',obj20.allusers(),'<br>'); // output raj, mohit, kayur, utsav
+            document.write('<hr>');
+
+            /* ========================= factory function with parameters ================== */
+            document.write('<b><i>factory function with parameter</i></b><br>');
+            function users3(fname,lname,email,age)  {
+                return {
+                    firstname:fname,
+                    lastname:lname,
+                    emailaddress:email,
+                    userage:age,
+                    fullname:function() {
+                        return(this.firstname+' '+this.lastname+', '+this.emailaddress+', '+this.userage);
+                    }
+                }
+            }
+            var obj21 = users3('om','rathod','om123@gmial.com',24);
+            document.write('obj 21 firstname = ',obj21.firstname,"<br>") // output om
+            document.write('obj 21 lastname = ',obj21.lastname,"<br>") // output om
+            document.write('obj 21 email = ',obj21.emailaddress,"<br>") // output om
+            document.write('obj 21 age = ',obj21.userage,"<br>") // output om
+            document.write('obj 21 full details = ',obj21.fullname(),"<br>") // output om
+            document.write('<hr>');
+
+
+            /* ====================================================================================
+                                            object accissing propertyes
+            ==================================================================================== */
+            /* ============================= accassing object property with .operator ============================ */
+            document.write('<b><i>accassing object property with .operator</i></b><br>');
+            var obj12 = {name:'raj',emial:'raj123@gmail.com',phno:98712365421};
+            document.write('obj12 name = ',obj12.name,'<br>'); // output raj
+            document.write('obj12 emial = ',obj12.emial,'<br>'); // output raj123@gmail.com
+            document.write('obj12 phno = ',obj12.phno,'<br><hr>'); // output 98712365421
+
+            /* ================ accassing object property with []square brackets =================== */
+            document.write('<b><i>accassing object property with []square brackets</i></b><br>');
+            var obj13 = {name:'meet',email:'meet123@gmial.com',phno:1236547895}
+            document.write('obj13 name = ',obj13['name'],'<br>'); // output raj
+            document.write('obj13 emial = ',obj13['email'],'<br>'); // output raj123@gmail.com
+            document.write('obj13 phno = ',obj13['phno'],'<br><hr>'); // output 98712365421
+
+            /* =====================================================================================
+                                             object accissing method 
+            ===================================================================================== */
+            /* ================= accassing object method with .operator ================= */
+            document.write('<b><i>accassing object method with .operator</i></b><br>');
+            var obj14 = {fname:'utsav',lname:'hirpara',email:'utav123@gmail.com',fullname:function() {return(this.fname+' '+this.lname)}}
+            document.write('obj14 firstname = ',obj14.fname,'<br>') // output utsav
+            document.write('obj14 lastname = ',obj14.lname,'<br>') // output hirpara
+            document.write('obj14 email = ',obj14.email,'<br>') // output utav123@gmail.com
+            document.write('obj14 fullname = ',obj14.fullname(),'<br><hr>') // output utsav hirpara
+
+            /* =============== accassing object method with []square operator ==============  */
+            document.write('<b><i>accassing object method with []square operator</i></b><br>');
+            var obj15 = {fname:'om',lname:'rathod',email:'om123@gmail.com',fullname:function() {return(this.fname+' '+this.lname)}}
+            document.write('obj14 firstname = ',obj15['fname'],'<br>') // output om
+            document.write('obj14 lastname = ',obj15['lname'],'<br>') // output rathod
+            document.write('obj14 email = ',obj15['email'],'<br>') // output om123@gmail.com
+            document.write('obj14 fullname = ',obj15['fullname'](),'<br><hr>') // output om rathod
+
+            /* =============== adding new properties and methods with .operator ============ */
+            document.write('<b><i>adding new properties and methods with .operator</i></b><br>');
+            var obj17 = {name1:'utasv',name2:'shivam',name3:'meet',name4:'virang',name5:'parth'}
+            obj17.name6 = 'deep'
+            obj17.name7 = 'haresh';
+            obj17.allnames = function(){document.write(this.name1+' '+this.name2+' '+this.name3+' '+this.name4+' '+this.name5+' '+this.name6+' '+this.name7)};
+            document.write('obj17 name1 = ',obj17.name1,"<br>"); // output utsav
+            document.write('obj17 name2 = ',obj17.name2,"<br>"); // output shivam
+            document.write('obj17 name3 = ',obj17.name3,"<br>"); // output meet
+            document.write('obj17 name4 = ',obj17.name4,"<br>"); // output virang
+            document.write('obj17 name5 = ',obj17.name5,"<br>"); // output parth
+            document.write('obj17 name6 = ',obj17.name6,"<br>"); // output deep
+            document.write('obj17 name7 = ',obj17.name7,"<br>"); // output haresh
+            document.write('obj17 allnames = ',obj17.allnames(),"<br><hr>"); // output utsav,shivam,meet,virang,parth,deep,haresh
+
+            /* ==================== adding new properties and methods with [] square brackets ==================== */
+            document.write('<b><i>adding new properties and methods with [] square brackets</i></b><br>');
+            var obj18 = {name1:'utasv',name2:'shivam',name3:'meet',name4:'virang',name5:'parth'}
+            obj18['name6']='om';
+            obj18['name7']='mohit';
+            obj18['allnames']= function() {this.name1+' '+this.name2+' '+this.name3+' '+this.name4+' '+this.name5+' '+this.name6+' '+this.name7}
+            document.write('obj18 name1 = ',obj18.name1,"<br>"); // output utsav
+            document.write('obj18 name2 = ',obj18.name2,"<br>"); // output shivam
+            document.write('obj18 name3 = ',obj18.name3,"<br>"); // output meet
+            document.write('obj18 name4 = ',obj18.name4,"<br>"); // output virang
+            document.write('obj18 name5 = ',obj18.name5,"<br>"); // output parth
+            document.write('obj18 name6 = ',obj18.name6,"<br>"); // output om
+            document.write('obj18 name7 = ',obj18.name7,"<br>"); // output mohit
+            document.write('obj18 allnames = ',obj18.allnames(),"<br><hr>"); // output utsav,shivam,meet,virang,parth,om,mohit
+
+            /* =========================================================================================
+                                        delete object properties and methods
+            ========================================================================================= */
+            document.write('<b><i>delete object properties and methods</i></b><br>');
+            var obj22 = {
+                fname:'meet',
+                lname:'rathod',
+                class:'10th',
+                age:18,
+                fulldetails:function() {
+                    return(this.fname+' '+this.lname+', '+this.class+', '+this.age);
+                }
+            }
+            document.write('obj22 firstname = ',obj22.fname,'<br>'); // output meet
+            document.write('obj22 lastname = ',obj22.lname,'<br>'); // output rathod
+            document.write('obj22 class = ',obj22.class,'<br>'); // output 10th
+            document.write('obj22 age = ',obj22.age,'<br>'); // output 18
+            document.write('obj22 fulldetails = ',obj22.fulldetails(),'<br><br>'); // output meet ratohd, 10th, 18
+            delete obj22.fname;
+            document.write('obj22 firstname = ',obj22.fname,'<br>'); // output undefined
+            document.write('obj22 lastname = ',obj22.lname,'<br>'); // output rathod
+            document.write('obj22 class = ',obj22.class,'<br>'); // output 10th
+            document.write('obj22 age = ',obj22.age,'<br>'); // output 18
+            document.write('obj22 fulldetails = ',obj22.fulldetails(),'<br><br>'); // output meet ratohd, 10th, 18
+            delete obj22.lname;
+            document.write('obj22 firstname = ',obj22.fname,'<br>'); // output undefined
+            document.write('obj22 lastname = ',obj22.lname,'<br>'); // output undefined
+            document.write('obj22 class = ',obj22.class,'<br>'); // output 10th
+            document.write('obj22 age = ',obj22.age,'<br>'); // output 18
+            document.write('obj22 fulldetails = ',obj22.fulldetails(),'<br><br>'); // output meet ratohd, 10th, 18
+            delete obj22.class;
+            document.write('obj22 firstname = ',obj22.fname,'<br>'); // output undefined
+            document.write('obj22 lastname = ',obj22.lname,'<br>'); // output undefined
+            document.write('obj22 class = ',obj22.class,'<br>'); // output undefined
+            document.write('obj22 age = ',obj22.age,'<br>'); // output 18
+            document.write('obj22 fulldetails = ',obj22.fulldetails(),'<br><br>'); // output meet ratohd, 10th, 18
+            delete obj22.age; 
+            document.write('obj22 firstname = ',obj22.fname,'<br>'); // output undefined
+            document.write('obj22 lastname = ',obj22.lname,'<br>'); // output rathod
+            document.write('obj22 class = ',obj22.class,'<br>'); // output undefined
+            document.write('obj22 age = ',obj22.age,'<br>'); // output undefined
+            document.write('obj22 fulldetails = ',obj22.fulldetails(),'<br><hr>'); // output meet ratohd, 10th, 18
+
+            /* ====================================================================================================
+                                                check properties exist
+            ==================================================================================================== */
+            document.write('<b><i>check properties exist</i></b><br>');
+            var obj23 = {fname:'kayur',lname:'rathod',class:'9th',age:17}
+            document.write('obj23 firstname = ',obj23.fname,'<br>'); // output kayur
+            document.write('obj23 lasttname = ',obj23.lname,'<br>'); // output rathod
+            document.write('obj23 class = ',obj23.class,'<br>'); // output 9th
+            document.write('obj23 age = ',obj23.age,'<br>'); // output 17
+            document.write('<b>1.typeof operator</b><br>');
+            document.write('<b>2.in operator</b><br>');
+            document.write('<b>3.hasOwnProperty()</b><br>');
+            /* ================ with type of operator =============== */
+            if(typeof obj23.fname !== undefined) {
+                document.write('<b>typeof = fname exist in obj23 object</b><br>');
+            }
+            else {
+                document.write('<b>typeof = fname not exist in obj23 object</b><br>');
+            }
+
+            /* ============== without typeof operator =============== */
+            if(obj23.emial !== undefined) {
+                document.write('<b>email exist in obj23 object</b>');
+            }
+            else {
+                document.write('<b>email not exist in obj23 object</b><br>');
+            }
+
+            /* =================== in operator ==================== */
+            if('fname' in obj23) {
+                document.write('<b>in = fname exist in obj23 object</b><br>');
+            }
+            else {
+                document.write('<b>in = fname not exist in obj23 object</b><br>');
+            }
+            if('emial' in obj23) {
+                document.write('<b>in = emial exist in obj23 object</b><br>');
+            }
+            else {
+                document.write('<b>in = emial not exist in obj23 object</b><br>');
+            }
+
+            /* =============== hasOwnProperty() ================= */
+            if(obj23.hasOwnProperty('fname')) {
+                document.write('<b>hasOwnProperty = fname exist in obj23 object</b><br>');
+            }
+            else {
+                document.write('<b>in = fname not exist in obj23 object</b><br>');
+            }
+            if(obj23.hasOwnProperty('email')) {
+                document.write('<b>hasOwnProperty = email exist in obj23 object</b><br>');
+            }
+            else {
+                document.write('<b>hasOwnProperty = email not exist in obj23 object</b><br>');
+            }
+            document.write('<hr>');
+
+            /* ====================================================================================================================================
+                                                                    way to creating object
+            ==================================================================================================================================== */
+            /* =================================================
+            ============== 1.object litreal
+            ============== 2.object litereal declare and initialization
+            ============== 3.object constructor
+            ============== 4.factory function
+            ================================================= */
+            /* ============== object litereal ============== */
+            var obj24 = {}
+
+            /* ============== object litereal declare and initialization ================ */
+            var onj25 = {fnmae:'utdav',lname:'hirpara',class:'10th',age:17}
+
+            /* ============= object constructor ============= */
+            function usersobj() {
+                this.fname = 'kayur',
+                this.lname = 'rathod',
+                this.emial = 'kayur123@gmail.com'
+            }
+            var obj26 = new usersobj();
+            document.write(obj26.fname,'<br><hr>'); // output kayur
+
+            /* =========== object factory function =========== */
+            function usersobj2() {
+                return {
+                    fname:'om',
+                    lname:'rathod',
+                    email:'om123@gmial.com'
+                }
+            }
+            var obj27 = usersobj2();
+            document.write(obj27.fname,"<br>"); // output om
+
+            /* ==============================================================================================================================================
+                                                                                for in loop
+            ============================================================================================================================================== */
+            // var obj28 = {fname:'shivam',lname:'hirpara',class:'9th'};
+            // for(fname in obj28) {
+            //     document.write(Object.keys(obj28))
+            // }
+
+            /* ==========================================================================================================================
+                                                            private properties and methods
+            ========================================================================================================================== */
+            /* =================== pravite properties with object constructor ==================== */
+            document.write('<b><i>pravite properties with object constructor</i></b><br>');
+            function usersobj3() {
+                this.firstname = 'shivam',
+                this.lastname = 'hirpara',
+                this.emial = 'shivam123@gmial.com',
+                friend = 'kayur';
+                fulldetails = function() {
+                    return(this.firstname+' '+this.lastname+' ',this.class+' '+this.friend);
+                }
+            }
+            var obj28 = new usersobj3();
+            document.write('obj28 firstname = ',obj28.firstname,'<br>'); // output shivam
+            document.write('obj28 lastname =',obj28.lastname,'<br>'); // output hirpara
+            document.write('obj28 emial = ',obj28.emial,'<br>'); // output shivam123@gmail.com
+            document.write('obj28 friends = ',obj28.friend,'<br>'); // undefined
+            document.write('obj28 fulldetails = ',obj28.fulldetails,'<br><hr>'); // undefined
+
+            /* ============== access pravite properties ============== */
+            document.write('<b><i>access pravite properties</i></b><br>');
+            function usersobj3() {
+                this.firstname = 'shivam',
+                this.lastname = 'hirpara',
+                this.emial = 'shivam123@gmial.com',
+                friend = 'kayur';
+                fulldetails = function() {
+                    return(this.firstname+' '+this.lastname+' ',this.class+' '+this.friend);
+                }
+                this.friendfun = function() {
+                    return(friend);
+                }
+            }
+            var obj28 = new usersobj3();
+            document.write('obj28 firstname = ',obj28.firstname,'<br>'); // output shivam
+            document.write('obj28 lastname =',obj28.lastname,'<br>'); // output hirpara
+            document.write('obj28 emial = ',obj28.emial,'<br>'); // output shivam123@gmail.com
+            document.write('obj28 pravite firends = ',obj28.friendfun(),"<br>"); // output kayur
+        </script>
+    </body>
+</html>

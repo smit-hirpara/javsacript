@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>while loop</title>
+    </head>
+    <body>
+        <script>
+            // while loop
+            var a = 0;
+            while(a<5) {
+                document.write(a);
+                a++;
+            }
+
+            // nasted while loop
+            var b = 0;
+            while(b<5) {
+                document.write("<b>outer while loop</b> = ",b ,"<br>");
+                var c = 0;
+                while(c<5) {
+                    document.write("<i>innter while loop</i> = ",c,"<br>");
+                    c++;
+                }
+                b++;
+            }
+        </script>
+    </body>
+</html>

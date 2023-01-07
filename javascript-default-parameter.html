@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>default parameter</title>
+    </head>
+    <body>
+        <script>
+            //example 1
+            function users(user1,user2,user3='smit') {
+                document.write('user1 = ',user1,' user2 = ',user2,' user3 = ',user3,"<br>");
+            }
+            users('smit','shivam');
+
+            // exapmle 2
+            function users2(user1,user2,user3=['smit','shivam','utsav']) {
+                document.write(user1,' ',user2,' ',user3,'<br>');
+            }
+            users2('raj','meet');
+
+            // example 3
+            function users3(user1,user2,user3={name:'smit',class:'11th',age:17}) {
+                document.write(user1,' ',user2,' ',user3.name,' ',user3.class,' ',user3.age);
+            }
+            users3('shivam','meet');
+        </script>
+    </body>
+</html>

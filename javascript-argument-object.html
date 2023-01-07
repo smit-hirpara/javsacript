@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>argument object</title>
+    </head>
+    <body>
+        <script>
+            // example 1
+            function user(user1,user2) {
+                arguments[0] = 'utsav ';
+                document.write("user1 = " + user1 + ", user2 = " + user2,"<br>"); // outut user1 = smit, user2 = shivam
+                document.write("0 index argument value = ",arguments[0],"<br>"); // output 0 index argument value = smit
+                document.write("1 index argument value = ",arguments[1],"<br>"); // output 1 index argument value = shivam
+                document.write("arguments length = ",arguments.length); // arguments length = 2
+            }
+            user('smit','shiavm');
+        </script>
+    </body>
+</html>

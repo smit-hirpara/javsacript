@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>variable scope</title>
+    </head>
+    <body>
+        <h4>javascript has to scope :- 1.blobal  2.local</h4>
+        <script>
+            // example 1
+            // ========== global scope
+            var a = 'meet'; // global variable
+
+            function user() {
+                document.write("global scope = ",a,"<br>");
+            }
+            document.write("global scope = ",a,"<br>");
+            user();
+
+            // example 2
+
+            // ======= local scope
+            function users2() {
+                var b = 'utsav'; // local variable
+                document.write('local scope = ',b,"<br>");
+            }
+            users2();
+            // document.write('local scope = ',b);   // Error
+
+            // example 3
+            // function users3() {
+            //     users = "meet";
+            //     document.write('loacl variable = ',users);   // Erroe
+            // }
+            // document.write('loacl variable = ',users);
+            // users3();
+
+
+            // example 3
+            function users3() {
+                var user1 = 'meet';
+                document.write('outer function = user1 = ',user1,"<br>");
+                // document.write('user2 = ',user2);  // ERROR  you can't user inner funtion variable
+                function users4() {
+                    var user2 = 'raj';
+                    document.write('inner function = user2 = ',user2,"<br>");
+                    document.write('outer function var = ' , user1); // you can use outer function variable
+                }
+                users4();
+            }
+            users3();
+
+        </script>
+    </body>
+</html>

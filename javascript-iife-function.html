@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IIFE function</title>
+</head>
+
+<body>
+    <h1>IIFE(immeeditely invoked function experssion)</h1>
+    <script>
+        // example 1
+        (function () { document.write('IIFE function 1<br>') })(); // output IIFE function 1
+
+        // example 2
+        (function () { document.write('IIFE function 2<br>') })(); // output IIFE function 2
+
+        // example 3
+        var user1 = 'meet';
+        (function () { document.write("user name = ", user1, "<br>") })(); // output user name = meet
+
+        // example 4
+        var user2 = 'meet';
+        (function (user, age) { document.write("user2 = ", user2, ' age = ', age, "<br>") })('', 10); // output user2 = meet, age = 10
+
+        // examplw 5 
+        // ========== IIFE fucnction with arguments
+        (function (user, age) { document.write('user name = ', user, ', age = ', age, "<br>") })('virang', 19); // output user name = virang, age = 19
+
+        // example 6 
+        (function () {
+            var user3 = 'raj'
+            document.write('outer function user name = ', user3, "<br>"); // outut outer function user name = raj
+            // document.write('inner function user name = ', user4, "<br>");  // output user name = mohit  Error you can't use inner function variable
+            function users() {
+                user4 = 'mohit';
+                document.write('inner function user name = ', user4, "<br>"); // output user name = mohit
+                document.write('outer function user name = ', user3, "<br>"); // outut outer function user name = raj
+            }
+            users();
+        })();
+        // document.write('outer function user name = ', user3, "<br>"); // outut outer function user name = raj Error
+
+        /* =========================================
+                    iife Function
+        ========================================= */
+        (function users() {document.write('iife function<br>')})();
+
+        /* ==========================================
+            iife function with anonymous function
+        =========================================== */
+        (function(){document.write('iffe fiunction wiht anonymous function<br>')})();
+    </script>
+</body>
+
+</html>

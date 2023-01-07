@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rest paramenter</title>
+    </head>
+    <body>
+        <script>
+            // example 1
+            function users(user1,user2,...user3) {
+                document.write(user1,' ',user2,' ',user3);
+            }
+            users('smit','shivam','utsav','meet','om','virang','raj');
+
+            // example 2
+            // function users2(user1,...user2,user3) {
+            //     document.write(user1,' ', user2,' ',user3);
+            // }
+            // users2('smit','shivam','utsav',',meet','virang','raj','parth');  ERROR A rest parameter must be last in a parameter list
+        </script>
+    </body>
+</html>

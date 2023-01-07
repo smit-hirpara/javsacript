@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>do while loop</title>
+    </head>
+    <body>
+        <script>
+            // do while loop
+            var a = 0;
+            do {
+                document.write(a);
+                a++
+            }
+            while(a<5);
+            document.write("<br>");
+
+            // nasted do while loop
+            var b = 0;
+            do {
+                document.write("<b>outer do while loop = </b>",b,"<br>");
+                var c = 0;
+                do {
+                    document.write("<i>inner do while loop = </i>",c,"<br>");
+                    c++;
+                }
+                while(c<5);
+                b++;
+            }
+            while(b<5);
+        </script>
+    </body>
+</html>

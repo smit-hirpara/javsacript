@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>var, let and const</title>
+    </head>
+    <body>
+        <script>
+            // ================== var ============
+            document.write('<b><i>Var</b></i><br>');
+            var user1 = 'smit'; // true
+            document.write('decaler and initialization var keyword variable: user1 = ',user1,"<br>"); // output smit
+            var user1 = 'utsav'; // true
+            document.write('redeclare var keyword variable: user1 = ',user1,"<br>"); // output utasv
+            user1 = 'kayur'; // true
+            document.write('reassign var keyword variable: user1 = ',user1,"<br><hr>"); // output kayur 
+
+            // ============== let ===============
+            document.write('<b><i>Let</b></i><br>');
+            let user2 = 'mohit'; // true
+            document.write('declare and initialization let keyword variable: user2 =',user2,'<br>'); // output mohit
+            // let user2 = 'utsav'; // Fasle ERROR
+            // document.write('redeclare let keyword variable: user2 = ',user2,"<br>");
+            user2 = 'virang'; // true
+            document.write('reassign let keyword variable: user2 = ',user2,"<br><hr>"); // output virang
+
+            // ============== const =============
+            document.write('<b><i>Const</b></i><br>');
+            const user3 = 'rohit'; // true
+            document.write('declare and initalization const keyworsd variable: user3 = ',user3,'<br><hr><hr>'); // output rihit
+            // const user3 = 'virang'; // false ERROR
+            // document.write('redecalre const keyword variable = ',user3,"<br>");
+            // user3 = 'raj'; // flase ERROR
+            // document.write('reassign const keyword variable: user3  = ',user3,'<br>');
+
+
+            // ===================== example 1
+            // ================================================= var
+            var user4 = 'meet';
+            var user4 = 'rohit'; // redeclare TRUE
+            user4 = 'utsav' // reassign TRUE 
+
+            // ================================================== let
+            let user5 = 'mohit';
+            // let user5 = 'meet'; // redecalre FALSE
+            user5 = 'kayur'; // reassign TRUE
+
+            // ================================================== const
+            const user6 = 'shivam';
+            // const user6 = 'rohit'; // redecalre FALSE
+            // user6 = 'kayur'; // reassing FALSE
+
+
+            // ================== example 2
+            // ======================================= var
+            document.write('<b><i>Var</b></i><br>');
+            var a = 10
+            if(a==10) {
+                var right = 'a = 10 : true<br>';
+                document.write('inner statement: right = ',right);
+            }
+            document.write('outer statement: right = ',right,"<hr>");
+
+            // ========================================== let
+            document.write('<b><i>Let</b></i><br>');
+            let b = 10
+            if(b==10) {
+                let right2 = 'b = 10 : true';
+                document.write('inner statement: right2 = ',right2,'<br><hr>');
+            }
+            // document.write('outer statement: right2 = ',right2,'<br>');  // ERROR
+
+            // ============================================ const
+            document.write('<b><i>Const</b></i><br>');
+            const c = 10;
+            if(c==10) {
+                const right3 = 'c = 10: true';
+                document.write('inner statement : right3 = ',right3,'<br>');
+            }
+            // document.write('inner statement : right3 = ',right3,'<br>'); // ERROR
+        </script>
+    </body>
+</html>
