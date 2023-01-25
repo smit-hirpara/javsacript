@@ -402,15 +402,30 @@
                 }
             }
             var obj27 = usersobj2();
-            document.write(obj27.fname,"<br>"); // output om
+            document.write(obj27.fname,"<br><hr>"); // output om
 
             /* ==============================================================================================================================================
                                                                                 for in loop
             ============================================================================================================================================== */
-            // var obj28 = {fname:'shivam',lname:'hirpara',class:'9th'};
-            // for(fname in obj28) {
-            //     document.write(Object.keys(obj28))
-            // }
+            document.write('<b><i>for in loop</i></b><br>');
+            // example 1
+            var obj30 = {fname:'shivam',lname:'hirpara',class:'9th'};
+            for(var user in obj30) {
+                document.write(obj30[user]," ")
+            }
+            document.write('<br><hr>');
+
+            // example 2
+            var obj31 = {fname:'utsav',lname:'hirpara',class:'1st',age:'6',email:'utasv123@gmail.com'};
+            for(var user in obj31) {
+                document.write(obj31[user],' ');
+            }
+            document.write('<br><hr>');
+            document.write(Object.keys(obj31));
+            document.write('<br><hr>');
+            document.write(Object.values(obj31));
+            document.write('<br><hr>');
+
 
             /* ==========================================================================================================================
                                                             private properties and methods
@@ -420,7 +435,7 @@
             function usersobj3() {
                 this.firstname = 'shivam',
                 this.lastname = 'hirpara',
-                this.emial = 'shivam123@gmial.com',
+                this.email = 'shivam123@gmial.com',
                 friend = 'kayur';
                 fulldetails = function() {
                     return(this.firstname+' '+this.lastname+' ',this.class+' '+this.friend);
@@ -429,13 +444,13 @@
             var obj28 = new usersobj3();
             document.write('obj28 firstname = ',obj28.firstname,'<br>'); // output shivam
             document.write('obj28 lastname =',obj28.lastname,'<br>'); // output hirpara
-            document.write('obj28 emial = ',obj28.emial,'<br>'); // output shivam123@gmail.com
+            document.write('obj28 email = ',obj28.emial,'<br>'); // output shivam123@gmail.com
             document.write('obj28 friends = ',obj28.friend,'<br>'); // undefined
             document.write('obj28 fulldetails = ',obj28.fulldetails,'<br><hr>'); // undefined
 
             /* ============== access pravite properties ============== */
             document.write('<b><i>access pravite properties</i></b><br>');
-            function usersobj3() {
+            function usersobj4() {
                 this.firstname = 'shivam',
                 this.lastname = 'hirpara',
                 this.emial = 'shivam123@gmial.com',
@@ -447,11 +462,223 @@
                     return(friend);
                 }
             }
-            var obj28 = new usersobj3();
-            document.write('obj28 firstname = ',obj28.firstname,'<br>'); // output shivam
-            document.write('obj28 lastname =',obj28.lastname,'<br>'); // output hirpara
-            document.write('obj28 emial = ',obj28.emial,'<br>'); // output shivam123@gmail.com
-            document.write('obj28 pravite firends = ',obj28.friendfun(),"<br>"); // output kayur
+            var obj29 = new usersobj4();
+            document.write('obj29 firstname = ',obj29.firstname,'<br>'); // output shivam
+            document.write('obj29 lastname =',obj29.lastname,'<br>'); // output hirpara
+            document.write('obj29 emial = ',obj29.emial,'<br>'); // output shivam123@gmail.com
+            document.write('obj29 pravite firends = ',obj29.friendfun(),"<br><hr>"); // output kayur
+
+            /* ===============================================================================================================
+                                                prototype with properties and methods
+            =============================================================================================================== */
+            // ========================== example 1 ======================
+            document.write('<b><i>prototype</i></b><br>');
+            var usersobj5 = function(fname,lname,emial) {
+                this.fname = fname, // instance member
+                this.lname = lname, // instance member
+                this.email = emial // instance member
+            }
+            var obj30 = new usersobj5('utsav','hirpara','utsav123@gmial.com');
+            obj30.age=6; // ================ 1
+            var obj31 = new usersobj5('meet','ratohs','meet123@gmail.com');
+            obj31.age=18; // ================ 2
+            document.write('obj30 firstname = ',obj30.fname,'<br>'); // output utsav
+            document.write('obj30 lastname = ',obj30.lname,'<br>'); // output hirpara
+            document.write('obj30 email = ',obj30.email,'<br>'); // output utsav123@gmail.com
+            document.write('obj30 age = ',obj30.age,'<br>'); // output 6
+            console.warn('obj30 = ',obj30);
+
+            document.write('obj31 firstname = ',obj31.fname,'<br>'); // output utsav
+            document.write('obj31 lastname = ',obj31.lname,'<br>'); // output hirpara
+            document.write('obj31 email = ',obj31.email,'<br>'); // output utsav123@gmail.com
+            document.write('obj31 age = ',obj31.age,'<br><hr>'); // output 6
+            console.warn('obj31 = ',obj30);
+
+            // ============================== example 2 ============================
+            // ========= prototype with properties
+            var usersobj6 = function(fname,lname,email) {
+                this.firstname = fname, // instance member
+                this.lastname = lname, // instance member
+                this.email = email // instance member
+            }
+            var obj32 = new usersobj6('om','rathod','om123@gmail.com');
+            var obj33 = new usersobj6('shivam','hirpara','shivam123@gmail.com');
+            // ============ prototype member
+            usersobj6.prototype.age = 17; // ============= 1
+            document.write('obj32 firstname = ',obj32.firstname,'<br>'); // output om
+            document.write('obj32 lastname = ',obj32.lastname,'<br>'); // output rathod
+            document.write('obj32 email = ',obj32.email,'<br>'); // output om123@gmail.com
+            document.write('obj32 age = ',obj32.age,'<br><hr>'); // output 17
+            console.warn('obj32 = ',obj32);
+            document.write('obj33 firstname = ',obj33.firstname,'<br>'); // output om
+            document.write('obj33 lastname = ',obj33.lastname,'<br>'); // output rathod
+            document.write('obj33 email = ',obj33.email,'<br>'); // output om123@gmail.com
+            document.write('obj33 age = ',obj33.age,'<br><hr>'); // output 17
+            console.warn('obj33 = ',obj33);
+
+            // ========== prototype with mathods
+            var usersobj7 = function(fname,lname) {
+                this.firstname = fname; // instance member
+                this.lastname = lname; // instance member
+            }
+            var obj34 = new usersobj7('utsav','hirpara');
+            var obj35 = new usersobj7('kauyr','rathod');
+            // =========== prototypr member
+            usersobj7.prototype.fullname= function() {return(this.firstname+' '+this.lastname)};
+            document.write('obj34 firstname = ',obj34.firstname,'<br>'); // output kayur
+            document.write('obj34 firstname = ',obj34.lastname,'<br>'); // output rathod
+            document.write('obj34 fullname = ',obj34.fullname(),'<br><hr>'); // output rathod
+            document.write('obj34 firstname = ',obj35.firstname,'<br>'); // output kayur
+            document.write('obj34 firstname = ',obj35.lastname,'<br>'); // output rathod
+            document.write('obj34 fullname = ',obj35.fullname(),'<br><hr>'); // output rathod
+            
+
+            /* ============================================================================================================================
+                                                                        Prototype
+            ============================================================================================================================ */
+            document.write('<b><i>prototype 2</i></b><br>');
+            // normaliy add new properties
+            var usersobj8 = function(name) {
+                // =============== instance member
+                this.name=name;
+            }
+            var obj36 = new usersobj8('deep');
+            var obj37 = new usersobj8('kayur');
+            obj36.age=13;
+            obj37.age=15;
+            document.write('obj36 name = ',obj36.name+' '+obj36.age,'<br>'); // output deep 13
+            console.warn('obj36 = ',obj36);
+            document.write('obj36 name = ',obj37.name+' '+obj37.age,'<br>'); // output kautr 15
+            console.warn('obj37 = ',obj37);
+
+            // with prototype add new properties
+            var usersobj9 = function(user) {
+                // ============ instance member
+                this.name = user;
+            }
+            var obj38 = new usersobj9('utsav');
+            var obj39 = new usersobj9('kayur');
+            var obj40 = new usersobj9('dev');
+            // =============== prototype member
+            usersobj9.prototype.age=10;
+            document.write('obj38 = ',obj38.name,'<br>'); // output utsav
+            document.write('obj38 = ',obj38.age,'<br>'); // output 10
+            document.write('obj39 = ',obj39.name,'<br>'); // output kayur 
+            document.write('obj39 = ',obj39.age,'<br>'); // output 10
+            document.write('obj40 = ',obj40.name,'<br>'); // output dev
+            document.write('obj40 = ',obj40.age,'<br><hr>'); // output 10
+            console.warn('obj38 = ',obj38);
+            console.warn('obj39 = ',obj39);
+            console.warn('obj40 = ',obj40);
+
+            /* ========================================================================================================================================
+                                                                     Nasted Object
+            ======================================================================================================================================== */
+            var obj41 = {
+                name:'utsav',
+                class:'1st',
+                age:5,
+                friends:{
+                    name1:'meet',
+                    name2:'kayur',
+                    name3:'virang'
+                }
+            }
+            // ============= access nasted object with .operator
+            document.write("<b><i>access nases object properties with . operator</b></i><br>");
+            document.write('obj41 name = ',obj41.name,'<br>'); // otuptut utsav
+            document.write('obj41 class = ',obj41.class,'<br>'); // otuptut utsav
+            document.write('obj41 age = ',obj41.age,'<br>'); // otuptut utsav
+            document.write('obj41 friends = ',obj41.friends.name1,'<br>'); // otuptut meet
+            document.write('obj41 friends = ',obj41.friends.name2,'<br>'); // otuptut kayur
+            document.write('obj41 friends = ',obj41.friends.name3,'<br><hr>'); // otuptut virang
+
+            // ============ access nasted object with [] square brackets
+            document.write("<b><i>access nases object properties with [] square brackets</b></i><br>");
+            document.write('obj41 name = ',obj41['name']),'<br>'; // output utsav
+            document.write('obj41 class = ',obj41['class'],'<br>'); // output utsav
+            document.write('obj41 age = ',obj41['age'],'<br>'); // output utsav
+            document.write('obj41 friends = ',obj41['friends']['name1'],'<br>'); // output utsav
+            document.write('obj41 friends = ',obj41['friends']['name2'],'<br>'); // output utsav
+            document.write('obj41 friends = ',obj41['friends']['name3'],'<br><hr>'); // output utsav
+
+
+            // ========================================= javascipt object method =============================================
+            var obj42 = {
+                firstname:'shivam', // property
+                lastname:'hirpara', // property
+                age:14, // property
+                full: function() {document.write('name is:- ',this.firstname,', class is:- ',this.lastname,', age is:- ',this.age,'<br>')} // method
+            }
+            // ========= access object method with . opertaor
+            document.write("<b><i>access object method with . operator</b></i><br>");
+            document.write("firstname = ",obj42.firstname,'<br>');
+            document.write("lastname = ",obj42.lastname,'<br>');
+            document.write("age = ",obj42.age,'<br>');
+            document.write("fullname = ",obj42.full(),'<br><hr>');
+
+            // =========== access object method with [] square brackets
+            document.write("<b><i>access object method with [] square brackets</b></i><br>");
+            document.write("firstname = ",obj42['firstname'],"<br>");
+            document.write("lastname = ",obj42['lastname'],"<br>");
+            document.write("age = ",obj42['age'],"<br>");
+            document.write("fullname = ",obj42['full()'],"<br>");
+
+            
+            /* ==========================================================================================================================================
+                                                                    javascript this keyword
+            ========================================================================================================================================== */
+            document.write("<b><i>javascript this keyword</b></i><br>");
+            // example 1
+            var obj43 = {
+                firstname:'kayur',
+                lastname:'rathod',
+                age:14,
+                full: function() {document.write('firstname = ',this.firstname,', lastname = ',this.lastname,', age = ',this.age,'<br>')}
+            }
+            document.write("obj43 firstnaem = ",obj43.firstname,'<br>');
+            document.write("obj43 lastname = ",obj43.lastname,'<br>');
+            document.write("obj43 age = ",obj43.age,'<br>');
+            document.write("obj43 full name = ",obj43.full(),'<br><hr>');
+
+            // example 2
+            var obj44 = {
+                firstname:'shivam',
+                lastname:'hirpara',
+                age:15,
+                full: function() {
+                    var city = 'junagadh';
+                    document.write('firstname = ',this.firstname,', lastname = ',this.lastname,', age = ',this.age,', city = ',city);
+                }
+            }
+            document.write("obj44 firstname = ",obj44.firstname,'<br>');
+            document.write("obj44 lastname = ",obj44.lastname,'<br>');
+            document.write('obj44 age = ',obj44.age,'<br>');
+            document.write(' fulldetails = ',obj44.full(),'<br>');
+
+            /* ==================================================================================================================================
+                                                                javascript getter and setter
+            ================================================================================================================================== */
+            document.write("<b><i>javascript getter</b></i><br>");
+            var obj45 = {
+                fullname:'meet rathod',
+                get getfullname() {
+                    return this.fullname;
+                }
+            }
+            // accass getter
+            document.write("access getter = ",obj45.getfullname,'<br><hr>');
+            // document.write("access getter = ",obj45.getfullname(),'<br>'); // error
+
+            document.write("<b><i>javascript setter</b></i><br>");
+            var obj46 = {
+                fullname:'om rathod',
+                set setfullname(newName) {
+                    this.fullname = newName;
+                }
+            }
+            obj46.setfullname = 'shivam hirpara';
+            document.write('set fullname = ',obj46.fullname,'<br>');
         </script>
     </body>
 </html>

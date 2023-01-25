@@ -1,0 +1,1173 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 10px 30px;
+        }
+
+        .main-header {
+            background-color: aqua;
+            border: 2px solid rgb(96, 194, 194);
+            border-radius: 30px 60px 30px 60px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .content-header {
+            background-color: rgb(104, 212, 176);
+            padding: 5px 5px 5px 60px;
+            border: 2px solid rgb(196, 117, 44);
+            border-radius: 20px 40px 20px 40px;
+        }
+
+        table {
+            margin: 10px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+        }
+
+        th {
+            background-color: rgb(37, 35, 35);
+            color: white;
+        }
+
+        td {
+            width: 30%;
+            text-align: center;
+        }
+
+        .true {
+            background-color: rgb(96, 201, 139);
+        }
+
+        .false {
+            background-color: rgb(226, 95, 95);
+        }
+
+        .box {
+            background-color: rgb(226, 95, 95);
+            padding: 10px;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        button {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body onresize="fun17()" onscroll="fun18()">
+    <!-- <marquee class="main-header"><h1>Javascript Revision</h1></marquee> -->
+    <h1 class="main-header">Javascript Revision</h1>
+    <h4 class="content-header">Variables</h4>
+    <!-- ========================variable table ============================= -->
+    <table>
+        <tr>
+            <th colspan="3">Variable</th>
+        </tr>
+        <tr>
+            <th>var</th>
+            <th>let</th>
+            <th>const</th>
+        </tr>
+        <tr>
+            <td class="true">var a = 'abcd';</td>
+            <td class="true">let b = 'efgh';</td>
+            <td class="true">let c = 'ijkl';</td>
+        </tr>
+        <tr>
+            <td class="true">a = 'ABCD';</td>
+            <td class="true">b = 'EFGH';</td>
+            <td class="false">c = 'IJKL';</td>
+        </tr>
+        <tr>
+            <td class="true">var a = 'mnop';</td>
+            <td class="false">let b = 'qrst';</td>
+            <td class="false">const c = 'uvwx';</td>
+        </tr>
+    </table>
+
+    <!-- ==================== how to write a variable name table ======================== -->
+    <table>
+        <tr>
+            <th colspan="2">how to write a variable name</th>
+        </tr>
+        <tr>
+            <th>Write Way</th>
+            <th>Wrong Way</th>
+        </tr>
+        <tr>
+            <td class="true">firstname</td>
+            <td class="false">first name</td>
+        </tr>
+        <tr>
+            <td class="true">first_name</td>
+            <td class="false">77firstname</td>
+        </tr>
+        <tr>
+            <td class="true">first-name</td>
+        </tr>
+        <tr>
+            <td class="true">firstName</td>
+        </tr>
+        <tr>
+            <td class="true">firstName77</td>
+        </tr>
+    </table>
+
+    <!-- ================ data types table ================== -->
+    <table>
+        <tr>
+            <th colspan="2">data types</th>
+        </tr>
+        <tr>
+            <th>Primitive Data Types</th>
+            <th>Non Primitive Data Types</th>
+        </tr>
+        <tr>
+            <td class="true">string</td>
+            <td class="true">array</td>
+        </tr>
+        <tr>
+            <td class="true">number</td>
+            <td class="true">object</td>
+        </tr>
+        <tr>
+            <td class="true">boolean</td>
+            <td class="true">regexp (<small>regular expression</small>)</td>
+        </tr>
+        <tr>
+            <td class="true">null</td>
+        </tr>
+        <tr>
+            <td class="true">undefined</td>
+        </tr>
+        <tr>
+            <th>string</th>
+            <th>number</th>
+        </tr>
+        <tr>
+            <td class="true">var a = 'abcd';</td>
+            <td class="true">var a = 20;</td>
+        </tr>
+        <tr>
+            <th>boolean</th>
+            <th>null</th>
+        </tr>
+        <tr>
+            <td class="true">var a = true;</td>
+            <td class="true">var a = null;</td>
+        </tr>
+        <tr>
+            <th>undefined</th>
+            <th>array</th>
+        </tr>
+        <tr>
+            <td class="true">var a;</td>
+            <td class="true">var a = ['abcd','efgh','ijkl'];</td>
+        </tr>
+        <tr>
+            <th>object</th>
+        </tr>
+        <tr>
+            <td class="true">var a = {fname:'abcd',lname:'ABCD'};</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th colspan="2">Differnt type of arthmetic operator</th>
+        </tr>
+        <tr>
+            <th>Operator</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td class="true">+</td>
+            <td class="true">addition</td>
+        </tr>
+        <tr>
+            <td class="true">-</td>
+            <td class="true">subscription</td>
+        </tr>
+        <tr>
+            <td class="true">*</td>
+            <td class="true">nultiplication</td>
+        </tr>
+        <tr>
+            <td class="true">**</td>
+            <td class="true">exponentiction</td>
+        </tr>
+        <tr>
+            <td class="true">/</td>
+            <td class="true">division</td>
+        </tr>
+        <tr>
+            <td class="true">%</td>
+            <td class="true">modulus (remainder)</td>
+        </tr>
+        <tr>
+            <td class="true">++</td>
+            <td class="true">increment</td>
+        </tr>
+        <tr>
+            <td class="true">--</td>
+            <td class="true">decrement</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th colspan="3">Differnt type of assignment operator</th>
+        </tr>
+        <tr>
+            <th>Operators</th>
+            <th>example</th>
+            <th>same as</th>
+        </tr>
+        <tr>
+            <td class="true">=</td>
+            <td class="true">a = b</td>
+            <td class="true">a = b</td>
+        </tr>
+        <tr>
+            <td class="true">+=</td>
+            <td class="true">a += b</td>
+            <td class="true">A = a + b</td>
+        </tr>
+        <tr>
+            <td class="true">-=</td>
+            <td class="true">a -= b</td>
+            <td class="true">A = a - b</td>
+        </tr>
+        <tr>
+            <td class="true">*=</td>
+            <td class="true">a *= b</td>
+            <td class="true">A = a * b</td>
+        </tr>
+        <tr>
+            <td class="true">/=</td>
+            <td class="true">a /= b</td>
+            <td class="true">A = a / b</td>
+        </tr>
+        <tr>
+            <td class="true">%=</td>
+            <td class="true">a %= b</td>
+            <td class="true">A = a % b</td>
+        </tr>
+        <tr>
+            <td class="true">**=</td>
+            <td class="true">a **= b</td>
+            <td class="true">A = a ** b</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th colspan="3">comparison operator</th>
+        </tr>
+        <tr>
+            <th>Operators</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td class="true">==</td>
+            <td class="true">equal to (equal value)</td>
+        </tr>
+        <tr>
+            <td class="true">===</td>
+            <td class="true">equal type and equal value</td>
+        </tr>
+        <tr>
+            <td class="true">!=</td>
+            <td class="true">not equal (not equal value)</td>
+        </tr>
+        <tr>
+            <td class="true">!==</td>
+            <td class="true">not qual type and not equal value</td>
+        </tr>
+        <tr>
+            <td class="true">></td>
+            <td class="true">gratethan</td>
+        </tr>
+        <tr>
+            <td class="true">
+                << /td>
+            <td class="true">lessthan</td>
+        </tr>
+        <tr>
+            <td class="true">>=</td>
+            <td class="true">grate then or equal value</td>
+        </tr>
+        <tr>
+            <td class="true">
+                <=< /td>
+            <td class="true">less then or equal value</td>
+        </tr>
+    </table>
+    <table>
+        <th colspan="3">Logical Operator</th>
+        </tr>
+        <tr>
+            <th>Operators</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td class="true">&&</td>
+            <td class="true">logical AND operator</td>
+            <td class="true">true all condition then execuite</td>
+        </tr>
+        <tr>
+            <td class="true">||</td>
+            <td class="true">logical OR operator</td>
+            <td class="true">true one condition then execuite</td>
+        </tr>
+        <tr>
+            <td class="true">!</td>
+            <td class="true">logical NOT operator</td>
+            <td class="true">false condition then execuite</td>
+        </tr>
+    </table>
+    <table>
+        <th colspan="3">Global & Local variable</th>
+        </tr>
+        <tr>
+            <th>In script tag</th>
+            <th>In Function</th>
+            <th>In Statement</th>
+        </tr>
+        <tr>
+            <td class="true">var (global variable)</td>
+            <td class="true">var (local variable)</td>
+            <td class="true">var (global variable)</td>
+        </tr>
+        <tr>
+            <td class="true">let (global variable)</td>
+            <td class="true">let (local variable)</td>
+            <td class="true">let (local variable)</td>
+        </tr>
+        <tr>
+            <td class="true">const (global variable)</td>
+            <td class="true">const (local variable)</td>
+            <td class="true">const (local variable)</td>
+        </tr>
+    </table>
+    <table>
+        <th colspan="4">Events</th>
+        </tr>
+        <tr>
+            <th>Click Events</th>
+            <th>Double Click Events</th>
+            <th>Key Events</th>
+            <th>Window Events</th>
+        </tr>
+        <tr>
+            <td class="true">click</td>
+            <td class="true">mouse hover</td>
+            <td class="true">key press</td>
+            <td class="true">load</td>
+        </tr>
+        <tr>
+            <td class="true">double click</td>
+            <td class="true">mouse out</td>
+            <td class="true">key up</td>
+            <td class="true">unload</td>
+        </tr>
+        <tr>
+            <td class="true">right click</td>
+            <td class="true">mouse down</td>
+            <td class="true"></td>
+            <td class="true">resize</td>
+        </tr>
+        <tr>
+            <td class="true"></td>
+            <td class="true">mouse up</td>
+            <td class="true"></td>
+            <td class="true">scroll</td>
+        </tr>
+    </table>
+    <script>
+        /* ===============================================================================================================================================
+                                                                        Variable
+        =============================================================================================================================================== */
+        /* ====================== how to use variable ====================== */
+        var name1 = 'smit';
+        /* variable-name        variable-property*/
+        /* ex:- var variableName = variable-value,property */
+
+        /* ====================== type of variable ========================= */
+        var name2 = 'meet';
+        let name3 = 'deep';
+        const name4 = 'utsav';
+
+        /* ===================== var variable ============== */
+        var name5 = 'abcd';
+        name5 = 'efgh'; // you can reassign var keyword variable
+        var name5 = 'ijkl'; // you can re declare ver keyword variable
+
+        /* ==================== let variable =============== */
+        let name6 = 'abcd';
+        name6 = 'efgh'; // you can reassign let keyword variable
+        // let name6 = 'ijkl'; // you can't redeclare let keyword variable
+
+        /* =================== const variable ============== */
+        const name10 = 'abcd';
+        // name10 = 'efgh'; // you can't reassign const keyword variable
+        // const name10 = 'ijkl'; // you can't redeclare const keyword variable
+
+        document.write('virable are multiple use = ', name1, '<br>'); //smit
+
+
+        /* =====================================================================================================================================================
+                                                            how to write a variable name
+        ===================================================================================================================================================== */
+        /* 
+                            Write way,true way                                                                   wrong way,false way          
+                                firstname                                                                           first name
+                                first_name                                                                          10firstaname
+                                first-name
+                                firstName
+                                firstname77
+        */
+
+        /* =====================================================================================================================================================
+                                                                    data types
+        ===================================================================================================================================================== */
+        let name12 = 'hello'; // string
+        let name13 = 10; // number
+        let name14 = true // boolean
+        let name15 = ['abcd', 'efgh', 'ijkl']; // array
+        let name16 = { firstname: 'abcd', lastname: 'ABCD' }; // object
+        let name17 = null; // null
+        let name18; // undefined
+
+        /*
+                premitive data types                                                            non premitive data types
+                    string                                                                          array
+                    number                                                                          object
+                    boolean                                                                         regexp (ragulear expression)
+                    null
+                    undefined
+        */
+
+
+        /* =====================================================================================================================================================
+                                                                    typeof() function in javascript
+        ===================================================================================================================================================== */
+        document.write('<h4 class="content-header">typeof() function</h4>');
+        let name19 = 'hello';
+        let name20 = 10;
+        let name21 = true;
+        let name22 = null;
+        let name23;
+        let name24 = ['abcd', 'efgh', 'ijkl'];
+        let name25 = { fisrtname: 'abcd', lastname: 'ABCD' };
+
+        document.write('typeof name19 = ', typeof (name19), '<br>'); // hello
+        document.write('typeof name20 = ', typeof (name20), '<br>'); // 10
+        document.write('typeof name21 = ', typeof (name21), '<br>'); // true
+        document.write('typeof name22 = ', typeof (name22), '<br>'); // object
+        document.write('typeof name23 = ', typeof (name23), '<br>'); // undefined
+        document.write('typeof name24 = ', typeof (name24), '<br>'); // object
+        document.write('typeof name25 = ', typeof (name25), '<br>'); // object
+
+
+        /* ===================================================================================================================================================
+                                                            Differnt type of arthmetic operator
+        =================================================================================================================================================== */
+        document.write('<h4 class="content-header"> Differnt type of arthmetic operator</h4>');
+        /* =========== addition(+) operator ============= */
+        let number1 = 10;
+        let number2 = 10;
+        document.write('addition opeartor = ', number1 + number2, '<br>'); // 20
+
+        /* ========= subscription(-) operator ========== */
+        let number3 = 10;
+        let number4 = 5;
+        document.write('subscription operator = ', number3 - number4, '<br>'); // 5
+
+        /* ========= multiplication(*) operator ========== */
+        let number5 = 10;
+        let number6 = 5;
+        document.write('multiplication operator = ', number5 * number6, '<br>'); // 50
+
+        /* ========= exponentictiation(**) operator ========== */
+        let number7 = 10;
+        let number8 = 5;
+        document.write('exponentictiation operator = ', number7 ** number8, '<br>'); // 100000
+
+        /* ========= division(/) operator ========== */
+        let number9 = 10;
+        let number10 = 5;
+        document.write('division operator = ', number9 / number10, '<br>'); // 2
+
+        /* ========= modulus(%) operator ========== */
+        let number11 = 10;
+        let number12 = 5;
+        document.write('modulus operator = ', number11 % number12, '<br>'); // 0
+
+        /* ========= increment(++) operator ========== */
+        let number13 = 10;
+        number13++;
+        document.write('increment operator = ', number13, '<br>'); // 11
+
+        /* ========= decrement(--) operator ========== */
+        let number14 = 10;
+        number14--;
+        document.write('decrement operator = ', number14, '<br>'); // 9
+
+
+        /* ==================================================================================================================================================
+                                                        without variable print value
+        ================================================================================================================================================== */
+        document.write('<h4 class="content-header">without variable print value</h4>');
+        document.write('without variable print value = ', 10 + 10, '<br>'); // 20
+        document.write('without variable print value = ', 10 - 5, '<br>'); // 5
+        document.write('without variable print value = ', 10 * 5, '<br>'); // 50
+        document.write('without variable print value = ', 10 / 5, '<br>'); // 2 
+        document.write('without variable print value = ', 10 % 5, '<br>'); // 0
+
+
+        /* ==================================================================================================================================================
+                                                        different type of  asssignment operator
+        ================================================================================================================================================== */
+        // assignment operator is arithmetic operator's short hand
+        document.write('<h4 class="content-header">different type of asssignment operator</h4>');
+        /* ========= = operator ========== */
+        let number15 = 10;
+        let number16 = 5;
+        number15 = number16;
+        document.write('assignment operator = ', number15, '<br>'); // 5
+
+        /* ======== += operator ========= */
+        let number17 = 10;
+        let number18 = 5;
+        number17 += number18;
+        document.write('assignment operator = ', number17, '<br>'); // 15
+
+        /* ======== -= operator ========= */
+        let number19 = 10;
+        let number20 = 5;
+        number19 -= number20;
+        document.write('assignment operator = ', number19, '<br>');  // 5
+
+        /* ======== *= operator ========= */
+        let number21 = 10;
+        let number22 = 5;
+        number21 *= number22;
+        document.write('assignment operator = ', number21, '<br>'); // 50
+
+        /* ======== *= operator ========= */
+        let number23 = 10;
+        let number24 = 5;
+        number23 /= number24;
+        document.write('assignment operator = ', number23, '<br>'); // 2
+        /* ======== *= operator ========= */
+        let number25 = 10;
+        let number26 = 5;
+        number25 %= number26;
+        document.write('assignment operator = ', number25, '<br>');  // 0
+        /* ======== *= operator ========= */
+        let number27 = 10;
+        let number28 = 5;
+        number27 **= number28;
+        document.write('assignment operator = ', number27, '<br>'); // 100000
+
+        /* ====================================================================================================================================================
+                                                                            Console
+        ==================================================================================================================================================== */
+        document.write('<h4 class="content-header">Console</h4>');
+        /* ========= console.log =========== */
+        let number30 = 10;
+        console.log('console.log = ', number30); // 10
+        console.log('console.log = ', number30 + 10); // 20
+        console.log('console.log = ', [1, 2, 3, 4, 5]); // [1,2,3,4,5]
+        document.write('console.log(text);<br>');
+
+        /* ========= console.error =========== */
+        console.error('console.error = ', number30); // 10
+        console.error('console.error = ', number30 + 10); // 20
+        console.error('console.error = ', [1, 2, 3, 4, 5]); // [1,2,3,4,5]
+        document.write('console.error(text);<br>');
+
+        /* ======== console.warn =========== */
+        console.warn('console.warn = ', number30); // 10
+        console.warn('console.warn = ', number30 + 10); // 20
+        console.warn('console.warn = ', [1, 2, 3, 4, 5]); // [1,2,3,4,5]
+        document.write('console.warn(text);<br>');
+
+        /* ========= clear console =========== */
+        // console.clear();
+        document.write('console.clear();<br>');
+
+        /* ========= check time in called function ========= */
+        console.time('test');
+        console.warn('cosnole.time'); // cosnole.time
+        console.warn('cosnole.time'); // cosnole.time
+        console.warn('cosnole.time'); // cosnole.time
+        console.timeEnd('test'); // 0.06494140652 ms
+        document.write('console.time("test");<br>' +
+            'console.warn("warning");<br>' +
+            'console.warn("warning");<br>' +
+            'console.temeEnd("test");<br>');
+
+
+        /* ==================================================================================================================================================
+                                                                    comparison operator
+        ================================================================================================================================================== */
+        document.write('<h4 class="content-header">Comparison Operator</h4>');
+
+        /* ======== equal to operator (equal value) ========= */
+        let number31 = 10;
+        let number32 = '10';
+        document.write('number31 == number32 = ', number3 == number32, '<br>'); // true
+
+        number32 = 20; // reassign number32
+        document.write('number31 == number32 = ', number3 == number32, '<br>'); // false
+
+
+        /* ======== equal type and equal value ========= */
+        let number33 = 10;
+        let number34 = 10;
+        document.write('number33 === number34 = ', number33 === number34, '<br>'); // true
+
+        number34 = '10'; // reassign number34
+        document.write('number33 === number34 = ', number33 === number34, '<br>'); // false
+
+
+        /* =========== not equal value ========== */
+        let number35 = 10;
+        let number36 = '20';
+        document.write('number35 != number36 = ', number35 != number36, '<br>'); // true
+
+        number36 = 10; // reassign number36
+        document.write('number35 != number36 = ', number35 != number36, '<br>'); // false
+
+
+        /* =========== not equal value and not equal type ========== */
+        let number37 = 10;
+        let number38 = '20';
+        document.write('number37 !== number38 = ', number37 !== number38, '<br>'); // true
+
+        number38 = 10; // reassign number38
+        document.write('number37 !== number38 = ', number37 !== number38, '<br>'); // false
+
+
+        /* =========== greate than ========== */
+        let number39 = 15;
+        let number40 = 10;
+        document.write('number39 > number40 = ', number39 > number40, '<br>'); // true
+
+        number40 = 17; // reassign number40
+        document.write('number39 > number40 = ', number39 > number40, '<br>'); // false
+
+
+        /* ========== less than =========== */
+        let number41 = 10;
+        let number42 = 20;
+        document.write('number41 < number42 =', number41 < number42, '<br>'); // true
+
+        number42 = 8; // reassign number42
+        document.write('number41 < number42 =', number41 < number42, '<br>'); // false
+
+        /* ======= greter than equal to ========== */
+        let number43 = 10;
+        let number44 = 20;
+        document.write('number43 >= number44 =', number43 >= number44, '<br>'); // false
+
+        number44 = 10; // reassign number44
+        document.write('number43 >= number44 =', number43 >= number44, '<br>'); // true
+
+        number43 = 25; // reassign number43
+        document.write('number43 >= number44 =', number43 >= number44, '<br>'); // true
+
+        /* ======= less than equal to ========== */
+        let number45 = 10;
+        let number46 = 20;
+        document.write('number45 >= number46 =', number45 <= number46, '<br>'); // true
+
+        number46 = 10; // reassign number46
+        document.write('number45 >= number46 =', number45 <= number46, '<br>'); // true
+
+        number45 = 25; // reassign number45
+        document.write('number45 >= number46 =', number45 <= number46, '<br>'); // false
+
+
+        /* ======================================================================================================================================================
+                                                                                If Seatement
+        ====================================================================================================================================================== */
+        document.write('<h4 class="content-header">If Seatement</h4>');
+        let number47 = 100;
+        let number48 = 100;
+        //  true
+        if (number47 == number48) {
+            document.write('number47 = ', number47, ' ', 'number48 = ', number48, ' same value'); // number47 = 100 number48 = 100 same value
+        }
+
+        number48 = 200; // reassign number48
+        // false
+        if (number47 == number48) {
+            document.write('number47 = ', number47, ' ', 'number48 = ', number48, ' same value'); // not print bicous condition not match
+        }
+
+
+        /* ======================================================================================================================================================
+                                                                                Logical Operator
+        ====================================================================================================================================================== */
+        document.write('<h4 class="content-header">Logical Operator</h4>');
+        /* ======= logical AND operator ======== */
+        let nubmer49 = 100;
+        let number50 = 100;
+        //  true                    true
+        if (nubmer49 === number50 && nubmer49 == number50) { // true 2 conditions
+            document.write('number49 number = ', nubmer49, ' number50 number = ', number50, ' & number49 = ', nubmer49, ' number50 = ', number50, ' same value<br>');
+        }
+
+        number50 = '100'; // reassign number50
+        //  false                   true
+        if (nubmer49 === number50 && nubmer49 == number50) { // not execute becouse 1 condition are false
+            document.write('number49 number = ', nubmer49, ' number50 number = ', number50, ' & number49 = ', nubmer49, ' number50 = ', number50, ' same value<br>');
+        }
+
+        /* ======= logical OR operator ======== */
+        let number51 = 100;
+        let number52 = 100;
+        //  true                    true
+        if (number51 === number52 || number51 == number52) { // true 2 conditions
+            document.write('number51 number = ', number51, ' number52 number = ', number52, ' || number51 = ', number51, ' number52 = ', number52, ' same value<br>');
+        }
+
+        number52 = '100'; // reassign number52
+        //  false                   true
+        if (number51 === number52 || number51 == number52) { // true 1 condition
+            document.write('number51 number = ', number51, ' number52 string = ', number52, ' || number51 = ', number51, ' number52 = ', number52, ' same value<br>');
+        }
+
+        /* ======= logical NOT operator ======== */
+        let number53 = 100;
+        let number54 = 200;
+        //   true
+        if (!number53 == number54) {
+            document.write('number53 = ', number53, ' number54 = ', number54, ' not same value<br>');
+        }
+
+
+        /* ======================================================================================================================================================
+                                                                                If Else Seatement
+        ====================================================================================================================================================== */
+        document.write('<h4 class="content-header">If Else Seatement</h4>');
+        let number55 = 100;
+        let number56 = 100;
+        //      true
+        if (number55 == number56) {
+            document.write('number55 = ', number55, ' number56 = ', number56, ' same value<br>');
+        }
+        else {
+            document.write('number55 = ', number55, ' number56 = ', number56, 'not same value<br>');
+        }
+
+        number56 = 200; // reassign number56
+        //  false
+        if (number55 == number56) {
+            document.write('number55 = ', number55, ' number56 = ', number56, ' same value<br>');
+        }
+        else {
+            document.write('number55 = ', number55, ' number56 = ', number56, ' not same value<br>');
+        }
+
+
+        /* ======================================================================================================================================================
+                                                                                If Else If Seatement
+        ====================================================================================================================================================== */
+        /* ================ you can add multiple else if staement ============ */
+        document.write('<h4 class="content-header">If Else If Seatement</h4>');
+        let number57 = 100;
+        let number58 = 100;
+        //  true            false
+        if (number57 > 90 && number58 > 100) {
+            document.write('number57 = ', number57, ' number58 = ', number58);
+        }
+        //          true        true
+        else if (number57 > 90 && number58 > 90) {
+            document.write('number57 greater than 90 = ', number57, ' number58 greater than 90 = ', number58);
+        }
+        else {
+            document.write('number57 less than 90 = ', number57, ' number58 less than 90 = ', number58);
+        }
+        document.write('<br>');
+
+        if (number57 > 90 && number58 > 100) {
+            document.write('number57 = ', number57, ' number58 = ', number58);
+        }
+        else if (number57 > 95 && number58 > 105) {
+            document.write('number57 greater than 95 = ', number57, ' number58 greater than 105 = ', number58);
+        }
+        else {
+            document.write('any condition not match');
+        }
+        document.write('<br>');
+
+
+        /* ======================================================================================================================================================
+                                                                                Conditiion Ternary Operator
+        ====================================================================================================================================================== */
+        document.write('<h4 class="content-header">Conditiion Ternary Operator</h4>');
+        let number59 = 100;
+        let number60;
+        (number59 == 100) ? number60 = 'number59 == 100 = true<br>' : number60 = 'number59 : 100 = false<br>';
+        document.write(number60);
+
+        (number59 < 90) ? number60 = 'number59 lessthan 90 = true<br>' : number60 = 'number59 lessthan 90 = false<br>';
+        document.write(number60);
+
+
+        /* ======================================================================================================================================================
+                                                                                Switch Statement
+        ====================================================================================================================================================== */
+        /* ========= check multiple condition ============ */
+        document.write('<h4 class="content-header">Switch Statement</h4>');
+        let number61 = 10;
+        switch (number61) {
+            case 10:
+                document.write('number61 = ', number61);
+                break;
+            case 10:
+                document.write('number61 = ', number61);
+                break;
+            case 13:
+                document.write('number61 = ', number61);
+                break;
+            default:
+                document.write('condition not match');
+        }
+        document.write("<br>");
+
+        number61 = 20; // reassign number61
+        switch (number61) {
+            case (number61 <= 20):
+                document.write('number61 less than 11 = ', number61)
+                break;
+            case (number61 <= 15):
+                document.write('number61 less than 11 = ', number61);
+                break;
+            case (number61 <= 10):
+                document.write('number61 less than 11 = ', number61);
+                break;
+            default:
+                document.write('condition not match');
+        }
+        document.write("<br>");
+
+
+        /* ======================================================================================================================================================
+                                                                                Alert Box
+        ====================================================================================================================================================== */
+        document.write('<h4 class="content-header">Alert Box</h4>');
+        let number62 = 100;
+        let number63 = 100;
+        if (number62 == number63) {
+            // alert('number62 = ',number62,'number63 = ',number63,' same value');
+            document.write('number62 = ', number62, ' number63 = ', number63, ' same value<br>');
+        }
+        document.write('alert("value");<br>');
+
+
+        /* ======================================================================================================================================================
+                                                                                Confirm Box
+        ====================================================================================================================================================== */
+        /* =========== confirm box give only boolean value (true,false) ======== */
+        // click ok on confirn box then given true value and click cancel button then given false value
+        document.write('<h4 class="content-header">Confirm Box</h4>');
+        // let number64 = confirm('do you like it our website');
+        // document.write('user like our website = ',number64,'<br>');
+        document.write('confirm("Qustion");');
+
+
+        /* ======================================================================================================================================================
+                                                                                Prompt Box
+        ====================================================================================================================================================== */
+        document.write('<h4 class="content-header">Prompt Box</h4>');
+        // let number65 = prompt('enter your name');
+        // document.write('you name = ',number65,'<br>');
+        document.write('prompt("qustion");<br>');
+
+
+        /* ======================================================================================================================================================
+                                                                                Functions
+        ====================================================================================================================================================== */
+        document.write('<h4 class="content-header">Functions</h4>');
+        /*
+            function defination
+        function functionName() { block of statement }
+
+        functionName(); calling a function
+        */
+
+        /* ======================= simple function ======================== */
+        // function defination
+        function fun1() {
+            document.write('simple function<br>');
+        }
+
+        fun1(); // calling a function       /* you can colling function multiple time
+        fun1(); // calling a function
+        fun1(); // calling a function
+
+
+        /* ======================================================================================================================================================
+                                                                        Function With Parameter
+        ====================================================================================================================================================== */
+        document.write('<h4 class="content-header">Function With Parameter</h4>');
+        /*                        parametername         parameter default value
+            function functionName(parameter1        =   'value',parameter2='value');
+
+                        argument    argument
+            functionName(argument1,argument2);
+        */
+
+        function fun2(parameter1, parameter2) {
+            document.write('parameter1 = ', parameter1, ' parameter2 = ', parameter2, '<br>');
+        }
+        fun2('arg1', 'arg2');
+
+        function fun3(number1, number2) {
+            document.write(number1 + number2, '<br>');
+        }
+        fun3(10, 20);
+        fun3(20, 20);
+
+        function fun4(fname, lname) {
+            document.write('fullname = ', fname, ' ', lname, '<br>');
+        }
+        fun4('raj', 'dobariya');
+        fun4('kayur');
+
+
+        /* ======================================================================================================================================================
+                                                                        Function With Return Value
+        ====================================================================================================================================================== */
+        document.write('<h4 class="content-header">Function With Return Value</h4>');
+        function fun5(parameter1, parameter2) {
+            var fullname = 'hello ' + parameter1 + ' ' + parameter2;
+            return fullname;
+        }
+        let name26 = fun5('kayur', 'rathod');
+        document.write(name26);
+
+        /* ======================================================================================================================================================
+                                                                    Global & Local Varaible
+        ====================================================================================================================================================== */
+        document.write('<h4 class="content-header">Global & Local Varaible</h4>');
+        /* ============= global variables ============ */
+        var name27 = 'raj'; // global variable
+        let name28 = 'kayur'; // global variable
+        const name29 = 'jenil'; // global variable
+        function fun6() {
+            document.write('var name27 = ', name27, '<br>');
+            document.write('let name28 = ', name28, '<br>');
+            document.write('const name29 = ', name29, '<br><hr>');
+        }
+        fun6();
+
+        /* ======== local variable ======== */
+        function fun7() {
+            var name30 = 'deep'; // local variable
+            let name31 = 'raj'; // local variable
+            const name32 = 'kayur'; // local varialbe
+            document.write('var name30 = ', name30, '<br>');
+            document.write('let name31 = ', name31, '<br>');
+            document.write('const name32 = ', name32, '<br><hr>');
+        }
+        fun7();
+
+
+        /* ============ loal variable & global variable with statement ============ */
+        if (20 > 10) {
+            var name30 = 'raj';  // global variable
+            let name31 = 'om'; // local variable
+            let name32 = 'kayur'; // local variable
+            document.write('var name30 = ', name30, '<br>');
+            document.write('let name31 = ', name31, '<br>');
+            document.write('const name32 = ', name32, '<br><hr>');
+        }
+        document.write('var name30 = ', name30, '<br>');
+        // document.write('let name31 = ',name31,'<br>');
+        // document.write('const name32 = ',name32,'<br><hr>');
+
+
+        /* ======================================================================================================================================================
+                                                                        Evens
+        ====================================================================================================================================================== */
+        document.write('<h4 class="content-header">Events</h4>');
+        /* ======== click event ======== */
+        function fun8() {
+            console.log('%c[ Click Event ]', 'font-size:13px; font-weight: bold; background:white; color:red;');
+
+        }
+        document.write('<button onClick="fun8()">click me</button><br>');
+
+        /* ========  double click event ======== */
+        function fun9() {
+            console.log('%c[ Double Click Event ]', 'font-size:13px; font-weight: bold; background:white; color:red;');
+        }
+        document.write('<button onClick="fun9()">double click me</button><br>');
+
+        /* ========  Right click event ======== */
+        function fun10() {
+            console.log('%c[ Right Click Event ]', 'font-size:13px; font-weight: bold; background:white; color:red;');
+        }
+        document.write('<button ondblclick="fun10()">right click me</button><br>');
+
+        /* ========  mouse over event ======== */
+        function fun11() {
+            console.log('%c[ Mouse Over Event ]', 'font-size:13px; font-weight: bold; background:white; color:red;');
+        }
+        document.write('<div onmouseover="fun11()" class="box">mouse over me</div>');
+
+        /* ========  mouse out event ======== */
+        function fun12() {
+            console.log('%c[ Mouse Out Event ]', 'font-size:13px; font-weight: bold; background:white; color:red;');
+        }
+        document.write('<div onmouseout="fun12()" class="box">mouse out me</div>');
+
+        /* ========  mouse up event ======== */
+        function fun13() {
+            console.log('%c[ Mouse UP Event ]', 'font-size:13px; font-weight: bold; background:white; color:red;');
+        }
+        document.write('<div onmouseup="fun13()" class="box">mouse up me</div>');
+
+        /* ========  mouse down event ======== */
+        function fun14() {
+            console.log('%c[ Mouse Down Event ]', 'font-size:13px; font-weight: bold; background:white; color:red;');
+        }
+        document.write('<div onmousedown="fun14()" class="box">mouse down me</div>');
+
+        /* ========  key press event ======== */
+        function fun15() {
+            console.log('%c[ key press Event ]', 'font-size:13px; font-weight: bold; background:white; color:red;');
+        }
+        document.write('<input onkeypress="fun15()" placeholder="keypress event"><Br>');
+
+        /* ========  key up event ======== */
+        function fun16() {
+            console.log('%c[ key up Event ]', 'font-size:13px; font-weight: bold; background:white; color:red;');
+        }
+        document.write('<input onkeyup="fun16()" placeholder="keyup event"><br>');
+
+        /* ========  resize event ======== */
+        function fun17() {
+            console.log('%c[ resize Event ]', 'font-size:13px; font-weight: bold; background:white; color:red;');
+        }
+
+        /* ========  scooll event ======== */
+        function fun18() {
+            // console.log('%c[ scroll Event ]', 'font-size:13px; font-weight: bold; background:white; color:red;');
+        }
+
+
+        /* ======================================================================================================================================================
+                                                                       Loop
+       ====================================================================================================================================================== */
+        /* 
+        # loop devided in 3 part 
+        1. initalization
+        2. condition
+        3. increment and decrement
+        */
+        /* 
+        1. initalization:- 
+        var name; // variable declare
+        name = 'raj'; // variabl initalization
+ 
+        2. condition:- 
+        number1==number2, nubmber1>number2, number>=number2
+ 
+        3. increment and decrement
+        number++, number1--
+        */
+        document.write('<h4 class="content-header">Loop</h4>');
+        document.write('<b>loop devided in 3 part </b><ol>');
+        document.write('<li>initalization</li>');
+        document.write('<li>condition</li>');
+        document.write('<li>increment, decrement</li></ol>');
+
+        /* ============= how many types loop in javascript ============= */
+        document.write('<b>how many types loop in javascript</b><ol>');
+        document.write('<li>for loop</li>');
+        document.write('<li>while loop</li>');
+        document.write('<li>do while loop</li>');
+        document.write('<li>for in loop</li>');
+        document.write('<li>for each loop</li></ol>');
+
+
+        /* ====================== while loop ============================== */
+        // increment value
+        let number66 = 0;
+        while(number66<=5) {
+            document.write(number66,') while loop<br>');
+            number66++;
+        }
+
+        // decrement value
+        var number67 = 10;
+        while(number67>=1) {
+            document.write(number67,') while loop<br>');
+            number67--;
+        }
+        // let name68=[10,20,30,40,50];
+        // document.write(name68.slice(-2,-1),'<br>');
+        // document.write(name68.lastIndexOf(50));
+        // document.write(name68[name69.length-1]);
+        // document.write(name68.slice(-1));
+        // document.write(name68.pop());
+
+        /*------ Get second of last Index from Array ------*/
+        document.write("<br><br>");
+        let name68=[10,20,30,40,50,60,70,80,90];
+        let lastElement = name68[name68.length - 2];
+        document.write('last2 = ',lastElement,'<br>');
+
+
+        let name69=[50,80,100,30,60,40,20,70,90,10];
+        // document.write(name69);
+        let name70 = name69.sort((a, b) => {return a-b});
+        let name71 = name69.sort();
+        document.write(name70,'<br>');
+        // document.write(name70.reverse(),'<br>')
+        document.write(name71,'<br>')
+
+        // let number70 =[]
+
+        /* ====================== do while loop ============================== */
+
+        /* ========================= form loop ======================= */
+        // document.write('<b>for loop</b><br>');
+        // for(var number67=0; number67<=10; number67++) {
+        //     document.write('for loop = ',number66,'<br>');
+        // }
+
+        let a = "Parth"
+        let b = "PPaarrtthh";
+        let first = a[a.length-1];
+        let last = a[a.langth];
+        
+        // console.log(a[a.length-1]) 
+        
+        // console.log('%c [ result ]-1162', 'font-size:13px; background:pink; color:#bf2c9f;', result)
+       
+
+    </script>
+</body>
+
+</html>

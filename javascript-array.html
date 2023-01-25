@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>javascript array</title>
+</head>
+
+<body>
+    <script>
+        /* ======================================================================================================
+                                                            array
+        ====================================================================================================== */
+        // example 1
+        document.write('<b><i>array</i></b><br>');
+        var array1 = ['apple', 'banana', 'orange'];
+        document.write('full array', array1, '<br>'); // output apple, banana, orange
+        document.write('array1 0 = ', array1[0], '<br>'); // output apple
+        document.write('array1 1 = ', array1[1], '<br>'); // output banana
+        document.write('array1 2 = ', array1[2], '<br>'); // output orange
+        document.write('array1 2 = ', array1[3], '<br><hr>'); // output undefined
+
+        // example 2
+        document.write('<b><i>array index</i></b><br>');
+        var array2 = new Array('kayur', 'meet');
+        document.write('full array2 = ', array2, '<br>'); // output kayur, meet
+        document.write('array2 0 = ', array2[0], '<br>'); // output kayur
+        document.write('array2 1 = ', array2[1], '<br><hr>'); // output meet
+
+        // example 3
+        document.write('<b><i>array number</i></b><br>');
+        var array3 = [10, 20, 30, 40];
+        document.write('full array3 = ', array3, '<br>'); // output 10,20,30,40
+        document.write('array3 0 = ', array3[0], '<br>'); // output 10
+        document.write('array3 1 = ', array3[1], '<br>'); // output 20
+        document.write('array3 2 = ', array3[2], '<br>'); // output 30
+        document.write('array3 3 = ', array3[3], '<br><hr>'); // output 40
+
+        // example 4
+        document.write('<b><i>array string</i></b><br>');
+        var array4 = ['raj', 'meet', 'mohit'];
+        document.write('full array4', array4, '<br>'); // output raj,meet,mohit
+        document.write('array4 0 = ', array4[0], '<br>'); // output raj
+        document.write('array4 1 = ', array4[1], '<br>'); // output meet
+        document.write('array4 2 = ', array4[2], '<br><hr>'); // output mohit
+
+        // example 5
+        document.write('<b><i>array string, number, boolean</i></b><br>');
+        var array5 = ['apple', 500, 'orange', 300, true];
+        document.write('full array5 = ', array5, '<br>'); // output apple,500,orange,300
+        document.write('array5 1 = ', array5[0], '<br>'); // output apple
+        document.write('array5 2 = ', array5[1], '<br>'); // output 500
+        document.write('array5 3 = ', array5[2], '<br>'); // output orange
+        document.write('array5 4 = ', array5[3], '<br>'); // output 300
+        document.write('array5 5 = ', array5[4], '<br><hr>'); // output true
+
+        // example 6 
+        document.write('<b><i>array object and method</i></b><br>');
+        var array6 = [
+            { name: 'utsav', class: '1st', age: 6 },
+            { name: 'meet', class: '10th', age: 17 },
+            function allusers() { console.log('array method') }
+        ]
+        document.write('full array6 = ', array6, '<br>'); // output [object Object],[object Object],function allusers() {console.log('array method')}
+        document.write('full array6 0 = ', array6[0], '<br>'); // output [object Object]
+        document.write('full array6 1 = ', array6[1], '<br>'); // output [object Object]
+        document.write('full array6 2 = ', array6[2], '<br>'); // output function allusers() {console.log('array method')}
+        document.write('full array6 0 = ', array6[0].name, '<br>'); // output utsav
+        document.write('full array6 0 = ', array6[0].class, '<br>'); // output 1st
+        document.write('full array6 0 = ', array6[0].age, '<br>'); // output 6
+        document.write('full array6 1 = ', array6[1].name, '<br>'); // output meet
+        document.write('full array6 1 = ', array6[1].class, '<br>'); // output 10th
+        document.write('full array6 1 = ', array6[1].age, '<br><hr>'); // output 17
+
+        // example 7
+        document.write('<b><i>array index</i></b><br>');
+        var array7 = ['k', 'a', 'y', 'u', 'r'];
+        document.write('full array7 = ', array7, '<br>'); // output k,a,y,u,r
+        document.write('array7 0 = ', array7[0], '<br>'); // output k
+        document.write('array7 1 = ', array7[1], '<br>'); // output a
+        document.write('array7 2 = ', array7[2], '<br>'); // output y
+        document.write('array7 3 = ', array7[3], '<br>'); // output u
+        document.write('array7 4 = ', array7[4], '<br><hr>'); // output r
+
+        // example 8
+        document.write('<b><i>array push method</i></b><br>');
+        var array8 = ['apple', 'orange', 'mango'];
+        document.write('before push full array8 = ', array8, '<br>'); // output apple,orange,mango
+        array8.push('banana') // push in array
+        document.write('after push full array8 = ', array8, '<br><hr>'); // output apple,orange,mango,banana
+
+        // exmple 9
+        document.write('<b><i>array unshift method</i></b><br>');
+        var array9 = ['shivam', 'utsav', 'pal'];
+        document.write('before unshift array9 = ', array9, '<br>'); // output shivam,utsav,pal
+        array9.unshift('smit');
+        document.write('after unshift array9 = ', array9, '<br><hr>'); // output smit,shivam,utsav,pal
+
+        // example 10
+        document.write('<b><i>array add new value with index</i></b><br>');
+        var array10 = ['utsav', 'meet', 'virang', 'jenil'];
+        document.write('before add new value = ', array10, '<br>'); // output utsav,meet,virang,jenil
+        array10[4] = 'smit';
+        document.write('after add new value = ', array10, '<br><hr>'); // output utsav,meet,virang,jenil,smit
+
+        // example 11
+        document.write('<b><i>array add new value with index</i></b><br>');
+        var array11 = ['meet', 'om', 'kayur'];
+        document.write('before add new value = ', array11, '<br>'); // output meet,om,kayur
+        array11[2] = 'utsav';
+        document.write('after change value = ', array11, '<br>'); // output meet,om,utsav
+        array11[1] = 'shivam';
+        document.write('after change value = ', array11, '<br><hr>'); // output meet,shivam,utasv
+
+        // example 12
+        document.write('<b><i>array add new value with index</i></b><br>');
+        var array12 = ['apple', 'banana', 'orange', 'mango'];
+        document.write('before add new value = ', array12, '<br>'); // outut apple,banana,orange,mango
+        array12[5] = 'graps';
+        document.write('before add new value = ', array12, '<br><hr>'); // output apple,banana,orange,mango,,graps
+
+        // example 13
+        document.write('<b><i>array pop method</i></b><br>');
+        var array13 = ['mango', 'banana', 'orange', 'apple', 'watermelon'];
+        document.write('before use pop method = ', array13, '<br>'); // output mango,banana,orange,apple,watremelon
+        array13.pop();
+        document.write('after use pop method = ', array13, '<br>'); // output mango,banana,orange,apple
+        array13.pop();
+        document.write('after use pop method = ', array13, '<br>'); // output mango,banana,orange
+        array13.pop();
+        document.write('after use pop method = ', array13, '<br>'); // output mango,banana
+        array13.pop();
+        document.write('after use pop method = ', array13, '<br><hr>'); // output mango
+
+        // example 14
+        document.write('<b><i>array shift method</i></b><br>');
+        var array14 = ['orange', 'apple', 'mango', 'banana'];
+        document.write('before use shift method = ', array14, '<br>'); // output orange, apple, mango, banana
+        array14.shift();
+        document.write('before use shift method = ', array14, '<br>'); // output apple, mango, banana
+        array14.shift();
+        document.write('before use shift method = ', array14, '<br>'); // output mango, banana
+        array14.shift();
+        document.write('before use shift method = ', array14, '<br><hr>'); // output banana
+
+        // example 15
+        document.write('<b><i>array length</i></b><br>');
+        var array15 = ['shivam', 'utsav', 'meet', 'kayur', 'om'];
+        document.write('full array15 = ', array15, '<br>'); // output shivam,utsav, meet, kayur, om
+        document.write('array15 0 = ', array15[0], '<br>'); // output shivam
+        document.write('array15 1 = ', array15[1], '<br>'); // output utsav
+        document.write('array15 2 = ', array15[2], '<br>'); // output meet
+        document.write('array15 3 = ', array15[3], '<br>'); // output kayur
+        document.write('array15 4 = ', array15[4], '<br>'); // output om
+        document.write('array15 length = ', array15.length, '<br><hr>'); // output 5
+
+        /* ========================================================================================================================================
+                                                                multidimensional array
+        ======================================================================================================================================== */
+        // example 16
+        document.write('<b><i>multidimensional array</i></b><br>');
+        var array16 = ['utsav', 25];
+        var array17 = ['meet', 24];
+        var array18 = ['virang', 23];
+        var array19 = [array16, array17, array18];
+        document.write('array16 = ', array16, '<br>'); // output utsav,25
+        document.write('array17 = ', array17, '<br>'); // output meet,24
+        document.write('array18 = ', array18, '<br>'); // output virang,23
+        document.write('array19 = ', array19, '<br><hr>'); // output utsav,25,meet,24,virang,23
+
+        // example 17 
+        document.write('<b><i>multidimensional array access porperty</i></b><br>');
+        var array20 = [
+            ['utsav', 10],
+            ['meet', 15],
+            ['virang', 20]
+        ]
+        document.write('array20 = ', array20, '<br>'); // output utsav,10,meet,15,virnag,20
+        document.write('array20 0 0 = ', array20[0][0], '<br>'); // output utsav
+        document.write('array20 0 1 = ', array20[0][1], '<br>'); // output 10
+        document.write('array20 0 1 = ', array20[1][0], '<br>'); // output meet
+        document.write('array20 0 1 = ', array20[1][1], '<br>'); // output 15
+        document.write('array20 0 1 = ', array20[2][0], '<br>'); // output virang
+        document.write('array20 0 1 = ', array20[2][1], '<br><hr>'); // output 20
+
+        // example 18
+        document.write('<b><i>multidimensional array with push method</i></b><br>');
+        var array21 = [
+            ['meet', 10],
+            ['virang', 20],
+            ['om', 10]
+        ]
+        document.write('before add new array = ', array21, '<br>'); // output meet,10,virang,20,om,10
+        array21.push(['shivam', 30]);
+        document.write('after add new array = ', array21, '<br><hr>'); // output meet,10,virang,20,om,10,shivam,30
+
+        // example 19 
+        document.write('<b><i>multidimensional array with push method</i></b><br>');
+        var array22 = [
+            ['shivam', 10],
+            ['utsav', 20],
+            ['meet', 10]
+        ]
+        document.write('brfore push new properties = ', array22, '<br>');  // output shivam,10,utsav,20,meet,10
+        array22[1].push('hirpara');
+        document.write('after push new properties = ', array22, '<br><hr>'); // output shivam,10,utsav,20,hirpara,meet,10
+
+        // example 20
+        document.write('<b><i>multidimensional array with push method</i></b><br>');
+        var array23 = [
+            ['kayur', 10],
+            ['jenil', 20]
+        ]
+        document.write('before add new property = ', array23, '<br>') // output kayur,10,jenil,20
+        array23[0][2] = 'rathod';
+        document.write('after add new prperty = ', array23, '<br><hr>'); // output kayur,10,jenil,20
+
+        // example 21
+        document.write('<b><i>multidimensional array with splice method</i></b><br>');
+        var array24 = [
+            ['utsav', 20],
+            ['shivam', 30]
+        ]
+        document.write('before splice metnod = ', array24, '<br>');
+        array24.splice(1, 0, ['jenil', 20]);
+        document.write('after splice metnod = ', array24, '<br><hr>');
+
+        // example 22
+        document.write('<b><i>multidimensional array with splice method</i></b><br>');
+        var array25 = [
+            ['kayur', 10],
+            ['meet', 20]
+        ]
+        document.write('before pllice method = ', array25, '<br>');
+        array25.splice(1);
+        document.write('after pllice method = ', array25, '<br><hr>');
+
+        // example 23
+        document.write('<b><i>Iterating over Multidimensional Array</i></b><br>');
+        var array26 = [
+            ['jenil', 20],
+            ['pal', 30]
+        ];
+        array26.forEach((users) => {
+            users.forEach((data) => {
+                document.write(data, '<br>');
+            })
+        });
+        document.write('<hr>');
+
+        // example 24
+        document.write('<b><i>Iterating over Multidimensional Array</i></b><br>');
+        var array27 = [
+            ['shivam', 20],
+            ['utsav', 30],
+            ['pal', 35]
+        ]
+        for (let users of array27) {
+            for (let data of users) {
+                document.write(data, '<br>');
+            }
+        }
+        document.write('<hr>');
+
+        // example 25
+        document.write('<b><i>Multidimensional Array with for loop</i></b><br>');
+        var array28 = [
+            ['shivam', 20],
+            ['utsav', 30],
+            ['pal', 35],
+            ['meet', 10],
+            ['kayur', 30]
+        ];
+        for (let a = 0; a < array28.length; a++) {
+            let arraylength = array28[a].length;
+            for (let b = 0; b < arraylength; b++) {
+                document.write(array28[a][b], '<br>');
+            }
+        }
+    </script>
+</body>
+
+</html>

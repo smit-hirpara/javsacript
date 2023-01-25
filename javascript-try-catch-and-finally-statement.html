@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>javascript try, catch nad finally statement</title>
+    </head>
+    <body>
+        <h1>javascript try, catch nad finally statement</h1>
+        <script>
+            /* ================================================================================================================================================
+                                                                        try,catch and finally
+            ================================================================================================================================================ */
+            /* =================================== Display Undeclared Variable =============================== */
+            const number = 100, name = 'utsav';
+            try {
+                console.warn(number/name);
+                console.warn(a); // not declare a ariable
+            }
+            catch(error) {
+                console.warn('ERROR MESSAGE1 :- '+ error);
+            }
+
+            /* ==================================== try...catch...finally Example ===================================== */
+            const number2 = 200, name2 = 'meet';
+            try {
+                console.warn(number2/name2);
+                console.warn(a); // not declare a ariable
+            }
+            catch(error) {
+                console.warn('ERROR MESSAGE2 :- '+ error);
+            }
+            finally {
+                console.warn('finally will execute every time');
+            }
+        </script>
+    </body>
+</html>

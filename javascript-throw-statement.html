@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <title>javascript throw statement</title>
+    </head>
+    <body>
+        <h1>javascript throw ststement</h1>
+        <script>
+            /* ==============================================================================================================================================
+                                                                        throw ststement with try and catch
+            ============================================================================================================================================== */
+            const number = 100;
+            try {
+                if(number>130) {
+                    console.warn('SUCCESS');
+                }
+                else {
+                    throw new Error('number the number is low');
+                }
+                console.warn('hello');
+            }
+            catch(error) {
+                console.warn('ERROR MESSAGE :- ' + error);
+            }
+
+            /* ==============================================================================================================================================
+                                                                        throw ststement with try and catch
+            ============================================================================================================================================== */
+            const number2 = 100;
+            try {
+                if(number>220) {
+                    console.warn('SUCCESS');
+                }
+                else {
+                    throw new Error('number2 the number is low');
+                }
+            }
+            catch(error) {
+                throw new Error('ERROR MESSAGE :- ' + error);
+            }
+
+            /* ==============================================================================================================================================
+                                                                        throw ReferenceError ststement with try and catch
+            ============================================================================================================================================== */
+            const number3 = 100;
+            try {
+                throw new ReferenceError('this is refreance error');
+            }
+            catch(error) {
+                if(number3 + 20 > 110) {
+                    console.warn('ERROR MESSAGE :- '+error);
+                }
+                else {
+                    throw new Error('number3 the value is low');
+                }
+            }
+            finally {
+            console.warn('success');
+            }
+        </script>
+    </body>
+</html>

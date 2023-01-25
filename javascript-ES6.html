@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>javascript ES6</title>
+    <style>
+        b {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>javascript ES6</h1>
+    <script>
+        /* ===============================================================================================================================================
+                                                                Globle And Local Variable
+        =============================================================================================================================================== */
+        /* ================================= let with statement ============================ */
+        // global variable
+        let name = 'utsav';
+        document.write('<b>let keyword with statement</b><br>');
+        {
+            // local variable
+            let name = 'meet';
+            document.write('inner statement name  = ', name, '<br>'); // output meet
+        }
+        document.write('outert statement name = ', name, '<br>'); // output utsav
+
+        /* =========================== var with statement ========================== */
+        // global variable
+        var name2 = 'shivam';
+        document.write('<b>var keyword with statement</b><br>');
+        {
+            // global variable
+            var name2 = 'pal';
+            document.write('inner statement name2 = ', name2, '<br>'); // output pal
+        }
+        document.write('outer statement name2 = ', name2, '<br>'); // output pal
+
+        /* ========================= const with statement =========================== */
+        // global variable
+        const name3 = 'jenil';
+        document.write('<b>const keyword with statement</b><br>');
+        {
+            // local variable
+            const name3 = 'virang';
+            document.write('inner statement name3 = ', name3, '<br>'); // output virang
+        }
+        document.write('inner statement name3 = ', name3, '<br>'); // output jenil
+
+        /* ======================= let with function ========================== */
+        // global variable
+        let name4 = 'pal';
+        document.write('<b>let keyword with function</b><br>');
+        // IIFE function
+        (function () {
+            // local variable
+            let name4 = 'jenil';
+            document.write('inner functiuon name4 = ', name4, '<br>'); // output jenil
+        })();
+        document.write('outer function name4 = ', name4, '<br>'); // output pal
+
+        /* ======================= var with function ========================= */
+        // global variable
+        var name5 = 'shivam';
+        document.write('<b>var keyword with function</b><br>');
+        // IIFE function
+        (function () {
+            // local variable
+            var name5 = 'meet';
+            document.write('inner function name5 = ', name5, '<br>');
+        })();
+        document.write('outer function name5 = ', name5, '<br>');
+
+        /* ========================= const with function ========================== */
+        // global variable
+        var name6 = 'pal';
+        document.write('<b>const keyword with function</b><br>');
+        // IIFE function
+        (function () {
+            // local variable
+            const name6 = 'jenil';
+            document.write('inner function name6 = ', name6, '<br>');
+        })();
+        document.write('inner function name6 = ', name6, '<br>');
+
+        /* ========================= var with ststement ========================== */
+        // globla variable
+        var name7 = 'meet';
+        document.write('<b>var keyword with statement</b><br>');
+        // statement
+        if (name7 == 'meet') {
+            // global variabel
+            var name7 = 'virang';
+            document.write('inner ststement name7 = ', name7, '<br>');
+        }
+        document.write('outer statement name7 = ', name7, '<br>');
+
+        /* ========================= let with ststement ========================== */
+        // global variable
+        let name8 = 'utsav';
+        document.write('<b>let keyword with statement</b><br>');
+        if (name8 == 'utsav') {
+            // local variable
+            let name8 = 'shivam';
+            document.write('inner statement name8 = ', name8, '<br>');
+        }
+        document.write('outer statement name8 = ', name8, '<br>');
+
+        /* ========================= const with ststement ========================== */
+        // global variable
+        const name9 = 'jenil';
+        document.write('<b>const keyword with statement</b><br>');
+        if (name9 == 'jenil') {
+            // local variable
+            const name9 = 'pal';
+            document.write('inner statement name9 = ', name9, '<br>');
+        }
+        document.write('outer statement name9 = ', name9, '<br>');
+
+        /* ====================== let,var and const with statement ==================== */
+        var name10 = 'ABCD'; // global variable
+        let name11 = 'EFGH'; // global variable
+        const name12 = 'IJKL'; // global variable
+        document.write('<b>var, let and const keyword with statement</b><br>');
+        if (name10 == 'ABCD') {
+            document.write('inner statement name10 = ', name10, '<br>');
+            document.write('inner statement name11 = ', name11, '<br>');
+            document.write('inner statement name12 = ', name12, '<br>');
+        }
+        document.write('outer statement name10 = ', name10, '<br>');
+        document.write('outer statement name11 = ', name11, '<br>');
+        document.write('outer statement name12 = ', name12, '<br>');
+
+        /* ======================== let, var nad const with function ========================== */
+        var name13 = 'shivam'; // global variable
+        let name14 = 'utsav'; // global variable
+        const name15 = 'jenil'; // global variable
+        document.write('<b>var, let and const keyword with function</b><br>');
+        (function () {
+            document.write('inner function name13 = ', name13, '<br>');
+            document.write('inner function name14 = ', name14, '<br>');
+            document.write('inner function name15 = ', name15, '<br>');
+        })();
+        document.write('outer function name13 = ', name13, '<br>');
+        document.write('outer function name14 = ', name14, '<br>');
+        document.write('outer function name15 = ', name15, '<br>');
+
+        /* ========================= var,let and const with statement ============================== */
+        document.write('<b>var, let and const keyword with statement</b><br>');
+        var name16 = 'ABCD';
+        if (name16 == 'ABCD') {
+            var name17 = 'utsav'; // global variable
+            let name18 = 'shivam'; // local variable
+            const name19 = 'meet'; // local variable
+            document.write('inner statement name17 = ', name17, '<br>');
+            document.write('inner statement name18 = ', name18, '<br>');
+            document.write('inner statement name19 = ', name19, '<br>');
+        }
+        document.write('outer statement name17 = ', name17, '<br>');
+        // document.write('inner statement name18 = ', name18, '<br>'); // ERROR
+        // document.write('inner statement name19 = ', name19, '<br>'); // ERROR
+
+        /* ========================= var,let and const with function ============================== */
+        document.write('<b>var, let and const keyword with function</b><br>');
+        var name20 = 'meet';
+        (function () {
+            var name21 = 'raj'; // local variable
+            let name22 = 'deep'; // local varialbe
+            const name23 = 'kayur'; // local variable
+            document.write('inner statement name21 = ', name21, '<br>');
+            document.write('inner statement name22 = ', name22, '<br>');
+            document.write('inner statement name23 = ', name23, '<br>');
+        })();
+        // document.write('outer statement name21 = ', name21, '<br>'); // ERROR
+        // document.write('outer statement name22 = ', name22, '<br>'); // ERROR
+        // document.write('outer statement name23 = ', name23, '<br>'); // ERROR
+
+
+        /* =================================================================================================================================================
+                                                            function expression
+        ================================================================================================================================================= */
+        /* ================= function expression ================== */
+        document.write('<b>function expression</b><br>');
+        const functionexe = function () {
+            return 10 + 20;
+        }
+        document.write('function expression = ', functionexe(), '<Br>');
+
+        /* ==================== function expression with parameter ===================== */
+        document.write('<b>function expression with parameter</b><br>');
+        const functionexe1 = function (num1, num2) {
+            return num1 + num2;
+        }
+        document.write('function expression with parameter = ', functionexe1(40, 30), '<Br>');
+
+        /* ====================== IIFE function with function expression ====================== */
+        document.write('<b> IIFE function with function expression</b><br>');
+        const functionexe2 = (function () {
+            return 'utsav ' + ' hirpara';
+        })();
+        document.write('IIFE function with function expression = ', functionexe2, '<br>');
+
+
+        /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+                                                        function expression usin arrow function                                                           
+        /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
+        /* ================ function expression with parameter and arrow function =========================== */
+        document.write('<b>function expression with parameter and arrow function</b><br>');
+        const functionexe3 = (num1, num2) => num1 + num2;
+        document.write('function expression with parameter and arrow function = ', functionexe3(50, 20), '<br>');
+
+
+        /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+                                                                    javascript classes
+        /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
+        /* ================================= javascript class ============================= */
+        document.write('<b>javascript class</b><br>');
+        class users {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+        let name24 = new users('kayur');
+        document.write('javascript class = ', name24.name, '<br>');
+
+        /* ================================ javascrippt class with multiple paramen=ter ==================== */
+        document.write('<b>javascript class with multiple parameter</b><br>');
+        class users2 {
+            constructor(fname, lname, age) {
+                this.firstname = fname;
+                this.lastname = lname;
+                this.age = age;
+            }
+        }
+        // objet
+        let name25 = new users2('utsav', 'hirpara', 5);
+        document.write('class with multiple parameter = ', name25.firstname, '<br>');
+        document.write('class with multiple parameter = ', name25.lastname, '<br>');
+        document.write('class with multiple parameter = ', name25.age, '<br>');
+
+
+        /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+                                                            function with default parameter
+        /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
+        /* ========================== function with default parameter ========================= */
+        document.write('<b>function with default parameter</b><br>');
+        function users3(num1 = 20, num2 = 30) {
+            return num1 + num2;
+        }
+        document.write('function with default parameter = ', users3(), '<br>');
+
+        /* ========================== function with default parameter ========================= */
+        function users4(num1 = 40, num2 = 60) {
+            return num1 + num2;
+        }
+        document.write('function with default parameter = ', users4(10, 20), '<br>');
+
+        /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+                                                            javascript template literals
+        /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
+        /* ====================================== javascript template literals ===================================== */
+        document.write('<b>javascript template literals</b><br>');
+        let name26 = 'jenil';
+        let name27 = 'pal';
+        document.write('hello ' + name26 + ' and ' + name27, '<br>');
+
+        /* ====================================== javascript template literals ===================================== */
+        let name28 = 'utsav';
+        let name29 = 'kayur';
+        document.write(`hello ${name28} and ${name29}<br>`);
+
+
+        /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+                                                            javascript destructuring
+        /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
+        /* ========================== javsacript destructuring ========================== */
+        document.write('<b>javascript destructuring</b><br>');
+        let userdetails = {
+            name: 'jeuil',
+            age: 19,
+            class: '11th'
+        }
+        let username = userdetails.name;
+        let userage = userdetails.age;
+        let userclass = userdetails.class;
+        document.write('javascript destructuring = ', username, '<br>');
+        document.write('javascript destructuring = ', userage, '<br>');
+        document.write('javascript destructuring = ', userclass, '<br>');
+
+        /* ========================== javsacript destructuring ========================== */
+        let userdetails2 = {
+            name: 'pal',
+            age: 16,
+            class: '8th'
+        }
+        let { username1, userage1, userclass1 } = userdetails2;
+        document.write('javascript destructuring = ', username1, '<br>');
+        document.write('javascript destructuring = ', userage1, '<br>');
+        document.write('javascript destructuring = ', userclass1, '<br>');
+
+
+        /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+                                                            JavaScript Rest Parameter and Spread Operator
+        /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
+        /* ========================================= javsacript rest parameter and spread opeartor ============================== */
+        document.write('<b>javascript rest parameter and spread operator</b><br>');
+        function users5(a, b, ...c) {
+            return (
+                document.write('javascript rest parameter and spread operator a = ', a, '<br>'),
+                document.write('javascript rest parameter and spread operator b = ', b, '<br>'),
+                document.write('javascript rest parameter and spread operator c = ', c, '<br>')
+            )
+        }
+        users5(10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+
+        /* ========================================= javsacript rest parameter and spread opeartor ============================== */
+        let array1 = [10, 20, 30];
+        let array2 = [40, 50, 60, 70, 80, 90, 100];
+        document.write('javascript rest parameter and spread operator arrat1+array2 = ', array1 + array2, '<br>');
+
+
+        let array3 = [10, 20, 30];
+        let array4 = [...array3, 40, 50, 60, 70, 80, 90, 100];
+        document.write('javascript rest parameter and spread operator array4 = ', array4, '<br>');
+
+        /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+                                                                javascript arrow function
+        /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
+        /* ================================= normal function ============================ */
+        document.write('<b>javascript arrow function</b><br>');
+        let users6 = function () {
+            return 10 + 20;
+        }
+        document.write('normal function = ', users6(), '<br>');
+        console.log('%c[ normal function= ]', 'font-size:13px; background:pink; color:#bf2c9f;', users6());
+
+        /* ================================= arrow function with parameter ============================ */
+        document.write('<b>arrow function with parameter</b><br>');
+        let users7 = (num1, num2) => num1 + num2;
+        document.write('arrow function = ', users7(10, 20), '<br>');
+        console.log('%c[ arrow function= ]', 'font-size:13px; background:pink; color:#bf2c9f;', users7(10, 20));
+
+        /* ================================= arrow function with parameter ============================ */
+        document.write('<b>arrow function with parameter</b><br>');
+        let users8 = (name1, name2) => name1 + " " + name2;
+        document.write('arrow function = ', users8('meet', 'rathod'), '<br>');
+
+        /* =============================== arrow function with none argument =================================== */
+        document.write('<b>arrow function with none argument</b><br>');
+        let users9 = () => document.write('arrow function with no argument<Br>');
+        users9();
+
+        /* =================================== arrow function with one argument ================================== */
+        document.write('<b>arrow function with one argument</b><br>');
+        let users10 = name => document.write('arrow function with one argument = ' + name, '<br>');
+        users10('kayur');
+
+        /* =================================== multiline row function and nultiple arguments ================================ */
+        document.write('<b>multiline row function and nultiple arguments</b><br>');
+        let users11 = (name, age) => {
+            let sum = name + ' ' + age;
+            document.write('multiline arow function and multiple arguments = ', sum, '<br>');
+        }
+        users11('utsav', 5);
+
+        /* ================================= this with Arrow Function ==================================== */
+        document.write('<b>this with Arrow Function</b><br>');
+        function users12() {
+            this.name = 'kayur';
+            this.class = '7th';
+            this.age = 15;
+            console.log('function property', this.age); // true
+            document.write('open console<br>');
+
+            function users13() {
+                console.warn('inner function property = ', this.age); // true
+            }
+            users13();
+        }
+        users12();
+
+        /* ================================= this with Arrow Function ==================================== */
+        document.write('<b>this with Arrow Function</b><br>');
+        function users14() {
+            this.name = 'meet';
+            this.class = '10th';
+            this.userage = 18;
+            document.write('open console<br>');
+            this.fulldetails1 = function () {
+                console.warn('fulldetails function property = ', this.userage); // true
+                function innerfunction() {
+                    console.warn('inner function property = ', this.userage); // false
+                }
+                innerfunction();
+            }
+        }
+        let fun1 = new users14();
+        fun1.fulldetails1();
+
+        /* ================================= this with Arrow Function ==================================== */
+        document.write('<b>this with Arrow Function</b><br>');
+        function users15() {
+            this.name = 'raj';
+            this.class = '10th';
+            this.userage = 16;
+            document.write('open console<br>');
+            this.fulldetails2 = function () {
+                console.warn('fulldetails function property = ', this.userage); // true
+                let innerfunction = () => {
+                    console.warn('innerfunction property = ', this.userage); // true
+                }
+                innerfunction();
+            }
+        }
+        let fun2 = new users15();
+        fun2.fulldetails2();
+
+        /* ============================================= Arguments Binding ============================================ */
+        document.write('<b>Arguments Binding</b><br>');
+        let users16 = function () {
+            console.warn('arguments = ', arguments);
+            document.write('open console<br>');
+        }
+        users16('utsav', 'meet');
+
+        /* ============================================= Arguments Binding ============================================ */
+        document.write('<b>Arguments Binding</b><br>');
+        document.write('open console<br>');
+        let users17 = () => {
+            console.warn(arguments)
+            document.write(arguments);
+        }
+        // users17('kayur','raj') // ERROR
+
+        /* ============================================= Arguments Binding ============================================ */
+        document.write('<b>Arguments Binding</b><br>');
+        document.write('open console<br>');
+        let users18 = (...arg) => {
+            console.warn('arguments = ', arg);
+            document.write('arguments = ', arg)
+        }
+        users18('shivam', 'utsav', 'meet')
+
+        /* =============================================== Things You Should Avoid With Arrow Functions =================================== */
+        document.write('<br><b>Things You Should Avoid With Arrow Functions</b><br>');
+        let users19 = {
+            fname: 'utsav',
+            lname: 'hirpara',
+            age: 5,
+            fullname: () => {
+                console.warn('fullname = ' + this.fname + ' ' + this.lname);
+                document.write('fullname = ' + this.fname + ' ' + this.lname);
+            }
+        }
+        users19.fullname(); // ERROR
+
+        /* =============================================== Things You Should Avoid With Arrow Functions =================================== */
+        document.write('<br><b>Things You Should Avoid With Arrow Functions</b><br>');
+        let users20 = () => {
+            this.fname = 'shivam';
+            this.lname = 'hirpara';
+            this.age = 15;
+        }
+        // let users21 = new users20(); ERROR
+
+
+        /* ==============================================================================================================================================
+                                                                JavaScript Default Parameters
+        ============================================================================================================================================== */
+        /* =========================== JavaScript Default Parameters ================================= */
+        document.write('<br><b>JavaScript Default Parameters</b><br>');
+        function users21(name1 = 'utsav', name2 = 'deep') {
+            return name1 + ' ' + name2;
+        }
+        console.warn('default parameter = ', users21());
+        document.write('default parameter = ', users21());
+
+        /* =========================== JavaScript Default Parameters ================================= */
+        document.write('<br><b>JavaScript Default Parameters 2</b><br>');
+        function users22(name1 = 'kayur', name2 = 'meet') {
+            return name1 + ' ' + name2;
+        }
+        console.warn('default parameter 2 = ', users22('om')); // name1 = 'om'
+        document.write('default parameter 2 = ', users22('raj')); // name1 = 'raj'
+
+        /* =========================== JavaScript Default Parameters ================================= */
+        document.write('<br><b>JavaScript Default Parameters 3</b><br>');
+        function users23(name1 = 'pal', name2 = 'jenil') {
+            return name1 + ' ' + name2;
+        }
+        console.warn('default parameter 3 = ', users23('utsav', 'shivam')); // name1 = 'utsav', name2 = 'shivam'
+        document.write('default parameter 3 = ', users23('meet', 'kayur')); // name1 = 'meet', name2 = 'kayur'
+
+        /* =============================== Passing Parameter as Default Values ========================= */
+        document.write('<br><b>Passing Parameter as Default Values</b><br>');
+        function users24(num1 = 1, num2 = num1, total = num1 + num2) {
+            console.warn('number1 = ', num1);
+            console.warn('number2 = ', num2);
+            console.warn('total = ', total);
+            document.write('number1 = ', num1, '<br>');
+            document.write('number2 = ', num2, '<br>');
+            document.write('total = ', total, '<br>');
+        }
+        users24();
+
+
+        /* =============================== Passing Parameter as Default Values ========================= */
+        document.write('<br><b>Passing Parameter as Default Values</b><br>');
+        function users25(number1 = number2, number2 = 5) {
+            console.warn(number1 + number2);
+            document.write(number1 + number2);
+        }
+        //  users25(); // ERROR
+
+
+        /* ========================== Passing Function Value as Default Value ============================ */
+        document.write('<br><b>Passing Function Value as Default Value</b><br>');
+        let users26 = () => 15;
+        let users27 = function (num1, num2 = num1 * users26()) {
+            return num1 + num2;
+        }
+        let result = users27(10);
+        console.warn('Passing Function Value as Default Value = ', result);
+        document.write('Passing Function Value as Default Value = ', result, '<br>');
+
+
+        /* =========================== Passing undefined Value ============================== */
+        document.write('<br><b>Passing undefined Value</b><br>');
+        function users28(num1 = 200) {
+            return num1;
+        }
+        console.warn('Passing undefined Value = ', users28(undefined));
+        document.write('Passing undefined Value = ', users28(undefined));
+
+
+        /* =========================================================================================================================================
+                                                        JavaScript Template Literals (Template Strings)
+        ========================================================================================================================================= */
+        /* ================ JavaScript Template Literals (Template Strings) ================= */
+        document.write('<br><b>JavaScript Template Literals (Template Strings)</b><br>');
+        let name30 = 'kayur';
+        console.warn(`Template Literals = hello ${name30}`);
+
+        /* ================== Template Literals for Strings ================== */
+        var name31 = 'Lorem ipsum dolor sit amet.'
+
+        // cannot use the same quotes
+        // let name32 = 'Lorem 'ipsum' dolor sit amet.' // FALSE
+        let name33 = 'Lorem "ipsum" dolor sit amet.'; // TRUE
+        // let name34 = "Lorem "ipsum" dolor sit amet." // FALSE
+        let name35 = "Lorem 'ipsum' dolor sit amet." // TRUE
+
+        // escape characters using \
+        let name36 = 'Lorem \'ipsum\' dolor sit amet.' // TRUE
+        let name37 = "Lorem \"ipsum\" dolor sit amet." // TRUE
+
+        let name38 = `Lorem ipsum dolor sit amet.`; // TRUE
+        let name39 = `Lorem 'ipsum' dolor sit amet.`; // TRUE
+        let name40 = `Lorem "ipsum" dolor sit amet.`; // TRUE
+
+
+        /* ================== Multiline Strings Using Template Literals ==================== */
+        let name41 = 'Lorem ipsum dolor sit amet.' +
+            'Lorem ipsum dolor sit amet.' +
+            'Lorem ipsum dolor sit amet.';
+
+        let name53 = `Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet.`;
+
+
+        /* ==================== Expression Interpolation =========================== */
+        let name54 = 'kayur';
+        console.warn('Expression Interpolation name54 = ' + name54);
+
+        let name55 = 'utsav';
+        console.warn('Expression Interpolation name55 = ' + name55);
+
+        let number3 = 4 + 5;
+        console.warn(`the sum of 4+5 is ${number3}`);
+        console.warn(`${number3 < 10 ? 'low number' : 'highnumber'}`);
+
+        /* ===================== Tagged Templates =========================== */
+        document.write('<br><b>Tagged Templates</b><br>');
+        function users40(argument1) {
+            return argument1;
+        }
+        let name56 = users40('utsav');
+        document.write(name56, '<br>');
+
+        /* =========================== */
+        function users41(argument1) {
+            return argument1;
+        }
+        let name57 = users41`shivam`;
+        let name58 = users41`shivam hirpara`;
+        document.write(name57, '<br>');
+        document.write(name58, '<br>');
+
+        /* ==================================== */
+        let name59 = 'utsav';
+        let booleanval1 = true;
+        function users42(argument1, argument2) {
+            let arg1 = argument1[0];
+            let arg2 = argument1[1];
+            if (booleanval1) {
+                return `${arg1}${argument2}${arg2}`
+            }
+        }
+        let name60 = users42`hello ${name}, how are you`;
+        console.warn(name60);
+        document.write(name60);
+
+
+        /* ==================================================================================================================================
+                                            shallow copy and deep copy in ajavscript
+        ================================================================================================================================== */
+        /* ==================================== shallow copy ============================ */
+        let users29 = {
+            name: 'utsav',
+            age: 5
+        }
+        let name42 = users29;
+        name42.class = '1st';
+        console.log('%c[ shallow copy main object = ]', 'font-size:13px; background:orange; color:#bf2c9f;', users29);
+        console.log('%c[ shallow copy variable = ]', 'font-size:13px; background:orange; color:#bf2c9f;', name42);
+
+        /* ================================ deep copy =================================== */
+        let users30 = {
+            name: 'kayur',
+            age: 16
+        }
+        let name43 = [users30];
+        name43.class = '8th';
+        console.log('%c[ deep copy main object = ]', 'font-size:13px; background:orange; color:#bf2c9f;', users30);
+        console.log('%c[ deep copy variable = ]', 'font-size:13px; background:orange; color:#bf2c9f;', name43);
+
+        /* ==================================== shallow copy usign spread operator  ============================ */
+        let users31 = {
+            name: 'meet',
+            age: 18
+        }
+        let name44 = { ...users31 }
+        users31.class = '10th';
+        console.log('%c[ shallow copy main object = ]', 'font-size:13px; background:orange; color:#bf2c9f;', users31);
+        console.log('%c[ shallow copy variable = ]', 'font-size:13px; background:orange; color:#bf2c9f;', name44);
+
+        /* ==================================== shallow copy usign Object.assign() function  ============================ */
+        let users32 = {
+            name: 'jenil',
+            age: 18
+        }
+        let name45 = Object.assign({}, users32);
+        users32.age = 19;
+        console.log('%c[ shallow copy main object = ]', 'font-size:13px; background:orange; color:#bf2c9f;', users32);
+        console.log('%c[ shallow copy variable = ]', 'font-size:13px; background:orange; color:#bf2c9f;', name45);
+
+
+        /* ==================================== deep copy usign JSON parsing  ============================ */
+        let users33 = {
+            name: 'pal',
+            age: 16
+        }
+        let name46 = JSON.parse(JSON.stringify(users33));
+        users33.age = 17;
+        console.log('%c[ deep copy main object = ]', 'font-size:13px; background:orange; color:#bf2c9f;', users33);
+        console.log('%c[ deep copy variable = ]', 'font-size:13px; background:orange; color:#bf2c9f;', name46);
+
+        /* ==================================== deep copy usign structuredClone() Function ============================ */
+        let users34 = {
+            name: 'shivam',
+            age: 15,
+        }
+        let name47 = structuredClone(users34);
+        users34.age = 16
+        console.log('%c[ deep copy main object = ]', 'font-size:13px; background:orange; color:#bf2c9f;', users34);
+        console.log('%c[ deep copy variable = ]', 'font-size:13px; background:orange; color:#bf2c9f;', name47);
+
+        /* ======================================= normal object copy ======================================== */
+        let users35 = {
+            name: 'kayur',
+            age: 16
+        }
+        let name48 = users35;
+        name48.name = 'meet'
+        console.log('%c[ copy main object = ]', 'font-size:13px; background:orange; color:#bf2c9f;', users35);
+        console.log('%c[ copy variable = ]', 'font-size:13px; background:orange; color:#bf2c9f;', name48);
+
+        /* ================================= shallow copy usign spread operator ========================== */
+        let users36 = {
+            name: 'raj',
+            age: 18
+        }
+        let name49 = { ...users36 };
+        name49.name = 'kayur';
+        console.log('%c[ shallow copy main object = ]', 'font-size:13px; background:orange; color:#bf2c9f;', users36);
+        console.log('%c[ shallow copy variable = ]', 'font-size:13px; background:orange; color:#bf2c9f;', name49);
+
+        /* ================================= shallow copy usign spread operator ========================== */
+        let users37 = {
+            name: 'meet',
+            age: 17,
+            friends: ['kayur', 'mohit', 'utsav', 'raj']
+        }
+        let name50 = { ...users37 };
+        name50.friends[0] = 'shivam';
+        console.log('%c[ shallow copy main object = ]', 'font-size:13px; background:orange; color:#bf2c9f;', users37);
+        console.log('%c[ shallow copy variable = ]', 'font-size:13px; background:orange; color:#bf2c9f;', name50);
+
+        /* ==================================== shallow copy usign Object.assign ================================ */
+        let users39 = {
+            name: 'mohit',
+            age: 19
+        }
+        let name52 = Object.assign({}, users39);
+        name52.name = 'raj';
+        console.log('%c[ shallow copy main object = ]', 'font-size:13px; background:orange; color:#bf2c9f;', users39);
+        console.log('%c[ shallow copy variable = ]', 'font-size:13px; background:orange; color:#bf2c9f;', name52);
+
+        /* ================================= deep copy usign JSON parsing ========================== */
+        let users38 = {
+            name: 'kayur',
+            age: 15,
+            friends: ['shivam', 'mogit', 'om']
+        }
+        let name51 = JSON.parse(JSON.stringify(users38));
+        name51.friends[1] = 'mohit';
+        console.log('%c[ deep copy main object = ]', 'font-size:13px; background:orange; color:#bf2c9f;', users38);
+        console.log('%c[ deep copy variable = ]', 'font-size:13px; background:orange; color:#bf2c9f;', name51);
+
+        /* =========================================================================================================================================
+                                                                            Spread Operator
+        ========================================================================================================================================= */
+        /* ============================ Spread Operator ============================ */
+        document.write('<br><b>Spread Operator</b><br>');
+        let array29 = ['your', 'name', 'is', 'meet'];
+        let name61 = array29;
+        let name62 = [...array29];
+        console.warn('spread operator name61 = ', name61);
+        console.warn('spread operator name62 = ', name62);
+        document.write(array29, '<br>');
+        document.write(...array29, '<br>');
+
+        /* ========================= Copy Array Using Spread Operator ========================== */
+        let array30 = ['one', 'two', 'three'];
+        let array31 = [...array30, 'four', 'five'];
+
+        console.warn('Copy Array Using Spread Operator array31 = ', array31);
+        document.write('Copy Array Using Spread Operator array31 = ', array31);
+
+        /* ==================== Clone Array Using Spread Operator ============================= */
+        document.write('<br><b>Clone Array Using Spread Operator</b><br>');
+        let array32 = [1, 2, 3];
+        let array33 = array32;
+        console.warn('Clone Array Using Spread Operator', array32);
+        console.warn('Clone Array Using Spread Operator', array33);
+        document.write('Clone Array Using Spread Operator array32 = ', array32, '<br>');
+        document.write('Clone Array Using Spread Operator array32 = ', array33, '<br>');
+
+        /* ================ shallow copy ================== */
+        let array34 = [1, 2, 3, 4];
+        let array35 = [...array34];
+        array34.push(5);
+        console.warn('shallow copy array34 = ', array34)
+        console.warn('shallow copy array34 = ', array35);
+
+        /* ========================== Spread Operator with Object ======================== */
+        let obj1 = { name1: 'utsav', name2: 'virang', name3: 'kayur' };
+        let obj2 = { name4: 'meet' };
+        let margeobj1 = { ...obj1, ...obj2 };
+        console.warn('Spread Operator with Object obj1 = ', obj1);
+        console.warn('Spread Operator with Object obj2 = ', obj2);
+        console.warn('Spread Operator with Object margeobj1 = ', margeobj1);
+
+        /* ======================== Rest Parameter =============================== */
+        let func = function (...argument) {
+            return argument;
+        }
+        let name63 = func(10, 20, 30, 40);
+        console.warn('Rest Parameter name63 = ', name63);
+
+        /* ====================== */
+        function func2(a, b, c) {
+            return a + b + c;
+        }
+        let number4 = [10, 20, 30, 40];
+        let name64 = func2(...number4);
+        console.warn('Rest Parameter name64 = ', name64);
+
+        /* ====================================================================================================================================================
+                                                                            Javascript Map
+        ==================================================================================================================================================== */
+        /* ===================================== map syntex =============================== */
+        let map1 = new Map();
+        console.warn('map1 = ', map1);
+
+        /* =================================== Insert Item to Map =================================== */
+        let map2 = new Map();
+        map2.set('information', { name: 'meet', age: 17 });
+        console.warn('Insert Item in map2 = ', map2);
+
+        /* =============================  Map with object key =============================== */
+        let map3 = new Map();
+        let obj3 = {};
+        map3.set(obj3, { name: 'kayur', age: 15 });
+        console.warn('Insert Item in map3 = ', map3);
+
+        /* ======================= Access Map Elements ========================== */
+        let map4 = new Map();
+        map4.set('info', { name: 'mohit', age: 18 });
+        console.warn('Access Map Elements in map4 = ', map4.get('info'));
+
+        /* ======================= Check Map Elements ============================ */
+        let map5 = new Map();
+        map5.set('info', { name: 'utsav', age: 5 });
+        console.warn('Check Map Elements in map5 = ', map5.has('info'));
+
+        /* =========================== Removing Elements ============================== */
+        let map6 = new Map();
+        map6.set('info', { name: 'kayur', age: 15 });
+        console.warn('Removing Elements in map6 = ', map6.delete('info'));
+        console.warn('Removing Elements in map6 = ', map6);
+
+        /* ============================================== */
+        let map7 = new Map();
+        map7.set('info', { name: 'utsav', age: 5 });
+        console.warn('clear Elements in map7 = ', map7);
+        console.warn('clear Elements in map7 = ', map7.clear());
+
+        /* ======================== JavaScript Map Size =========================== */
+        let map8 = new Map();
+        map8.set('info', { name: 'kayur', age: 16 });
+        console.warn('map size map8 = ', map8.size);
+
+        let map9 = new Map();
+        map9.set('info', { name: 'kayur', age: 16 });
+        map9.set('info2', { name: 'utsav', age: 5 });
+        console.warn('map size map8 = ', map9.size);
+
+        /* ====================== Iterate Through a Map ============================= */
+        let map10 = new Map();
+        map10.set('name', 'om');
+        map10.set('age', 22);
+
+        for (let [key1, value1] of map10) {
+            console.warn('Iterate Through a Map map10 = ' + key1 + ' ' + value1);
+        }
+
+        /* ========= using forEach method() ============= */
+        let map11 = new Map();
+        map11.set('name', 'kayur');
+        map11.set('age', 15);
+
+        map11.forEach(function (value, key) {
+            console.warn('using forEach method map11 = ' + key + ' ' + value);
+        });
+
+        /* ========================== Iterate Over Map Keys ========================= */
+        let map12 = new Map();
+        map12.set('name', 'utsav');
+        map12.set('age', '5');
+
+        for (let key of map12.keys()) {
+            console.warn('Iterate Over Map Keys map12 = ' + key);
+        }
+
+        /* ========================== Iterate Over Map Values ======================= */
+        let map13 = new Map();
+        map13.set('name', 'kayur');
+        map13.set('age', 16);
+
+        for (let values of map13.values()) {
+            console.warn('Iterate Over Map Values map13 = ', values);
+        }
+
+        /* ========================== Get Key/Values of Map ============================= */
+        let map14 = new Map();
+        map14.set('name', 'utsav');
+        map14.set('age', 5);
+
+        for (let properties of map14.entries()) {
+            console.warn('Get Key/Values of map14 = ', properties);
+        }
+
+        /* ========================================================================================================================================
+                                                                    JavaScript WeakMap
+        ======================================================================================================================================== */
+        // ========================== example 1 =====================
+        let weakmap1 = new WeakMap();
+        console.warn('javascript weakmap = ', weakmap1);
+        let obj4 = {};
+        weakmap1.set(obj4, 'user');
+        console.warn('javascript weakmap = ', weakmap1);
+
+        // =========================== example 2 =====================
+        let weakmap2 = new WeakMap();
+        // weakmap2.set('user'); // ERROR set only object in weakmap
+        console.warn('JavaScript WeakMap = ', weakmap2);
+
+        /* ======================== WeakMap Methods ============================ */
+        let weakmap3 = new WeakMap();
+        let obj5 = {};
+        weakmap3.set(obj5, 'user');
+        console.warn('weakmap set method = ', weakmap3); // set method
+        weakmap3.get(obj5);
+        console.warn('weakmap get method = ', weakmap3); // get method
+        console.warn('weakmap has method = ', weakmap3.has(obj5)); // has method
+        weakmap3.delete(obj5); // delete method
+        console.warn('weakmpa delete method = ', weakmap3);
+
+        /* ======================= WeakMaps Are Not iterable ===================== */
+        let weakmap4 = new WeakMap();
+        let obj6 = {};
+        weakmap4.set(obj6, 'user');
+
+        // for(let i of weakmap4) {
+        // console.warn('WeakMaps Are Not iterable = ',weakmap4); // ERROR
+        // }
+
+
+        /* =================================================================================================================================================
+                                                                JavaScript Destructuring Assignment
+        ================================================================================================================================================= */
+        /* ============== JavaScript Destructuring ================== */
+        //  BEFORE ES6
+        // ====== example 1 ==========
+        let obj7 = {
+            name: 'utsav',
+            age: 5,
+            class: '1st'
+        }
+        let obj7name = obj7.name;
+        let obj7age = obj7.age;
+        let obj7class = obj7.class;
+        console.warn('JavaScript Destructuring BEFORE ES6 obj7 = ', obj7name);
+        console.warn('JavaScript Destructuring BEFORE ES6 obj7 = ', obj7age);
+        console.warn('JavaScript Destructuring BEFORE ES6 obj7 = ', obj7class);
+
+        // FROM ES6
+        // ========== example 1 =======
+        let obj8 = {
+            name: 'kayur',
+            age: 15,
+            userclass: '8th'
+        }
+        let { name: any, age, userclass: string } = obj8;
+        console.warn('JavaScript Destructuring FROM ES6 obj8 = ', name);
+        console.warn('JavaScript Destructuring FROM ES6 obj8 = ', age);
+        console.warn('JavaScript Destructuring FROM ES6 obj8 = ', userclass);
+
+        // ====== example 2 ========= 
+        let obj9 = {
+            name: 'virang',
+            age: 17,
+            class: '10th'
+        }
+        let { name: obj9name, age: obj9age, class: obj9class } = obj9;
+        console.warn('JavaScript Destructuring FROM ES6 obj9 = ', obj9name);
+        console.warn('JavaScript Destructuring FROM ES6 obj9 = ', obj9age);
+        console.warn('JavaScript Destructuring FROM ES6 obj9 = ', obj9class);
+
+        /* ==================================================================================================================================================
+                                                                         Array Destructuring 
+        ==================================================================================================================s================================ */
+        let array36 = ['utsav', 'shivam', 'kayur'];
+        let [user1, user2, user3] = array36;
+        console.warn('Array Destructuring array36 = ', user1);
+        console.warn('Array Destructuring array36 = ', user2);
+        console.warn('Array Destructuring array36 = ', user3);
+
+        /* ===================== Assign Default Values ======================== */
+        // ======= example 1 ==========
+        let array37 = ['virang', 'raj', 'mohit'];
+        let [array37user1 = 'abcd', array37user2 = 'fegh', array37user3 = 'ijkl', array37user4 = 'mnop'] = array37;
+        console.warn('Assign Default Values array37 = ', array37user1);
+        console.warn('Assign Default Values array37 = ', array37user2);
+        console.warn('Assign Default Values array37 = ', array37user3);
+        console.warn('Assign Default Values array37 = ', array37user4);
+
+        // ====== example 2 =========
+        let array38 = {
+            array38name: 'kayur',
+        }
+        let { array38name, array38age = 16 } = array38;
+        console.warn('Assign Default Values array38 = ', array38name);
+        console.warn('Assign Default Values array38 = ', array38age);
+
+        /* ================================================================ Swapping Variables ====================================================== */
+        let name65 = 'meet'; // name65 = meet
+        let name66 = 'utsav'; // name66 = utsav
+        [name65, name66] = [name66, name65]; // name65 = utsav, name66 = meet
+        console.warn('Swapping Variables = ', name65);
+        console.warn('Swapping Variables = ', name66);
+
+        /* ==================== Skip Items ================ */
+        let array39 = ['utsav', 'meet', 'kayur'];
+        let [array39name1, , array39name2] = array39;
+        console.warn('Skip Items array39 = ', array39name1);
+        console.warn('Skip Items array39 = ', array39name2);
+
+        /* ===================== Assign Remaining Elements to a Single Variable ===================== */
+        // ========= example 1 ===========
+        let array40 = ['utsav', 'shivam', 'jenil', 'meet', 'raj'];
+        let [array40name1, ...array40names] = array40;
+        console.warn('Assign Remaining Elements to a Single Variable array40 = ', array40name1);
+        console.warn('Assign Remaining Elements to a Single Variable array40 = ', array40names);
+
+        // ========= example 2 ==========
+        let obj10 = {
+            name: 'kayur',
+            age: 16,
+            class: '7th'
+        }
+        let { obj10name, ...other1 } = obj10;
+        console.warn('Assign Remaining Elements to a Single Variable obj10 = ', obj10name);
+        console.warn('Assign Remaining Elements to a Single Variable obj10 = ', other1);
+
+        /* ======================= Nested Destructuring Assignment ============================ */
+        // ========== example 1 ==========
+        let array41 = ['utsav', ['meet', 'kayur']];
+        let [array41name1, [array41name2, array41name3]] = array41;
+        console.warn('Nested Destructuring Assignment array41 = ', array41name1);
+        console.warn('Nested Destructuring Assignment array41 = ', array41name2);
+        console.warn('Nested Destructuring Assignment array41 = ', array41name3);
+
+        // ========== example 2 ===========
+        let obj11 = {
+            name: 'kayur',
+            age: 15,
+            friends: {
+                freind1: true,
+                freind2: true
+            }
+        }
+        let { obj11name, friends: { freind1, freind2 } } = obj11;
+        console.warn('Nested Destructuring Assignment onj11 = ', obj11name);
+        console.warn('Nested Destructuring Assignment onj11 = ', freind1);
+        console.warn('Nested Destructuring Assignment onj11 = ', freind2);
+
+        /* ================================================================================================================================================
+                                                                        JavaScript Classes
+        ================================================================================================================================================ */
+        document.write('<br><b>javascript classes</b><br>');
+        /* ========================= class ============================== */
+        // constructor function
+        function person1() {
+            this.name = 'kayur';
+            this.age = 15;
+        }
+
+        // create an object
+        let name67 = new person1();
+        document.write('javascript class name67 = ', name67.name, '<br>');
+        document.write('javascript class name67 = ', name67.age, '<br>');
+
+        /* ========================= class with parameter ============================== */
+        function person2(argumant1, argumant2) {
+            this.name = argumant1;
+            this.age = argumant2;
+        }
+        let name68 = new person2('meet', 17);
+        document.write('class with parameter name68 = ', name68.name, '<br>');
+        document.write('class with parameter name68 = ', name68.age, '<br>');
+
+        /* ========================= Class Methods ======================== */
+        function person3(angument1, argument2) {
+            this.fname = angument1;
+            this.lname = argument2;
+            this.fullname1 = function () {
+                return this.fname + ' ' + this.lname;
+            }
+        }
+        let name69 = new person3('mohit', 'rathod');
+        document.write('class method name69 = ', name69.fname, '<br>');
+        document.write('class method name69 = ', name69.lname, '<br>');
+        document.write('class method name69 = ', name69.fullname1(), '<br>');
+
+        /* ======================= Getters and Setters =========================== */
+        class person4 {
+            constructor(arg1) {
+                this.name = arg1;
+            }
+            // getter
+            get personname1() {
+                return this.name;
+            }
+            // setter
+            set personname2(arg1) {
+                this.name = arg1;
+            }
+        }
+        let name70 = new person4('kayur');
+        document.write('getter and setter name70 = ', name70.personname1, '<br>');
+        document.write('getter person4 = ', person4.personname1, '<br>');
+        person4.personname2 = 'raj';
+        document.write('setter person4 = ', person4.personname2, '<br>');
+
+
+        /* =================================================================================================================================================
+                                                                    JavaScript for... of Loop
+        ================================================================================================================================================= */
+        document.write('<br><b>JavaScript for... of Loop</b><br>');
+        /* =============== for...of with Arrays ================== */
+        let array42 = ['raj','deep','virang','kayur'];
+        for(let names of array42) {
+            document.write(names,' ');
+        }
+        document.write('<br>');
+
+
+        /* =============== for...of with Strings =================== */
+        let name71 = 'kayur rathod';
+        for(let name of name71) {
+            document.write(name,'    ')
+        }
+        document.write('<br>');
+        
+
+        /* ============== for...of with Sets ================== */
+        let name72 = new Set([1,2,3]);
+        for(let name of name72) {
+            document.write(name);
+        }
+        document.write('<br>');
+
+
+        /* =========== for...of with Maps ================= */
+        let name73 = new Map();
+        name73.set('name','jenil');
+        name73.set('age',19);
+
+        for(let [key,value] of name73) {
+            document.write(key+' '+value+', ');
+        }
+        document.write('<br>');
+
+        /* =========== for...of with Generators function ============== */
+        function* person5() {
+            yield 20;
+            yield 40;
+            yield 60;
+            yield 80;
+            yield 100;
+        }
+        let name74 = person5();
+        for(let name of name74) {
+            document.write(name,' ');
+        }
+
+    </script>
+</body>
+
+</html>
