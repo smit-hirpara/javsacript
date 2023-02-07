@@ -1,0 +1,383 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Open Console</h1>
+    <script>
+        /* ========================= convort object in array ====================== */
+        console.error('Converting Object An Array');
+        // ============ 1
+        let obj1 = {
+            name: 'raj',
+            age: 17
+        }
+        let objarrya1 = Object.keys(obj1);
+        let objarrya2 = Object.values(obj1);
+        let objarrya3 = Object.entries(obj1);
+        console.warn(objarrya1, 'type = ', typeof (objarrya1));
+        console.warn(objarrya2, 'type = ', typeof (objarrya2));
+        console.warn(objarrya3, 'type = ', typeof (objarrya3));
+
+        // ============== 2
+        let obj2 = {
+            number1: 1,
+            number2: 2
+        }
+        let objarray4 = [];
+
+        for (let number in obj2) {
+            if (obj2.hasOwnProperty(number)) {
+                objarray4.push(number);
+            }
+        }
+
+        // 1 ---------- objectname.Keys()
+        // 2 ---------- objectname.values()
+        // 3 ---------- objectname.entries()
+
+        console.warn('convort obj in array = ', objarray4);
+
+
+
+        /* ============= Object.entries + Destructuring ==============*/
+        let obj3 = {
+            number1: 1,
+            number2: 2,
+            number3: 3
+        }
+        let objarray5 = Object.entries(obj3);
+        objarray5.forEach(([key, value]) => {
+            console.warn('obj keys = ', key);
+            console.warn('obj value = ', value);
+        })
+
+        /* ====================== convort nasted array in object ================== */
+        let ary1 = [
+            ['number1', 1],
+            ['number2', 2],
+        ];
+        let aryobj1 = Object.fromEntries(ary1);
+        console.warn('array in object = ', aryobj1);
+
+        /* ==================== 3 Way To Clone Object In Javascript ==================== */
+        console.error('3 Way To Clone Object');
+        // 1 ------ using spread
+        // 2 ------ using object.assign
+        // 3 ------ using JSON
+
+        /* normal cline object */
+        console.log('normal clone object');
+        let obj4 = {
+            name: 'raj',
+            age: 17
+        }
+        let cloneobj1 = obj4;
+        cloneobj1.name = 'meet';
+        console.warn(obj4);
+        console.warn(cloneobj1);
+
+        /* ===== usin spread ===== */
+        console.log('clone object with spread');
+        let obj5 = {
+            name: 'mohit',
+            age: 18
+        }
+        let cloneobj2 = { ...obj5 };
+        cloneobj2.name = 'kayur';
+        console.warn(obj5);
+        console.warn(cloneobj2);
+
+        /* ==== using Object.assign ==== */
+        console.log('clone object with Object.assign');
+        let obj6 = {
+            name: 'raj',
+            age: 16
+        }
+        let cloneobj3 = Object.assign({}, obj6);
+        cloneobj3.name = 'om';
+        console.warn(obj6);
+        console.warn(cloneobj3);
+
+        /* === using JSON == */
+        let obj7 = {
+            name: 'nisarg',
+            age: 15
+        }
+        let cloneobj4 = JSON.parse(JSON.stringify(obj7));
+        cloneobj4.name = 'ayush';
+        console.warn(obj7);
+        console.warn(cloneobj4);
+
+        /* ===== shallow copy ===== */
+        // shallow copy clone object , but not work in nasted object
+        // 1. using spread
+        // 2. Object.assign
+
+        /* ==== deep copy ==== */
+        // deep copy clone nasted object
+        // 1. using JSON.parse(JSON.stringify(obj))
+
+
+        /* ============================== 2 Ways to Merge Arrays in JavaScript ========================== */
+        console.error('2 Ways to Merge Arrays');
+        // 1
+        console.log('marge 2 array using concat');
+        let fruits = ['orange', 'apple', 'banana', 'graps'];
+        let vagis = ['ladiesfinger', 'tomato', 'brinjal', 'batata'];
+        let vagfruit = [].concat(fruits, vagis);
+        console.warn(vagfruit);
+
+        ///////////
+        let vagfruit1 = fruits.concat(vagis);
+        console.warn(vagfruit1);
+
+        //2
+        console.log('marge 2 array sprade');
+        let vagfruit2 = [...fruits, ...vagis];
+        console.warn(vagfruit2);
+
+        /* ============ Difference between Spread vs Concat =========== */
+        console.error('Difference between Spread vs Concat');
+        // Spread
+        console.log('Spread');
+        combineArray = (ary1, ary2) => [...ary1, ...ary2];
+        let numbers1 = [1, 2, 3, 4];
+        let username1 = 'utsav';
+        let userarray1 = ['meet', 'raj'];
+        console.warn(combineArray(numbers1, username1));
+        console.warn(combineArray(numbers1, userarray1));
+
+        // Concat
+        console.log('Concat');
+        combineArray2 = (ary1, ary2) => [].concat(ary1, ary2);
+        console.warn(combineArray2(numbers1, username1));
+        console.warn(combineArray2(numbers1, userarray1));
+
+        /* ============ Merge Array with Push ============ */
+        console.error('Merge Array with Push');
+        // with push()
+        let numbers2 = [1, 2, 3, 4, 5];
+        let userarray2 = ['mohit', 'raj', 'deep'];
+        console.log('with push()');
+        let margeallarray2 = numbers2.push(userarray2);
+        let margeallarray3 = numbers2.push(...userarray2);
+        // numbers1.push(userarray1);
+        console.warn(margeallarray2);
+        console.warn(margeallarray3);
+
+
+        /* =========== ES6 Way to Clone an Array ========== */
+        console.error('ES6 Way to Clone an Array');
+        let numbers3 = [1, 2, 3, 4, 5];
+        // old way
+        let cloneobj5 = numbers3.slice();
+
+        // ES6 way
+        let cloneobj6 = [...numbers3];
+        console.log('clone array using slice (old way)');
+        console.warn(cloneobj5);
+        console.log('clone array using spread (ES6 way)');
+        console.warn(cloneobj6);
+
+        console.log('Why Can’t I Use = to Copy an Array?');
+        console.warn(numbers1 === cloneobj5);
+        console.warn(numbers1 === cloneobj6);
+
+
+        /* ========== Problem with Reference Values ========= */
+        console.error('Problem with Reference Values');
+        let numbers4 = [1, 2, 3, 4, 5];
+        let clonearray1 = numbers4;
+        clonearray1.push(6); // push value in main array
+        console.warn(numbers4);
+        console.warn(clonearray1);
+
+        let numbers5 = [1, 2, 3, 4, 5];
+        let clonearray2 = [...numbers5];
+        clonearray2.push(6); // push value only this variable
+        console.warn(numbers5);
+        console.warn(clonearray2);
+
+        /* =========== Shallow Copy Only =========== */
+        // not warkin becous shollow copy copy only object, array not copy nasted object, array
+        console.log('Shallow Copy');
+        let numbers6 = [[1, 2, 3, 4, 5], ['meet', 'raj']];
+        let clonearray3 = [...numbers6];
+        clonearray3[1].unshift('om');
+        console.warn(numbers6);
+        console.warn(clonearray3);
+
+        /* ========== Community Input ============ */
+        console.log('Community Input');
+        let numbers7 = [1, 2, 3, 4, 5];
+        let clonearray4 = Array.from(numbers7);
+        clonearray4.push('raj');
+        console.warn(numbers7);
+        console.warn(clonearray4);
+
+        /* ========== How to Compare 2 Objects in JavaScript ============= */
+        console.error('How to Compare 2 Objects in JavaScript');
+        console.log('Compare 2 Objects');
+        let obj8 = { name: 'raj' };
+        let obj9 = { name: 'raj' };
+        let obj10 = { name: 'kayur' }
+
+        // using javascript
+        let comparision1 = JSON.stringify(obj8) == JSON.stringify(obj9);
+        console.warn(comparision1);
+        let comparision2 = JSON.stringify(obj8) == JSON.stringify(obj10);
+        console.warn(comparision2);
+
+        /* ========= Deep Nested Comparison ============= */
+        console.log('Deep Nested Comparison');
+        let obj11 = {
+            name: 'raj',
+            friends: {
+                name1: 'om',
+                name1: 'kayur',
+                name1: 'deep'
+            }
+        }
+        let obj12 = {
+            name: 'raj',
+            friends: {
+                name1: 'om',
+                name1: 'kayur',
+                name1: 'deep'
+            }
+        }
+
+        let obj13 = {
+            name: 'shivam',
+            friends: {
+                name1: 'utsav',
+                name1: 'kayur',
+                name1: 'deep'
+            }
+        }
+
+        let comparision3 = JSON.stringify(obj11) == JSON.stringify(obj12);
+        let comparision4 = JSON.stringify(obj11) == JSON.stringify(obj13);
+        console.warn(comparision3);
+        console.warn(comparision4);
+
+        /* =============== */
+        console.log('Object Comparison');
+        let obj14 = {
+            name: 'utsav',
+            age: 5
+        }
+
+        let obj15 = {
+            age: 5,
+            name: 'utsav'
+        }
+
+        let comparision5 = JSON.stringify(obj14) == JSON.stringify(obj15);
+        console.warn(comparision5);
+
+        /* =============== ES6 Way for comparing 2 objects =============== */
+        console.log('ES6 Way for comparing 2 objects');
+        let obj16 = {
+            name: 'raj'
+        }
+
+        let obj17 = {
+            name: 'raj'
+        }
+
+        let comparision6 = Object.entries(obj16).toString() == Object.entries(obj17).toString();
+        console.warn(comparision6);
+
+
+        /* =========================================================== String Pad ==================================================================== */
+        console.error('String Pad');
+        console.log('String padStart And padEnd');
+        let str1 = 'hi';
+        let pad1 = str1.padStart(3, 'c');
+        console.warn(pad1);
+        let pad2 = str1.padEnd(4, 'i');
+        console.warn(pad2);
+        let pad3 = str1.padEnd(' ');
+        console.warn(pad3);
+
+        /* ======================= How it handles other data types ===================================*/
+        console.log('How it handles other data types');
+        let test1 = 100; // number
+        let test2 = true; // boolean
+        let test3 = false; // boolean
+        let test4 = ['smit']; // array
+        let test5 = ['']; // array
+        let test6 = { name: 'raj' }; // object
+        let test7 = {}; // object
+        console.warn(test1.toString());
+        console.warn(test2.toString());
+        console.warn(test3.toString());
+        console.warn(test4.toString());
+        console.warn(test5.toString());
+        console.warn(test6.toString());
+        console.warn(test7.toString());
+
+        let test9 = 'utsav';
+        console.warn(test9.padStart(8, 100));
+        console.warn(test9.padStart(8, true));
+        console.warn(test9.padStart(8, false));
+        console.warn(test9.padStart(8, ['']));
+        console.warn(test9.padStart(8, ['hi ']));
+        console.warn(test9.padStart(8, {}));
+        console.warn(test9.padStart(8, { name: 'shivam' }));
+
+
+        /* ================= Handling undefined ===================== */
+        console.log('Handling usdefined');
+        let test10 = 'raj';
+        // console.warn(undefined.toString()); // ERROR
+        console.warn(test10.padStart(10, undefined));
+
+
+        /* ==================== What if padString exceeds maxLength? =================== */
+        console.log('What if padString exceeds maxLength?');
+        let test11 = 'deep';
+        console.warn(test11.padEnd(5, 'la'));
+
+        console.warn(test11.padEnd(1, 'ol'));
+
+        /* ================== Right Aligning String with padStart ================== */
+        console.log('Right Aligning String with padStart');
+        console.warn('JAVASCRIPT'.padStart(15));
+        console.warn('CSS'.padStart(15));
+        console.warn('HTML'.padStart(15));
+        console.warn('ANGULAR'.padStart(15));
+
+        /* ================== Receipt formatting ==================== */
+        let nastedary1 = [
+            ['shirt', '9.99'],
+            ['teshirt', '15.99'],
+            ['jacket', '20.99'],
+            ['gloves', '18.99'],
+        ]
+        nastedary1.forEach(([item, price]) => {
+            console.log(item + price.padStart(20 - item.length));
+        });
+
+        /* =================== Masking Numbers =================== */
+        let banknumber1 = '1235 5432 3225 9620';
+        let lastdigits = banknumber1.slice(-4);
+
+        console.log(lastdigits.padStart(banknumber1.length, '*'));
+
+        /* ================== How to Check if Object is Empty ========================= */
+        console.error('How to Check if Object is Empty');
+        let obj18 = {};
+        let chacking1 = Object.keys(obj18).length === 0 && obj18.constructor === Object;
+        console.warn(chacking1);
+    </script>
+</body>
+
+</html>

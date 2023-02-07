@@ -1,0 +1,318 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* =======================================================================================================================
+                                                            string 
+        ======================================================================================================================= */
+        /* ============ capital first latter ============== */
+        // ========== 1 ==============
+        let str1 = 'smit hirpara';
+        let capitialzed1 = (str) => str[0].toUpperCase() + str.slice(1).toLowerCase();
+        let words = str1.split(' ').map(capitialzed1);
+        let capitalizedallwords = words.join(' ');
+        console.log('%c [ capital first latter ] = ', 'font-size:13px; background:pink; color:#bf2c9f;', capitalizedallwords);
+
+        // ========= 2 ==========
+        let str2 = 'smit hirpara';
+        let capitallatter = str2[0].toUpperCase() + str2.slice(1);
+        console.log('%c [ capital first latter ] = ', 'font-size:13px; background:pink; color:#bf2c9f;', capitallatter);
+
+
+        /* ======= find reprting character ======== */
+        let str3 = 'smit hirpara';
+        let repitingvalue = '';
+        for (let i = 0; i < str3.length; i++) {
+            repitingvalue = repitingvalue + str3[i];
+        }
+        document.write(repitingvalue, '<br>');
+
+        /* ======== concate string ========== */
+        let str4 = 'smit';
+        let str5 = 'designer';
+        let margestr1 = str4 + ' is web' + str5 + ' at hyd';
+        console.warn('concate string = ', margestr1);
+
+        function first_repeating_word(s) {
+            let word_count = new Map()
+
+            for (let i of s.split(' ')) {
+                if (word_count.has(i)) {
+                    word_count.set(i, word_count.get(i) + 1);
+                }
+                else word_count.set(i, 1);
+
+                if (word_count.get(i) > 1)
+                    return i
+            }
+            return 'No word is being repeated'
+        }
+
+        // Driver Code
+        let s = "Ravi had been saying that he had been there";
+        console.clear();
+        document.write("same character :- ", first_repeating_word(s), "<br>")
+
+        // single string to double character string
+        const str = 'how are you';
+        const repeatNTimes = (str, n) => {
+            let res = '';
+            for (let i = 0; i < str.length; i++) {
+                // using the String.prototype.repeat() function
+                res += str[i].repeat(n);
+            };
+            return res;
+        };
+        console.log(repeatNTimes(str, 2));
+
+
+
+        const consistsRepeatedSubstring = (str) => `${str}${str}`.indexOf(str, 1) !== str.length;
+        console.log(consistsRepeatedSubstring('aa')); // true
+        console.log(consistsRepeatedSubstring('aaa')); // true
+        console.log(consistsRepeatedSubstring('ababab')); // true
+        console.log(consistsRepeatedSubstring('abc')); // false
+
+        var text = "test".split("");
+        text.some(function (v, i, a) {
+            return a.lastIndexOf(v) != i;
+        });
+
+        /* =========== find repiting charcters in string ============= */
+        // example 1
+        let str8 = 'smit hirpara';
+        let smaecharceter = [];
+        for (let a = 0; a < str8.length; a++) {
+            for (let b = str8.length; b > a; b--) {
+                if (str8[a] == str8[b]) {
+                    smaecharceter.push(str8[a]);
+                }
+            }
+        }
+        console.error('returning charcters =', smaecharceter);
+
+        // example 2
+        let str18 = 'smit hirpara';
+        console.error('repiting charcters = ', str18.match(/i/g));
+        console.error('repiting charcters = ', str18.match(/a/g));
+        /* ===========================================================================================================================
+                                                                 array
+        =========================================================================================================================== */
+        /* ====== total ======== */
+        let arraybox1 = [10, 20, 30, 40, 50];
+        let total = Number();
+        ;
+        for (let i = 0; i < arraybox1.length; i++) {
+            total = total + arraybox1[i];
+        }
+        console.warn('addition all array numbers = ', total);
+
+        /* ======== reverce print ========= */
+        // === 1 ===
+        let arraybox2 = [10, 20, 30, 40, 50];
+        let revercearray2 = arraybox2.sort((a, b) => b - a);
+        console.warn('reverce array = ', revercearray2);
+
+        /* ======== add element ========== */
+        // === add element to last  === 
+        let arraybox3 = [10, 20, 30, 40, 50];
+        arraybox3.push(60);
+        console.warn('add element to last = ', arraybox3);
+
+        // === add element to first ===
+        arraybox3.unshift(5);
+        console.warn('add element to last = ', arraybox3);
+
+        /* =========== remove element ========== */
+        // === remove element to last ===
+        let arraybox4 = [7, 10, 20, 30, 40, 50, 55];
+        arraybox4.pop();
+        console.warn('remove element to last = ', arraybox4);
+
+        // === remove element to first ===
+        arraybox4.shift();
+        console.warn('remove element to first = ', arraybox4);
+
+        /* =============== marge to array ============= */
+        let arraybox5 = [10, 20, 30];
+        let arraybox6 = [40, 50, 60];
+        let margearray1 = arraybox5.concat(arraybox6);
+        console.warn(margearray1);
+
+        /* ============= accending ============ */
+        let arraybox7 = [10, 40, 60];
+        let arraybox8 = [20, 50, 30];
+        let margearray2 = arraybox7.concat(arraybox8);
+        let accendingarray1 = margearray2.sort((a, b) => a - b);
+        console.warn('accending array = ', accendingarray1);
+
+        /* ============= descending ============ */
+        let descendingarray1 = margearray2.sort((a, b) => b - a);
+        console.warn('descending array = ', descendingarray1);
+
+        /* ========= obb even ========= */
+        let arraybox9 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let oddnumbers = [];
+        let eventnumbers = [];
+        for (i = 0; i < arraybox9.length; i++) {
+            if (arraybox9[i] % 2) {
+                eventnumbers.push(i);
+            }
+            else {
+                oddnumbers.push(i);
+            }
+        }
+        let oddevenarray1 = [oddnumbers, eventnumbers];
+        console.warn('odd numbers and even numbers = ', oddevenarray1)
+        console.warn('odd numbers = ', oddnumbers);
+        console.warn('event numbers = ', eventnumbers);
+
+        /* ========= multiplacation array value ======== */
+        let arraybox10 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+        let result1 = [];
+        for (let i = 0; i < arraybox9.length; i++) {
+            let multiplication = arraybox10[i] * 10;
+            result1.push(multiplication);
+        }
+        console.warn('multiplaction array element = ', result1);
+
+        /* ============== find same element ============= */
+        // let arraybox11 = [10, 20, 30, 40, 10, 20, 50, 60, 70, 20];
+        // let filterarray = arraybox11.has(20);
+        // console.log('%c [ filterarray ]-126', 'font-size:13px; background:pink; color:#bf2c9f;', filterarray);
+
+        /* ============= first letter capital ============ */
+        let arraybox12 = ['smit', 'utsav', 'meet', 'kayur', 'deep'];
+        let capitialzed2 = (str) => str[0].toUpperCase() + str.slice(1).toLowerCase();
+        let words2 = arraybox12.map(capitialzed2);
+        console.warn('capital first letter = ', words2);
+
+        /* ============= first letter small ============ */
+        let smalllatters = (str) => str[0].toLowerCase() + str.slice(1).toUpperCase();
+        let words3 = arraybox12.map(smalllatters);
+        console.warn('smalle first latter = ', words3);
+
+        /* ============ get array index ============ */
+        let arraybox13 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+        let inedxes = [];
+        for (let i = 0; i < arraybox13.length; i++) {
+            var values = arraybox13[i];
+            var index = arraybox13.indexOf(values);
+            inedxes.push(index);
+        }
+        console.warn('get array index = ', inedxes);
+
+
+        /* ============ short value ============== */
+        let arraybox14 = ['mango', 'orange', 'umbrella', 'banana', 'parot', 'kitn', 'ship', 'apple', 'hourse', 'cat', 'truck', 'nest', 'elephant', 'dog', 'jeep', 'ret', 'fruit', 'lion', 'queen', 'glass', 'iron', ''];
+        arraybox14.sort();
+        console.warn('short value = ', arraybox14);
+
+        /* ========== clone array and push value in multidimensional array =========== */
+        let arraybox15 = [1, 2, 3];
+        let arraybox16 = [4, 5, 6];
+        let arraybox17 = [7, 8];
+        let arraybox18 = [10, 11, 12];
+        let margeallarray1 = [arraybox15, arraybox16, arraybox17, arraybox18];
+        console.warn('clone array = ', margeallarray1);
+        margeallarray1[2].push(9);
+        console.warn('push value = ', margeallarray1);
+
+
+        /* ======== remove value in multidimensional array ========== */
+        // 1
+        let arraybox19 = [[1, 2, 3, 4], [5, 6, 7, 8]];
+        arraybox19[0].pop();
+        console.warn(arraybox19);
+
+        // 2
+        // for (let i = 0; i < arraybox19.length; i++) {
+        //     var values = arraybox19[i];
+        //     var index = arraybox19.indexOf(values);
+        //     if (values == 4) {
+        //         continue;
+        //     }
+        // }
+
+        // for (let i = 0; i < arraybox19[i].length; i++) {
+        //     for (let j = i; j < arraybox19.length; j++) {
+        //         let values = arraybox19[j][i];
+        //         let index = arraybox19.indexOf(values);
+        //         if (values == 4) {
+        //             continue;
+        //         }
+        //     }
+        // }
+        console.warn('remove value = ', arraybox19);
+
+
+        /* ==========  print list wise ========== */
+        // === 1 ===
+        let arraybox20 = [['smit', 17], ['haresh', 25], ['john', 22], ['hardik', 30]];
+        for (let i = 0; i < arraybox20[i].length; i++) {
+            for (let j = i; j < arraybox20.length; j++) {
+                let values2 = arraybox20[j][i];
+                console.warn(values2);
+                document.write(values2, '<br>');
+            }
+        }
+
+
+        /* ============ add array ============= */
+        let arraybox21 = [[1, 2, 3], [4, 5, 6]];
+        arraybox21.push([7, 8, 9])
+        console.warn('add new array = ', arraybox21);
+
+        /* ========= accending ================== */
+        let arraybox22 = [1, 2, 3, 4, 3, 1, 5, 2, 1, 3, 6];
+        let accendingarray2 = arraybox22.sort((a, b) => a - b);
+        console.warn('accending = ', accendingarray2);
+
+        /* ========= smallest no ============ */
+        let arraybox23 = [5, 2, 7, 6, 9, 3, 8, 1, 0, 4];
+        let smallestvalue1 = Math.min(...arraybox23);
+        console.warn('smallest no of array = ', smallestvalue1);
+
+        /* ========= largest no =========== */
+        let largestvalue1 = Math.max(...arraybox23);
+        console.warn('largest no of array = ', largestvalue1);
+
+        /* ======= get index & print ============== */
+        let arraybox24 = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+        let findindex = arraybox24.indexOf('f');
+        console.warn('f index = ', findindex);
+
+        /* ======== sort numbers and charcters ======== */
+        let arraybox25 = ['a', 2, 3, 'd', 5, 'b', 'c', 1, 4];
+        let shoryarray1 = arraybox25.sort();
+        console.warn(shoryarray1);
+
+        /* ========= find same elements in array and given index ============ */
+        let arraybox40 = [10, 20, 30, 10, 20, 30, 50];
+        let sameelement = [];
+        for (let a = 0; a < arraybox40.length; a++) {
+            for (let b = arraybox40.length; b > a; b--) {
+                if (arraybox40[a] == arraybox40[b]) {
+                    sameelement.push(arraybox40[a]);
+                }
+            }
+        }
+        document.write('same element of array = ', sameelement);
+        console.error('same element of array = ', sameelement);
+
+
+        /* =========== 4 Ways to Convert String to Character Array in JavaScript ============= */
+
+        let str38 = 'Hello Jenil';
+
+    </script>
+</body>
+
+</html>
