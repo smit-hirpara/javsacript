@@ -3207,14 +3207,251 @@
 
 
         /* ========== addEventListner ============= */
-        document.write('<div class="class3" id="eventbox1">Click event</div>');
+        document.write('<div class="class3" id="eventbox1">Click event</div><br>');
         document.querySelector('#eventbox1').onclick = domcun1;
         function domcun1() {
-            console.log('%c [ Click Event ] ', 'font-size:13px; background:rgb(247, 95, 25); color:white;')
-
+            console.log('%c [ Click Event ] ', 'font-size:13px; background:rgb(247, 95, 25); color:white;');
         }
 
-        /*========= ========== */
+        document.write('<div class="class3" id="eventbox2">Click event</div><br>');
+        document.querySelector('#eventbox2').addEventListener('click', function () {
+            console.log('%c [ Click Event ] ', 'font-size:13px; background:black; color:white;');
+        }, true);
+
+        /*========= removeEventListner ========== */
+        document.write('<div class="class3" id="eventbox3">hover on me</div><br>');
+        document.querySelector('#eventbox3').addEventListener('mouseleave', fun31, true);
+        document.querySelector('#eventbox3').addEventListener('ondblclick', fun32, true);
+        function fun31() {
+            console.log('%c [ Click Event ] ', 'font-size:13px; background:blue; color:white;');
+        }
+        function fun32() {
+            this.removeEventListener('mouseleave', fun31);
+        }
+
+
+        /* ===============================================================================================================================================
+                                                                            Class List Methods
+        =============================================================================================================================================== */
+        document.write('<h4 class="content-header">Class List Methods</h4>');
+        /*
+        1. classList.add(class1,class2,cal..);
+        2. classList.remove(class1,class2,cla...);
+        3. toggle(class);
+        4. contains(class);
+        5. item(class);
+        6. length
+        */
+
+        /* ========== add() ============ */
+        document.write('<div id="classbox1">box1</div>');
+        document.querySelector('#classbox1').classList.add('class3', 'class2');
+
+        /* ========== remove() ============ */
+        document.querySelector('#classbox1').classList.remove('class3', 'class2');
+
+        /* ========== toggle() =========== */
+        document.write('<div id="classbox2"><button>click me</button></div>');
+        document.querySelector('#classbox2').addEventListener('click', fun33, true);
+        function fun33() {
+            document.querySelector('#classbox2').classList.toggle('class3');
+        }
+
+        /* ============ length ============ */
+        var classlength;
+        document.write('<div id="classbox3">cleck me to get class length</div><br>');
+        document.querySelector('#classbox3').classList.add('class3', 'class2');
+        document.querySelector('#classbox3').addEventListener('click', fun34, true);
+        function fun34() {
+            classlength = document.querySelector('#classbox3').classList.length;
+            console.warn('class length = ', classlength);
+        }
+
+        /* ============ item() ============ */
+        var specifyclass;
+        document.write('<div id="classbox4">box1</div><br>');
+        document.querySelector('#classbox4').classList.add('class3', 'class2');
+        document.querySelector('#classbox4').addEventListener('click', fun35, true);
+        function fun35() {
+            specifyclass = document.querySelector('#clssbox4').classList.item(1);
+            console.warn('specify class = ', specifyclass);
+        }
+
+        /* ========== contain() ============ */
+        var containclass;
+        document.write('<div id="classbox5">box1</div><br>');
+        document.querySelector('#classbox5').classList.add('class3', 'class2');
+        document.querySelector('#classbox5').addEventListener('click', fun36, true);
+        function fun36() {
+            containclass = document.querySelector('#clssbox5').classList.contains('class3');
+            console.warn('contain class = ', containclass);
+        }
+
+
+
+        /* ===============================================================================================================================================
+                                                                        DOM Traversal Methods
+        =============================================================================================================================================== */
+        document.write('<h4 class="content-header">DOM Traversal Methods</h4>');
+        console.error('DOM Traversal Methods');
+        console.warn('1. ParentNode');
+        console.warn('2. ParentElement');
+        console.warn('3. Children');
+        console.warn('4. ChildNode');
+        console.warn('5. firstChild');
+        console.warn('6. firstElementChild');
+        console.warn('7. lastChild');
+        console.warn('8. lastElementChild');
+        console.warn('9. nextElementSibiling');
+        console.warn('10. nextSibiling');
+        console.warn('11. PreviousElementSibiling');
+        console.warn('12. PreviousSibiling');
+        /* 
+        1. ParentNode
+        2. ParentElement
+        3. Children
+        4. ChildNode
+        5. firstChild
+        6. firstElementChild
+        7. lastChild
+        8. lastElementChild
+        9. nextElementSibiling
+        10. nextSibiling
+        11. PreviousElementSibiling
+        12. PreviousSibiling
+        */
+        document.write('<div class="parent-section">');
+        document.write('<div class="child-1">Child-1</div>');
+        document.write('<div class="child-2">Child-2</div>');
+        document.write('<div class="child-3">Child-3</div>');
+        document.write('<div class="child-4">Child-4</div>');
+        document.write('</div><br>');
+
+
+        /************ parentNose *************/
+        // document.querySelector('.child-2').parentNode.style.background = 'blue'; // Target Parent Element
+
+        /********** ParentElement ***********/
+        // document.querySelector('.child-1').parentElement.style.background = 'yellow'; // Target Parent Element
+
+        /********* children ***********/
+        // let allchilds1 = document.querySelector('.parent-section').children; // Target All Chil Elements
+        // console.warn(allchilds1);
+
+        // document.querySelector('.parent-section').children[1].style.background = 'black'; // Target Specify Child Element
+
+        /************* firstEmenentChild ************/
+        // document.querySelector('.parent-section').firstElementChild.style.background = 'red'; // Target First Child Element
+
+        /************* lastElementChild **************/
+        // document.querySelector('.parent-section').lastElementChild.style.background = 'gray'; // Target Last Child Element
+
+        /************** firstChild ***************/
+        // document.querySelector('.parent-section').firstChild.style.background = 'blue'; // Target First Child Element
+
+        /************** lastChild **************/
+        // document.querySelector('.parent-section').lastChild.style.background = 'orange'; // Target Last Child Element
+
+        /************* PreviousElementSibling **************/
+        // document.querySelector('.child-2').previousElementSibling.style.background = 'red'; // Target Previous Element
+
+        /************ NextElementSibling ************/
+        // document.querySelector('.child-2').nextElementSibling.style.background = 'blue'; // Target Next Element
+
+        /************ PreviousSibling ***************/
+        // document.querySelector('.child-2').previousSibling.style.background = 'gray'; // Target Previous Element, Same PreviousElementSibling
+
+        /*********** NextSibiling ***************/
+        // document.querySelector('.child-2').nextSibling.style.background = 'black'; // Target Next Element, Same NextElementSibling
+
+
+
+        /* ===============================================================================================================================================
+                                                                            DOM Create Methods
+        =============================================================================================================================================== */
+        document.write('<h4 class="content-header">DOM Create Methods</h4>');
+        console.error('DOM Create Methods');
+        console.warn('1. createElement');
+        console.warn('2. createTextNode');
+        console.warn('3. createComment');
+        document.write('1. createElement<br> 2. createTextNode<br> 3. createComment');
+
+        /*
+        1. CreateElement
+        2. CreateTextNode
+        3. CreateComment
+        */
+
+        /************ createElement ************/
+        let createmethod1 = document.createElement('h3'); // Create Emenent
+        console.warn(createmethod1);
+
+        /*********** createTextNode *************/
+        let createmethod2 = document.createTextNode('hello'); // Create TExt
+        console.warn(createmethod2);
+
+        /*********** createComment ************/
+        let createmethod3 = document.createComment('this is comment'); // Create Comment
+        console.warn(createmethod3);
+
+
+
+        /* ===============================================================================================================================================
+                                                                                DOM Append Methods
+        =============================================================================================================================================== */
+        document.write('<h4 class="content-header">DOM Append Methods</h4>');
+        console.error('DOM Append Methods');
+        console.warn('appendChild');
+        console.warn('insertBefore');
+        document.write('1. appendChild <br> 2. insertBefore')
+
+        /************** appendChild **************/
+        document.write('<div class="parent-tag"></div>');
+        let tag1 = document.createElement('h3');
+        let tagtext1 = document.createTextNode('Hello World');
+        tag1.appendChild(tagtext1)
+        let fulltag = document.querySelector('.parent-tag').appendChild(tag1);
+
+
+        /************** insertBefore **************/
+        document.write('<div class="parent-tag-2"><h4>Hi</h4></div>')
+        let tag2 = document.createElement('h3');
+        let tagtext2 = document.createTextNode('Hello World');
+        tag2.appendChild(tagtext2);
+        let maintga = document.querySelector('parent-tag-2');
+        // maintag.insertBefore(tag2, maintga.chilNodes[1]);
+
+
+        /* ===============================================================================================================================================
+                                                                            DOM insertAbjacent Methods
+        =============================================================================================================================================== */
+        document.write('<h4 class="content-header">DOM insertAbjacent Methods</h4>');
+        console.error('DOM insertAbjacent Methods');
+        console.warn('1. beforebegin');
+        console.warn('2. afterbegin');
+        console.warn('3. beforeend');
+        console.warn('4. afterend');
+        document.write('1. beforebegin <br> 2. afterbegin <br> 3. beforeend <br> 4. afterend');
+
+        /********** insertAdjacentElement ***********/
+        // document.write('<div class="parent-tag-3"></div>');
+        // let tag3 = document.createElement('h2');
+        // let tagtext3 = document.createTextNode('Hello World');
+        // tag3.appendChild(tagtext3);
+        // let mainelement = document.querySelector('.parent-tag-3');
+        // mainelement.insertAdjacentElement('beforebegin', mainelement);
+
+        /********* insertAbjacentHTML ***********/
+        // document.write('<div class="parent-tag-4"><p>hi</p></div>');
+        // let tag4 = document.querySelector('.parent-tag-4');
+        // let tagtext4 = '<h2>Hello World</h2>';
+        // tag4.insertAdjacentHTML('brforebrgin', tagtext4);
+
+        /********** insertAbjacentText ************/
+        // document.write('<div class="parent-tag-5"><p>hi</p></div>');
+        // let tag5 = document.querySelector('parent-tag-5');
+        // let tagtext5 = 'this is paragraph';
+        // tag5.insertAdjacentText('beforebegin', tagtext5);
     </script>
     <style>
         .class1 {
@@ -3238,6 +3475,34 @@
             background-color: aqua;
             padding: 5px;
             text-align: center;
+            border: 5px solid black;
+        }
+
+        .parent-section {
+            background-color: pink;
+            display: flex;
+            padding: 10px;
+            justify-content: space-evenly;
+        }
+
+        .child-1 {
+            background-color: aqua;
+            padding: 20px;
+        }
+
+        .child-2 {
+            background-color: rgb(248, 125, 43);
+            padding: 20px;
+        }
+
+        .child-3 {
+            background-color: rgb(96, 194, 194);
+            padding: 20px;
+        }
+
+        .child-4 {
+            background-color: orchid;
+            padding: 20px;
         }
     </style>
 </body>

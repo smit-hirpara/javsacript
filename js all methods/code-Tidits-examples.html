@@ -363,20 +363,84 @@
             ['gloves', '18.99'],
         ]
         nastedary1.forEach(([item, price]) => {
-            console.log(item + price.padStart(20 - item.length));
+            console.warn(item + price.padStart(20 - item.length));
         });
 
         /* =================== Masking Numbers =================== */
         let banknumber1 = '1235 5432 3225 9620';
         let lastdigits = banknumber1.slice(-4);
 
-        console.log(lastdigits.padStart(banknumber1.length, '*'));
+        console.warn(lastdigits.padStart(banknumber1.length, '*'));
 
         /* ================== How to Check if Object is Empty ========================= */
         console.error('How to Check if Object is Empty');
         let obj18 = {};
         let chacking1 = Object.keys(obj18).length === 0 && obj18.constructor === Object;
         console.warn(chacking1);
+
+        /* ================ 6 Use Case of Spread with Array ======================= */
+        console.error('Spread with Array');
+        let ary3 = [1, 2, 3];
+        let ary4 = [4, 5, 6];
+        let margeallarray4 = [ary3, ary4];
+        let margeallarray5 = [...ary3, ...ary4];
+        console.warn(margeallarray4);
+        console.warn(margeallarray5);
+
+        /***** Cloning Array the Wrong Way *****/
+        console.log('Cloning Array the Wrong Way');
+        let ary5 = [1, 2, 3, 4, 5];
+        let clonearray5 = ary5;
+        clonearray5[1] = 1;
+        console.warn('original = ', ary5);
+        console.warn('copy = ', clonearray5);
+
+        /***** Cloning Array the Right Way *****/
+        console.log('Cloning Array the Right Way');
+        let ary6 = [1, 2, 3, 4, 5];
+        let clonearray6 = [...ary6];
+        clonearray6[1] = 1;
+        console.warn('original = ', ary6);
+        console.warn('copy = ', clonearray6);
+
+        /********* String to Array **********/
+        console.log('String To Array');
+        let str2 = 'Hello Meet';
+        let ary7 = [...str2];
+        console.warn('original = ', str2);
+        console.warn('convort array = ', ary7);
+
+        /******* Set To Array *********/
+        console.log('Set To Array');
+        let str3 = new Set([1, 2, 3, 4, 5]);
+        console.warn('set array = ', str3);
+        let ary9 = [...str3];
+        console.warn(ary9);
+
+        /******* Arguments to Array ********/
+        console.log('Arguments to Array');
+        function fun1() {
+            let ArgumentsArray = [...arguments];
+            console.warn(ArgumentsArray.map(name => `hi ${name}`));
+        }
+        fun1('utsav', 'shivam');
+
+        /********** Community Input **********/
+        console.log('Community Input');
+        let ary10 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let minvalue1 = Math.min(...ary10);
+        let maxvalue1 = Math.max(...ary10);
+        console.warn('array min value = ', minvalue1);
+        console.warn('array max value = ', maxvalue1);
+
+        /********** JavaScript Object.fromEntries() ***************/
+        console.error('JavaScript Object.fromEntries()');
+        let ary11 = [
+            ['name', 'raj'],
+            ['age', 18]
+        ]
+        let aryobj2 = Object.fromEntries(ary11);
+        console.warn(aryobj2);
     </script>
 </body>
 

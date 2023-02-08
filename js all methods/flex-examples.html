@@ -1,0 +1,384 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /********** mina flex container **********/
+        .container {
+            margin: 10px 0;
+        }
+
+        /********* header ********/
+        .header {
+            background-color: black;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        /********* main flex box ********/
+        .flex-box-1 {
+            display: flex;
+            background-color: pink;
+        }
+
+        /********* flex box flex-direction ********/
+        .flex-box-2 {
+            display: flex;
+            background-color: pink;
+            flex-direction: row-reverse;
+            /* column-reverse */
+        }
+
+        /********* justify-content: flex-start *********/
+        .flex-box-3 {
+            display: flex;
+            background-color: pink;
+            justify-content: flex-start;
+            /* default */
+        }
+
+        /********* justify-content: center *********/
+        .flex-box-4 {
+            display: flex;
+            background-color: pink;
+            justify-content: center;
+        }
+
+        /********* justify-content: flex-end *********/
+        .flex-box-5 {
+            display: flex;
+            background-color: pink;
+            justify-content: flex-end;
+        }
+
+        /********* justify-content: space-evenly **********/
+        .flex-box-6 {
+            display: flex;
+            background-color: pink;
+            justify-content: space-evenly;
+        }
+
+        /********* justify-content: space-between **********/
+        .flex-box-7 {
+            display: flex;
+            background-color: pink;
+            justify-content: space-between;
+        }
+
+        /********** justify-content: space-around **********/
+        .flex-box-8 {
+            display: flex;
+            background-color: pink;
+            justify-content: space-around;
+        }
+
+        /********** align-items: flex-start; **********/
+        .flex-box-9 {
+            display: flex;
+            background-color: pink;
+            align-items: flex-start;
+            height: 200px;
+        }
+
+        /********** align-items: center; **********/
+        .flex-box-10 {
+            display: flex;
+            background-color: pink;
+            align-items: center;
+            height: 200px;
+        }
+
+        /********** align-items: flex-end; **********/
+        .flex-box-11 {
+            display: flex;
+            background-color: pink;
+            align-items: flex-end;
+            height: 200px;
+        }
+
+        /********** flex-wrap: wrap; **********/
+        .flex-box-12 {
+            display: flex;
+            background-color: pink;
+            flex-wrap: wrap;
+        }
+
+        /********** flex-wrap: wrap-reverse; **********/
+        .flex-box-13 {
+            display: flex;
+            background-color: pink;
+            flex-wrap: wrap-reverse;
+        }
+
+        /********** flex-flow: column wrap; **********/
+        .flex-box-14 {
+            display: flex;
+            background-color: pink;
+            flex-flow: column wrap;
+        }
+
+        /********** Order & flex-grow **********/
+        .flex-box-15 {
+            display: flex;
+            background-color: pink;
+        }
+
+        #flex-15-1 {
+            order: 5;
+            flex-grow: 4;
+        }
+
+        #flex-15-2 {
+            order: 4;
+            flex-grow: 2;
+        }
+
+        #flex-15-4 {
+            order: 3;
+            flex-grow: 3;
+        }
+
+        /********** flex-shrink **********/
+        .flex-box-16 {
+            display: flex;
+            background-color: pink;
+        }
+
+        #flex-16-1 {
+            order: 5;
+            flex-shrink: 2;
+        }
+
+        #flex-16-2 {
+            order: 4;
+            flex-shrink: 3;
+        }
+
+        #flex-16-4 {
+            order: 3;
+            flex-shrink: 4;
+        }
+
+        /********** align-self **********/
+        .flex-box-17 {
+            display: flex;
+            background-color: pink;
+            height: 200px;
+        }
+
+        #flex-17-1 {
+            align-self: flex-start;
+        }
+
+        #flex-17-2 {
+            align-self: flex-end;
+        }
+
+        #flex-17-3 {
+            align-self: center;
+        }
+
+        /************** flex boxes **************/
+        .flex-items {
+            background-image: linear-gradient(to left, rgb(206, 114, 206), rgba(15, 71, 201, 0.8), rgb(206, 114, 206));
+            padding: 30px;
+            margin: 10px;
+            border-radius: 10px;
+            color: white;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">CSS Flex</div>
+        <div class="flex-box-1">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">CSS Flex flex-direction</div>
+        <div class="flex-box-2">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex justify-content="flex-start"</div>
+        <div class="flex-box-3">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex justify-content="center"</div>
+        <div class="flex-box-4">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex justify-content="flex-end"</div>
+        <div class="flex-box-5">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex justify-content="spance-evenly"</div>
+        <div class="flex-box-6">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex justify-content="spance-between"</div>
+        <div class="flex-box-7">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex justify-content="spance-around"</div>
+        <div class="flex-box-8">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex text-align="flex-start"</div>
+        <div class="flex-box-9">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex text-align="center"</div>
+        <div class="flex-box-10">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex text-align="flex-end"</div>
+        <div class="flex-box-11">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex flex-wrap:"wrap"</div>
+        <div class="flex-box-12">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex flex-wrap:"wrap-reverse"</div>
+        <div class="flex-box-13">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex flex-flow: column wrap;</div>
+        <div class="flex-box-14">
+            <div class="flex-items">flex-item-1</div>
+            <div class="flex-items">flex-item-2</div>
+            <div class="flex-items">flex-item-3</div>
+            <div class="flex-items">flex-item-4</div>
+            <div class="flex-items">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex Order & flex-grow</div>
+        <div class="flex-box-15">
+            <div class="flex-items" id="flex-15-1">flex-item-1</div>
+            <div class="flex-items" id="flex-15-2">flex-item-2</div>
+            <div class="flex-items" id="flex-15-3">flex-item-3</div>
+            <div class="flex-items" id="flex-15-4">flex-item-4</div>
+            <div class="flex-items" id="flex-15-5">flex-item-5</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">CSS Flex flex-shrink</div>
+        <div class="flex-box-16">
+            <div class="flex-items" id="flex-16-1">flex-item-1</div>
+            <div class="flex-items" id="flex-16-2">flex-item-2</div>
+            <div class="flex-items" id="flex-16-3">flex-item-3</div>
+            <div class="flex-items" id="flex-16-4">flex-item-4</div>
+            <div class="flex-items" id="flex-16-5">flex-item-5</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">CSS Flex align-self</div>
+        <div class="flex-box-17">
+            <div class="flex-items" id="flex-17-1">flex-item-1</div>
+            <div class="flex-items" id="flex-17-2">flex-item-2</div>
+            <div class="flex-items" id="flex-17-3">flex-item-3</div>
+            <div class="flex-items" id="flex-17-4">flex-item-4</div>
+            <div class="flex-items" id="flex-17-5">flex-item-5</div>
+        </div>
+    </div>
+</body>
+
+</html>
